@@ -1,0 +1,59 @@
+.trust-badges-section {
+  background: white;
+  padding: 80px 0;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.badge-item {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 15px;
+  background: var(--light-color);
+  transition: all 0.3s ease;
+}
+
+.badge-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.badge-icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.badge-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .badge-icon {
+    font-size: 2.5rem;
+  }
+
+  .badge-item h3 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .badges-grid {
+    grid-template-columns: 1fr;
+  }
+}
