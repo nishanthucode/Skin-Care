@@ -7,6 +7,7 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  timeout: 1000, // Fail fast (1s) if backend is down
 });
 
 // Request interceptor to add auth token
