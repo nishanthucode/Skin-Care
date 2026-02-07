@@ -23,7 +23,7 @@ const Home = () => {
       <ProductSection
         title="Our Products"
         viewAllLink="/best-seller"
-        categories={['soap', 'body-cream']}
+        categories={['soap', 'body-cream', 'face-wash', 'perfume']}
         limit={4}
       />
 

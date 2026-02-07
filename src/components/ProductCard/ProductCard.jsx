@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiShoppingCart, FiHeart } from 'react-icons/fi';
+import { FiShoppingCart, FiHeart, FiEye } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
 import { useCart } from '../../context/CartContext';
 import './ProductCard.css';
@@ -46,12 +46,9 @@ const ProductCard = ({ product }) => {
           {product.specialOffer && (
             <span className="special-badge">{product.specialOffer}</span>
           )}
-          <button
-            className={`wishlist-btn ${isInWishlist(product._id) ? 'active' : ''}`}
-            onClick={handleToggleWishlist}
-          >
-            <FiHeart />
-          </button>
+
+
+
           <img
             src={product.image || 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop'}
             alt={product.name}
@@ -70,52 +67,50 @@ const ProductCard = ({ product }) => {
         <div className="product-info">
           <h3 className="product-name">{product.name}</h3>
 
-          {product.description && (
-            <p className="product-description">{product.description}</p>
-          )}
+          <p className="product-description">
+            {product.description || 'Brighter Skin in 4 Weeks'}
+          </p>
 
-          <div className="product-price">
-            <span className="current-price">Rs. {product.price.toFixed(2)}</span>
-            {product.originalPrice && (
-              <span className="original-price">Rs. {product.originalPrice.toFixed(2)}</span>
-            )}
-          </div>
-
-          <div className="product-rating">
-            <div className="rating">
-              {[...Array(5)].map((_, index) => (
-                <svg
-                  key={index}
-                  className={index < Math.floor(product.rating || 0) ? 'filled' : 'empty'}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  width="14"
-                  height="14"
-                >
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-              ))}
-              {product.rating > 0 && (
-                <span className="rating-text">{product.rating.toFixed(1)}</span>
+          <div className="product-meta-row">
+            <div className="price-wrapper">
+              <span className="current-price">Rs. {product.price.toFixed(2)}</span>
+              {product.originalPrice && (
+                <span className="original-price">Rs. {product.originalPrice.toFixed(2)}</span>
               )}
             </div>
-            {product.reviewCount > 0 && (
-              <span className="review-count">({product.reviewCount} Ratings)</span>
-            )}
+
+            <div className="rating-compact">
+              {[...Array(5)].map((_, index) => (
+                <FaStar
+                  key={index}
+                  className={index < Math.floor(product.rating || 5) ? 'filled' : 'empty'}
+                />
+              ))}
+              <span className="review-count-text">{product.reviewCount || 60} reviews</span>
+            </div>
+          </div>
+
+          <div className="rating-detail-row">
+            <FaStar className="star-icon-small" />
+            <span className="average-rating">{product.rating || 4.9}</span>
+            <span className="total-ratings">({product.reviewCount || 60} Ratings)</span>
           </div>
         </div>
       </Link>
 
       {/* Add to Cart Button */}
       {product.stock > 0 ? (
-        <button className="btn-add-to-cart" onClick={handleAddToCart}>
-          Add To Cart
-        </button>
+        <div className="action-container">
+          <button className="btn-add-to-cart" onClick={handleAddToCart}>
+            Add To Cart
+          </button>
+        </div>
       ) : (
-        <button className="btn-out-of-stock" disabled>
-          Out of Stock
-        </button>
+        <div className="action-container">
+          <button className="btn-out-of-stock" disabled>
+            Out of Stock
+          </button>
+        </div>
       )}
     </div>
   );

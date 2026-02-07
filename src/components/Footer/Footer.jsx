@@ -5,7 +5,10 @@ import {
   FaInstagram,
   FaTwitter,
   FaYoutube,
-  FaLinkedinIn
+
+  FaLinkedinIn,
+  FaWhatsapp,
+  FaEnvelope
 } from 'react-icons/fa';
 import { newsletterAPI } from '../../utils/api';
 import './Footer.css';
@@ -62,6 +65,12 @@ const Footer = () => {
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                   <FaLinkedinIn />
                 </a>
+                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+                  <FaWhatsapp />
+                </a>
+                <a href="mailto:support@youthface.in">
+                  <FaEnvelope />
+                </a>
               </div>
             </div>
 
@@ -111,7 +120,7 @@ const Footer = () => {
           <p>&copy; 2026, Youth Face. All rights reserved.</p>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 

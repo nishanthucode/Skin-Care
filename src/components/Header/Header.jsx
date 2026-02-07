@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiSearch, FiShoppingCart, FiUser, FiMenu, FiX, FiHeart, FiMail } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronLeft, FiPhone, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
-import { useCart } from '../../context/CartContext';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,13 +23,14 @@ const Header = () => {
     { name: 'Home', path: '/' },
     { name: 'Shop All', path: '/shop-all' },
     { name: 'About Us', path: '/about-us' },
+    { name: 'Contact Us', path: '/contact' },
   ];
 
   return (
     <>
       <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="header-container">
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Left on Mobile */}
           <button
             className="mobile-menu-btn"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -37,22 +38,32 @@ const Header = () => {
             {isMobileMenuOpen ? <FiX /> : <FiMenu />}
           </button>
 
-          {/* Logo */}
+          {/* Logo - Centered on Mobile, Left on Desktop */}
           <Link to="/" className="logo">
             <img
               src={logo}
-              alt="Youth Face - Whitening Cream"
+              alt="Youth Face"
               className="logo-image"
             />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Centered */}
           <nav className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+            <div className="mobile-nav-header">
+              <button
+                className="mobile-back-btn"
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Close Menu"
+              >
+                <FiChevronLeft /> <span>Back</span>
+              </button>
+            </div>
             <ul className="nav-links">
               {navLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
+                    className={link.isSpecial ? 'special-link' : ''}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}
@@ -62,11 +73,22 @@ const Header = () => {
             </ul>
           </nav>
 
-          {/* Header Actions - Call Us */}
+          {/* Header Actions - Right Side Icons */}
           <div className="header-actions">
-            <a href="tel:+919876543210" className="call-btn">
-              <span className="call-icon">📞</span>
-              <span className="call-text">Call Us</span>
+            <a href="tel:+919876543210" className="icon-action-btn" aria-label="Call Us">
+              <FiPhone />
+            </a>
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon-action-btn"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp />
+            </a>
+            <a href="mailto:support@youthface.in" className="icon-action-btn" aria-label="Email Us">
+              <FiMail />
             </a>
           </div>
         </div>
