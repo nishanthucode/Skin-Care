@@ -19,10 +19,13 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 
+import ScrollToTop from './components/ScrollToTop';
+
 function App() {
   return (
     <CartProvider>
       <Router>
+        <ScrollToTop />
         <div className="App">
           <Header />
           <main>
@@ -38,7 +41,7 @@ function App() {
               <Route path="/bakhoor" element={<Shop category="bakhoor" />} />
               <Route path="/anniversary-sale" element={<Shop category="anniversary-sale" />} />
               <Route path="/best-seller" element={<Shop category="best-seller" />} />
-              
+
               {/* Product Detail */}
               <Route path="/product/:id" element={<ProductDetail />} />
 

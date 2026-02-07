@@ -11,6 +11,7 @@ import {
   FaEnvelope
 } from 'react-icons/fa';
 import { newsletterAPI } from '../../utils/api';
+import logo from '../../assets/logo.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -44,7 +45,7 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="footer-col">
               <Link to="/" className="footer-logo">
-                <h2>Youth Face</h2>
+                <img src={logo} alt="Youth Face" className="footer-logo-img" />
               </Link>
               <p className="footer-desc">
                 For over eight years, Youthface has been on a mission to deliver the best skin whitening products India deserves—safe, dermatologist-approved formulations that actually work.
