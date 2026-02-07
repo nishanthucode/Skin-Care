@@ -2,45 +2,131 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight, FiShare2, FiHeart } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
+import { productAPI } from '../utils/api';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
-  /* ... inside ProductDetail ... */
   const { id } = useParams();
   const navigate = useNavigate();
-  const [selectedImage, setSelectedImage] = useState(0);
-  const [selectedPack, setSelectedPack] = useState(0); // Default to first pack
-  const [quantity, setQuantity] = useState(1);
-  // activeTab removed
+  const { addToCart } = useCart();
 
-  // ... (mock product data remains same) ...
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [selectedPack, setSelectedPack] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+
+  // Mock Products Database for Fallback
+  const mockProducts = [
+    {
+      id: '1',
+      _id: '1',
+      name: 'Beauty Cream (250g)',
+      tagline: 'Brighter Skin in 4 Weeks',
+      description: 'Experience the ultimate skin transformation with our Beauty Cream. Specially formulated with natural extracts, it deeply nourishes and brightens your complexion while providing 24-hour hydration. Perfect for all skin types, this non-greasy formula works while you sleep to reveal a radiant glow.',
+      benefits: ['Intense Brightening', '24h Moisture', 'Anti-Aging', 'For All Skin Types'],
+      rating: 4.9,
+      reviewCount: 60,
+      image: 'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&h=800&fit=crop',
+      images: [
+        'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&h=800&fit=crop'
+      ],
+      packs: [
+        { id: 1, name: 'Single Jar', price: 599.00, description: 'Standard size jar' },
+        { id: 2, name: 'Twin Pack', price: 1099.00, description: 'Best value for 2 months' }
+      ],
+      relatedProducts: [
+        { id: '2', name: 'DarkSpot Soap', price: 199.00, image: 'https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=300' },
+        { id: '3', name: 'Face Wash', price: 199.00, image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300' }
+      ]
+    },
+    {
+      id: '2',
+      _id: '2',
+      name: 'DarkSpot Remover Soap (100g)',
+      tagline: 'Brighten, Smooth, And Protect',
+      description: 'Our DarkSpot Remover Soap is a powerful yet gentle cleanser that targeted hyperpigmentation and uneven skin tone. Infused with vitamin C and herbal extracts, it fades dark spots effectively while maintaining your skins natural moisture balance.',
+      benefits: ['Fades Dark Spots', 'Even Tone', 'Germ Protection', 'Gentle Fragrance'],
+      rating: 4.5,
+      reviewCount: 40,
+      image: 'https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=800&h=800&fit=crop',
+      images: [
+        'https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=800&h=800&fit=crop',
+        'https://images.unsplash.com/photo-1585652757173-57de5e9fab42?w=800&h=800&fit=crop'
+      ],
+      packs: [
+        { id: 1, name: 'Standard Bar', price: 199.00, description: 'Luxury soap bar' },
+        { id: 2, name: 'Pack of 3', price: 499.00, description: 'Value multi-pack' }
+      ],
+      relatedProducts: [
+        { id: '1', name: 'Beauty Cream', price: 599.00, image: 'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=300' }
+      ]
+    }
+  ];
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        setLoading(true);
+        // Try to fetch from API
+        const response = await productAPI.getById(id);
+        if (response.data && response.data.product) {
+          setProduct(response.data.product);
+        } else if (response.data) {
+          setProduct(response.data);
+        } else {
+          throw new Error('No product found');
+        }
+      } catch (err) {
+        console.error('API Error, using fallback:', err);
+        // Fallback to mock data by ID
+        const found = mockProducts.find(p => p.id === id || p._id === id);
+        if (found) {
+          setProduct(found);
+        } else {
+          // If not found, use first as default so it doesn't crash during dev
+          setProduct(mockProducts[0]);
+        }
+      } finally {
+        setLoading(false);
+      }
+      setSelectedImage(0); // Reset for new product
+      setSelectedPack(0);
+    };
+
+    fetchProduct();
+    // Scroll to top on change
+    window.scrollTo(0, 0);
+  }, [id]);
+
+  if (loading) return <div className="product-detail-page"><div className="container" style={{ padding: '100px 0', textAlign: 'center' }}><h2>Loading Premium Skincare...</h2></div></div>;
+  if (!product) return <div className="product-detail-page"><div className="container" style={{ padding: '100px 0', textAlign: 'center' }}><h2>Product Not Found</h2><Link to="/shop-all">Back to Shop</Link></div></div>;
 
   const nextImage = () => {
-    setSelectedImage((prev) => (prev + 1) % product.images.length);
+    setSelectedImage((prev) => (prev + 1) % (product.images?.length || 1));
   };
 
   const prevImage = () => {
-    setSelectedImage((prev) => (prev - 1 + product.images.length) % product.images.length);
+    setSelectedImage((prev) => (prev - 1 + (product.images?.length || 1)) % (product.images?.length || 1));
   };
-
-  const { addToCart } = useCart();
 
   const handleAddToBag = () => {
     const selectedPackData = product.packs[selectedPack];
-
     const cartItem = {
-      _id: `${product.id}-${selectedPackData.id}`,
-      productId: product.id,
+      _id: `${product._id || product.id}-${selectedPackData.id}`,
+      productId: product._id || product.id,
       name: product.name,
       packName: selectedPackData.name,
       price: selectedPackData.price,
-      image: selectedPackData.image || product.images[0],
-      description: selectedPackData.description,
+      image: product.images[0],
+      description: product.tagline,
     };
 
     addToCart(cartItem, quantity);
-
-    // Optional: Show success feedback or navigate
     alert('Added to cart!');
   };
 
@@ -51,7 +137,6 @@ const ProductDetail = () => {
 
   return (
     <div className="product-detail-page">
-      {/* Breadcrumb */}
       <div className="container">
         <div className="breadcrumb">
           <Link to="/">Home</Link>
@@ -60,26 +145,20 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      {/* Main Product Section */}
       <div className="container">
         <div className="product-detail-container">
-          {/* Left: Image Gallery */}
           <div className="product-gallery">
             <div className="main-image-container">
-              <button className="gallery-nav prev" onClick={prevImage}>
-                <FiChevronLeft />
-              </button>
-              <img src={product.images[selectedImage]} alt={product.name} className="main-image" />
-              <button className="gallery-nav next" onClick={nextImage}>
-                <FiChevronRight />
-              </button>
+              <button className="gallery-nav prev" onClick={prevImage}><FiChevronLeft /></button>
+              <img src={product.images && product.images[selectedImage]} alt={product.name} className="main-image" />
+              <button className="gallery-nav next" onClick={nextImage}><FiChevronRight /></button>
             </div>
             <div className="thumbnail-gallery">
-              {product.images.map((image, index) => (
+              {product.images && product.images.map((image, index) => (
                 <img
                   key={index}
                   src={image}
-                  alt={`${product.name} ${index + 1}`}
+                  alt={product.name}
                   className={`thumbnail ${selectedImage === index ? 'active' : ''}`}
                   onClick={() => setSelectedImage(index)}
                 />
@@ -87,42 +166,36 @@ const ProductDetail = () => {
             </div>
           </div>
 
-          {/* Right: Product Info */}
           <div className="product-info">
             <h1 className="product-title">{product.name}</h1>
             <p className="product-tagline">{product.tagline}</p>
 
-            {/* Benefits Tags */}
             <div className="benefits-tags">
-              {product.benefits.map((benefit, index) => (
+              {product.benefits && product.benefits.map((benefit, index) => (
                 <span key={index} className="benefit-tag">{benefit}</span>
               ))}
             </div>
 
-            {/* Rating */}
             <div className="product-rating">
               <div className="stars">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="star filled">★</span>
+                  <span key={i} className={`star ${i < Math.floor(product.rating || 5) ? 'filled' : ''}`}>★</span>
                 ))}
               </div>
-              <span className="review-count">{product.reviewCount} reviews</span>
+              <span className="review-count">{product.reviewCount || 0} reviews</span>
             </div>
 
-            {/* Price */}
             <div className="product-price-section">
               <span className="label">Price:</span>
-              <span className="price">Rs. {product.packs[selectedPack].price.toFixed(2)}</span>
+              <span className="price">Rs. {product.packs && product.packs[selectedPack].price.toFixed(2)}</span>
             </div>
             <p className="tax-info">Tax included. Shipping calculated at checkout</p>
 
-            {/* Description (Replaces Pack Selection) */}
-            <div className="product-description-block" style={{ margin: '20px 0', lineHeight: '1.6', color: '#555' }}>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '10px', textTransform: 'uppercase' }}>Description</h3>
+            <div className="product-description-block">
+              <h3>Description</h3>
               <p>{product.description}</p>
             </div>
 
-            {/* Quantity */}
             <div className="quantity-section">
               <label>Quantity</label>
               <div className="quantity-controls">
@@ -132,45 +205,32 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="action-buttons">
-              <button className="add-to-bag-btn" onClick={handleAddToBag}>
-                + ADD TO BAG
-              </button>
-              <button className="buy-now-btn" onClick={handleBuyNow}>
-                BUY NOW
-              </button>
+              <button className="add-to-bag-btn" onClick={handleAddToBag}>+ ADD TO BAG</button>
+              <button className="buy-now-btn" onClick={handleBuyNow}>BUY NOW</button>
             </div>
 
-            {/* Offers Removed */}
-
-            {/* Related Products */}
             <div className="related-products-inline">
               <h3>You can also pair it with</h3>
               <div className="related-products-grid">
-                {product.relatedProducts.map((relatedProduct) => (
-                  <div key={relatedProduct.id} className="related-product-card">
-                    <img src={relatedProduct.image} alt={relatedProduct.name} />
+                {product.relatedProducts && product.relatedProducts.map((rp) => (
+                  <Link to={`/product/${rp.id}`} key={rp.id} className="related-product-card">
+                    <img src={rp.image} alt={rp.name} />
                     <div className="related-product-info">
-                      <h4>{relatedProduct.name}</h4>
-                      <p className="related-product-price">Rs. {relatedProduct.price.toFixed(2)}</p>
+                      <h4>{rp.name}</h4>
+                      <p className="related-product-price">Rs. {rp.price.toFixed(2)}</p>
                     </div>
-                    <button className="add-related-btn">+ Add</button>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
 
-            {/* Share */}
             <div className="share-section">
               <FiShare2 /> <span>SHARE</span>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom Tabs Section Removed */}
-
     </div>
   );
 };
