@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaLeaf, FaHeart, FaAward, FaUsers } from 'react-icons/fa';
+import { FaLeaf, FaHeart, FaAward, FaUsers, FaLightbulb, FaBullseye } from 'react-icons/fa';
 import './About.css';
 
 const About = () => {
@@ -12,120 +12,100 @@ const About = () => {
     <div className="about-page">
       {/* Hero Section */}
       <section className="about-hero">
-        <div className="about-hero-content">
-          <h1>Redefining Beauty Standards</h1>
-          <p>Empowering you to embrace your natural glow with science-backed, dermatologist-approved skincare.</p>
+        <div className="about-hero-overlay"></div>
+        <div className="about-hero-content container">
+          <h1>About Aura</h1>
+          <p className="hero-subtitle">Quality. Safety. Elegance.</p>
         </div>
       </section>
 
-      {/* Our Story Section */}
-      <section className="our-story">
+      {/* Brand Introduction (About Us) */}
+      <section className="about-intro section">
         <div className="container">
-          <div className="section-title">
-            <h2>Our Story</h2>
-            <p className="sub-title">From a humble beginning to a trusted skincare partner.</p>
-          </div>
-
-          <div className="story-container">
-            <div className="story-content">
-              <h3>8 Years of Excellence</h3>
-              <p>
-                Founded in 2016, YouthFace began with a simple yet powerful mission: to deliver safe, effective, and high-quality skin whitening products that actually work. What started as a small passion project has grown into a beloved brand trusted by thousands across India.
+          <div className="intro-grid">
+            <div className="intro-text">
+              <h2 className="section-title text-left">The Aura Philosophy</h2>
+              <p className="lead-text">
+                Aura is a premium skincare brand dedicated to enhancing natural beauty through thoughtfully crafted personal care products. We focus on combining gentle, skin-loving ingredients with modern skincare science to create products that support healthy, radiant-looking skin.
               </p>
               <p>
-                We believe that skincare isn't just about looking good—it's about feeling confident in your own skin. That's why every product we create is rigorous tested, dermatologist-approved, and formulated with the finest ingredients to ensure safety and efficacy.
+                From nourishing creams to moisturizing soaps, every Aura product is designed for daily use, visible glow, and lasting confidence. Our goal is to deliver quality, safety, and elegance in every package, making skincare simple, effective, and luxurious.
               </p>
-              <blockquote>
-                "True beauty comes from confidence, and our goal is to help you shine your brightest."
-              </blockquote>
             </div>
-            <div className="story-image">
+            <div className="intro-image">
               <img
-                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop"
-                alt="Our Story - Skincare"
+                src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=2070&auto=format&fit=crop"
+                alt="Aura Skincare Products"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="values-section">
+      {/* Mission & Vision */}
+      <section className="mission-vision section bg-light">
         <div className="container">
-          <div className="section-title">
-            <h2>Why Choose YouthFace?</h2>
-            <p className="sub-title">Our commitment to quality sets us apart.</p>
-          </div>
+          <div className="mv-grid">
+            {/* Mission */}
+            <div className="mv-card">
+              <div className="mv-icon">
+                <FaBullseye />
+              </div>
+              <h3>Our Mission</h3>
+              <p>
+                Our mission is to provide high-quality, glow-enhancing skincare products made with effective and skin-friendly ingredients that people can trust for everyday use. We aim to make premium skincare accessible, reliable, and results-focused while maintaining strong standards in formulation, packaging, and customer satisfaction.
+              </p>
+            </div>
 
+            {/* Vision */}
+            <div className="mv-card">
+              <div className="mv-icon">
+                <FaLightbulb />
+              </div>
+              <h3>Our Vision</h3>
+              <p>
+                Our vision is to become a trusted and recognized skincare brand known for delivering visible results, premium experience, and ingredient transparency. We strive to build a brand that inspires confidence, promotes healthy skin habits, and grows into a leading name in modern beauty and personal care.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values */}
+      <section className="values-section section">
+        <div className="container">
+          <h2 className="section-title text-center">Why Chooses Aura?</h2>
           <div className="values-grid">
             <div className="value-card">
-              <div className="value-icon">
-                <FaLeaf />
-              </div>
+              <div className="value-icon"><FaLeaf /></div>
               <h4>Natural Ingredients</h4>
-              <p>We harness the power of nature combined with science to bring you safe and effective solutions.</p>
+              <p>Harnessing the power of nature combined with science for safe, effective solutions.</p>
             </div>
-
             <div className="value-card">
-              <div className="value-icon">
-                <FaAward />
-              </div>
+              <div className="value-icon"><FaAward /></div>
               <h4>Dermatologist Approved</h4>
-              <p>Your safety is our priority. All our products are clinically tested and approved by experts.</p>
+              <p>Clinically tested and approved by experts to ensure your safety is our priority.</p>
             </div>
-
             <div className="value-card">
-              <div className="value-icon">
-                <FaHeart />
-              </div>
+              <div className="value-icon"><FaHeart /></div>
               <h4>Cruelty-Free</h4>
-              <p>We love animals as much as you do. None of our products are tested on animals.</p>
+              <p>We love animals. None of our products are ever tested on animals.</p>
             </div>
-
             <div className="value-card">
-              <div className="value-icon">
-                <FaUsers />
-              </div>
-              <h4>Customer First</h4>
-              <p>With thousands of happy customers, we are dedicated to providing the best service and results.</p>
+              <div className="value-icon"><FaUsers /></div>
+              <h4>Customer Focused</h4>
+              <p>Dedicated to providing the best service, experience, and radiant results for you.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="stats-section">
-        <div className="container">
-          <div className="stats-container">
-            <div className="stat-item">
-              <span className="stat-number">8+</span>
-              <span className="stat-label">Years of Trust</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">50+</span>
-              <span className="stat-label">Products</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">10k+</span>
-              <span className="stat-label">Happy Customers</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">Safe & Effective</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="cta-section">
-        <div className="cta-content">
-          <h2>Ready to Glow?</h2>
-          <p>Join thousands of others who have transformed their skin with YouthFace.</p>
-          <br />
-          <Link to="/shop-all" className="cta-btn">
-            Shop Now
-          </Link>
+      {/* CTA Section */}
+      <section className="about-cta section">
+        <div className="container text-center">
+          <h2>Experience the Aura Glow</h2>
+          <p>Join thousands who have transformed their daily ritual.</p>
+          <Link to="/shop-all" className="btn btn-primary mt-2">Shop Collection</Link>
         </div>
       </section>
     </div>

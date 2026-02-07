@@ -1,34 +1,36 @@
 .top-banner {
-  background: linear-gradient(135deg, #ff69b4, #ff1493);
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white);
   text-align: center;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  padding: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .header {
-  background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: all 0.3s ease;
-  height: 80px;
+  height: 90px;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
 .header.scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  height: 70px;
+  box-shadow: var(--shadow-md);
 }
 
 .header-container {
-  max-width: 1420px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  padding: 0 30px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,140 +42,100 @@
   border: none;
   font-size: 24px;
   color: var(--dark-color);
-  padding: 5px;
   cursor: pointer;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  /* Ensure Logo stays left on desktop */
-  margin-right: auto;
+  margin-right: 40px;
   flex-shrink: 0;
 }
 
 .logo-image {
   height: 80px;
-  /* Desktop Size */
   width: auto;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: height 0.3s ease;
 }
 
-/* Navigation - Center Aligned */
+.header.scrolled .logo-image {
+  height: 65px;
+}
+
+/* Navigation */
 .nav-menu {
   flex: 1;
   display: flex;
   justify-content: center;
-  position: absolute;
-  /* Center absolutely within container relative to closest positioned ancestor if needed, but flex centered works if siblings balance */
-  left: 50%;
-  transform: translateX(-50%);
+}
+
+.mobile-nav-header {
+  display: none;
 }
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links li a {
-  font-size: 15px;
-  font-weight: 500;
-  /* Slightly lighter than before */
-  color: #333;
-  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-color);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   transition: color 0.3s ease;
   position: relative;
-  white-space: nowrap;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
 }
 
 .nav-links li a:hover {
-  color: #d63031;
-  /* Reddish hover */
+  color: var(--primary-color);
 }
 
-/* Special Link Style for "Anniversary Sale" */
-.nav-links li a.special-link {
-  background-color: red;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-weight: 700;
+.nav-links li a:hover::after {
+  width: 100%;
 }
 
-.nav-links li a.special-link:hover {
-  background-color: #cc0000;
-  color: white;
-}
-
-
-/* Header Actions - Right Side Icons */
+/* Header Actions */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-left: auto;
-  /* Push to right */
-  flex-shrink: 0;
+  gap: 25px;
 }
 
 .icon-action-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: none;
-  border: none;
-  color: #333;
-  font-size: 22px;
-  /* Larger icons */
-  cursor: pointer;
+  color: var(--dark-color);
+  font-size: 20px;
   transition: all 0.3s ease;
-  position: relative;
   padding: 5px;
 }
 
 .icon-action-btn:hover {
-  color: #d63031;
-  /* Reddish hover */
-  transform: scale(1.1);
+  color: var(--primary-color);
+  transform: translateY(-2px);
 }
-
-.cart-btn {
-  position: relative;
-}
-
-.cart-badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: #d63031;
-  color: white;
-  font-size: 10px;
-  font-weight: bold;
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Mobile Nav Header (Hidden on Desktop) */
-.mobile-nav-header {
-  display: none;
-}
-
 
 /* Mobile Responsive */
-@media (max-width: 1200px) {
-
-  /* Adjust spacing for smaller desktops/tablets */
+@media (max-width: 1024px) {
   .nav-links {
-    gap: 20px;
+    gap: 25px;
   }
 
   .header-container {
@@ -181,85 +143,50 @@
   }
 }
 
-@media (max-width: 992px) {
-
-  /* Switch to Mobile Layout */
+@media (max-width: 900px) {
   .header {
-    height: 70px;
-  }
-
-  .header-container {
-    justify-content: flex-start;
-    /* Align start */
-    position: relative;
+    height: 75px;
   }
 
   .mobile-menu-btn {
     display: block;
-    z-index: 1002;
-    margin-right: 15px;
+    order: 1;
   }
 
   .logo {
-    margin: 0;
-    position: static;
-    transform: none;
-  }
-
-  .logo-image {
-    height: 45px;
-    /* Smaller logo on mobile */
+    order: 2;
+    margin: 0 auto;
   }
 
   .header-actions {
-    margin-left: auto;
-    /* Push actions to right */
+    order: 3;
     gap: 15px;
   }
 
-  .search-btn,
-  .user-btn {
-    display: none;
-    /* Hide Search and User on Mobile Header if desired, or keep specific ones */
-    /* Based on common patterns, Cart usually stays. Let's keep all small or hide some. User ref image shows icons. 
-         Let's keep icons but make them smaller. */
-    display: flex;
-  }
-
-  .icon-action-btn {
-    font-size: 20px;
-  }
-
-  /* Side Drawer Menu for Mobile */
   .nav-menu {
     position: fixed;
-    top: 0;
+    top: 75px;
     left: -100%;
-    width: 280px;
-    height: 100vh;
-    background: white;
-    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease;
-    z-index: 1001;
-    overflow-y: auto;
+    width: 100%;
+    height: calc(100vh - 75px);
+    background: var(--white);
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 0;
-    transform: none;
-    /* Reset desktop center transform */
+    padding: 50px 0;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
   }
 
   .nav-menu.open {
     left: 0;
   }
 
-  /* Mobile Nav Header specific styling */
   .mobile-nav-header {
     display: flex;
     align-items: center;
-    padding: 20px 25px;
-    border-bottom: 1px solid #f0f0f0;
-    background: #f9f9f9;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 30px;
   }
 
   .mobile-back-btn {
@@ -267,41 +194,37 @@
     border: none;
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 16px;
-    font-weight: 600;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
     color: var(--dark-color);
     cursor: pointer;
     text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
   .nav-links {
     flex-direction: column;
-    gap: 0;
-    width: 100%;
-  }
-
-  .nav-links li {
-    width: 100%;
-    border-bottom: 1px solid #f0f0f0;
+    gap: 30px;
   }
 
   .nav-links li a {
-    display: block;
-    padding: 15px 25px;
-    font-size: 16px;
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    height: 60px;
   }
 
-  /* Reset Special Link for Mobile to look normal or slightly emphasized */
-  .nav-links li a.special-link {
-    background: none;
-    color: red;
-    padding: 15px 25px;
-    font-weight: 600;
+  .header-actions {
+    gap: 10px;
   }
 
-  .nav-links li a.special-link:hover {
-    background: #f9f9f9;
-    color: red;
+  .icon-action-btn {
+    font-size: 18px;
   }
 }

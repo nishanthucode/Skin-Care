@@ -1,263 +1,209 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
 .about-page {
-    font-family: 'Poppins', sans-serif;
-    color: var(--dark-color, #333);
+    /* Font inherited from body (Lato), headings from global (Playfair) */
+    color: var(--text-color);
     overflow-x: hidden;
 }
 
-/* Hero Section */
+/* --- Hero Section --- */
 .about-hero {
     position: relative;
-    height: 60vh;
-    min-height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
+    height: 70vh;
+    /* Taller hero for impact */
+    min-height: 500px;
+    background: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
-    margin-bottom: 80px;
+    color: var(--white);
+    margin-bottom: 0;
+    /* Let sections flow naturally */
+}
+
+.about-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    /* Subtle overlay for text readability */
 }
 
 .about-hero-content {
-    max-width: 800px;
-    padding: 0 20px;
+    position: relative;
+    z-index: 2;
     animation: fadeInUp 1s ease-out;
 }
 
 .about-hero h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
 }
 
-.about-hero p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-family: var(--font-body);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
     opacity: 0.9;
 }
 
-/* Section Common Styling */
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
+/* --- Intro Section (About Us) --- */
+.about-intro {
+    background-color: var(--white);
+    padding: 100px 0;
 }
 
-.section-title h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: var(--dark-color, #333);
-    position: relative;
-    display: inline-block;
-}
-
-.section-title h2::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 3px;
-    background-color: var(--primary-color, #ff1493);
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.sub-title {
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Our Story Section */
-.our-story {
-    padding: 0 20px 80px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.story-container {
+.intro-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 80px;
     align-items: center;
 }
 
-.story-image {
-    position: relative;
+.intro-text .section-title {
+    text-align: left;
+    margin-bottom: 30px;
 }
 
-.story-image img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease;
-}
-
-.story-image:hover img {
-    transform: scale(1.02);
-}
-
-.story-content h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--primary-color, #ff1493);
-}
-
-.story-content p {
-    font-size: 1.1rem;
+.lead-text {
+    font-size: 1.25rem;
     line-height: 1.8;
-    color: #555;
+    color: var(--dark-color);
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    /* Minimal radius */
+    box-shadow: var(--shadow-md);
+}
+
+/* --- Mission & Vision --- */
+.mission-vision {
+    background-color: var(--secondary-color);
+    /* Light Blush Background/Accent */
+    padding: 100px 0;
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.mv-card {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 4px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.mv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.mv-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
-.story-content blockquote {
-    border-left: 4px solid var(--primary-color, #ff1493);
-    padding-left: 20px;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: #444;
-    margin: 30px 0;
+.mv-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
-/* Values Section */
-.values-section {
-    background-color: #fafafa;
-    padding: 80px 20px;
-    text-align: center;
-}
-
+/* --- Values Section --- */
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin-top: 40px;
 }
 
 .value-card {
-    background: white;
+    background: var(--white);
     padding: 40px 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 4px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid transparent;
+    /* Prepare for hover border */
 }
 
 .value-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    /* No shadow, maybe just border or distinct bg? Let's do simple lift */
+    box-shadow: var(--shadow-sm);
 }
 
 .value-icon {
-    font-size: 3rem;
-    color: var(--primary-color, #ff1493);
+    font-size: 2.5rem;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 .value-card h4 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
 }
 
 .value-card p {
-    color: #666;
+    font-size: 0.95rem;
+    color: var(--text-color);
     line-height: 1.6;
 }
 
-/* Stats Section */
-.stats-section {
-    background: linear-gradient(135deg, #ff69b4, #ff1493);
-    padding: 60px 20px;
-    color: white;
-}
-
-.stats-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
-    gap: 30px;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-number {
-    font-size: 3rem;
-    font-weight: 800;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.stat-label {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.9;
-}
-
-/* CTA Section */
-.cta-section {
-    padding: 100px 20px;
-    text-align: center;
-    background: url('https://images.unsplash.com/photo-1556228720-1910d5254173?q=80&w=2072&auto=format&fit=crop') no-repeat center center;
-    background-size: cover;
+/* --- CTA Section --- */
+.about-cta {
+    background: url('https://images.unsplash.com/photo-1556228720-1910d5254173?q=80&w=2072&auto=format&fit=crop') center/cover no-repeat fixed;
     position: relative;
+    color: var(--white);
+    padding: 120px 0;
 }
 
-.cta-section::before {
+.about-cta::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(0, 0, 0, 0.5);
+    /* Darken bg image */
 }
 
-.cta-content {
+.about-cta .container {
     position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-    z-index: 1;
+    z-index: 2;
 }
 
-.cta-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--dark-color, #333);
+.about-cta h2 {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-.cta-btn {
-    display: inline-block;
-    background-color: var(--primary-color, #ff1493);
-    color: white;
-    padding: 15px 40px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+.about-cta p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
 }
 
-.cta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 20, 147, 0.5);
-    background-color: #db0b7a;
-    /* Darker shade */
-    color: white;
-}
-
-/* Animations */
+/* --- Animations --- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -270,28 +216,37 @@
     }
 }
 
-/* Responsive */
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .intro-image {
+        order: -1;
+        /* Image first on tablet? Or keep text first? Let's keep text first for storytelling */
+    }
+
+    .mv-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .about-hero h1 {
         font-size: 2.5rem;
     }
 
-    .story-container {
-        grid-template-columns: 1fr;
+    .hero-subtitle {
+        font-size: 1.1rem;
     }
 
-    .story-image {
-        order: -1;
-        /* Image on top on mobile */
-        margin-bottom: 30px;
+    .mv-card {
+        padding: 30px 20px;
     }
 
-    .section-title h2 {
+    .about-cta h2 {
         font-size: 2rem;
-    }
-
-    .stats-container {
-        flex-direction: column;
-        gap: 40px;
     }
 }
