@@ -19,25 +19,23 @@ const CategorySection = () => {
   ];
 
   return (
-    <section className="category-section section">
-      <div className="container">
-        <h2 className="section-title">SHOP BY CATEGORY</h2>
-        <div className="category-grid">
-          {categories.map((category) => (
-            <Link
-              key={category.id}
-              to={category.link}
-              className="category-card"
-            >
-              <div className="category-image-container">
-                <img src={category.image} alt={category.name} />
-                <div className="category-overlay">
-                  <h3>{category.name}</h3>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+    <section className="category-section">
+      <h2 className="section-title">SHOP BY CATEGORY</h2>
+      <div className="category-grid">
+        {categories.map((category) => (
+          <Link
+            key={category.id}
+            to={category.link}
+            className="category-card"
+          >
+            <div className="category-image-container">
+              <img src={category.image} alt={category.name} />
+            </div>
+            <div className="category-info">
+              <h3>{category.name}</h3>
+            </div>
+          </Link>
+        ))}
       </div>
     </section>
   );

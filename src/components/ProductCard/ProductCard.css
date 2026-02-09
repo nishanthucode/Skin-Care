@@ -1,8 +1,10 @@
 .product-card {
   background: var(--white);
-  border: 1px solid var(--border-color);
-  border-radius: 2px;
-  overflow: hidden;
+  border: none;
+  /* Removed visible border */
+  border-radius: 0;
+  overflow: visible;
+  /* Allow hover effects to spill if needed, or keep hidden */
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
   display: flex;
@@ -27,9 +29,10 @@
 .product-image-container {
   position: relative;
   padding-top: 110%;
-  /* Vertically taller for elegance */
   overflow: hidden;
   background: var(--light-gray);
+  border-radius: 30px;
+  /* Significant rounded corners */
 }
 
 .product-image {
@@ -93,10 +96,12 @@
 
 /* Product Info */
 .product-info {
-  padding: 25px 20px 15px;
+  padding: 15px 0;
+  /* Reduced padding, removed side padding as it's cleaner */
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
+  /* Left alignment */
 }
 
 .product-name {
@@ -119,10 +124,12 @@
 
 .product-meta-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  /* Horizontal alignment */
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .price-wrapper {
@@ -132,9 +139,11 @@
 }
 
 .current-price {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
+  /* Larger price */
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--dark-color);
+  /* Darker for prominence */
 }
 
 .original-price {
@@ -144,57 +153,38 @@
   font-weight: 300;
 }
 
-.rating-compact {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.rating-compact svg {
-  color: var(--accent-color);
-  font-size: 12px;
-}
-
-.rating-compact svg.empty {
-  color: #eee;
-}
-
-.review-count-text {
-  font-size: 0.75rem;
-  color: #999;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Rating detail row simplified / hidden if desired for minimal look */
-.rating-detail-row {
-  display: none;
-  /* Cleaner look */
-}
+/* Rating Styles Removed */
 
 /* Action Container */
 .action-container {
-  padding: 0 20px 20px;
+  padding: 0 0 15px 0;
+  /* Aligned with left text */
 }
 
 .btn-add-to-cart {
   width: 100%;
-  padding: 14px;
-  background: var(--dark-color);
+  padding: 12px;
+  background: #7c2a1d;
+  /* Dark reddish brown from reference */
   color: var(--white);
-  border: 1px solid var(--dark-color);
-  border-radius: 2px;
-  font-size: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  /* Rounded corners */
+  font-size: 0.9rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  text-transform: capitalize;
+  /* "Add To Cart" */
+  letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .btn-add-to-cart:hover {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
+  background: #963425;
+  /* Slightly lighter on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .btn-out-of-stock {

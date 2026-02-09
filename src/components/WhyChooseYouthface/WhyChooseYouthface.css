@@ -1,6 +1,6 @@
 .why-choose-section {
     background: white;
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 .why-choose-section .section-title {
@@ -8,7 +8,7 @@
     font-size: 2rem;
     font-weight: 700;
     color: var(--dark-color);
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     letter-spacing: 1px;
 }
 

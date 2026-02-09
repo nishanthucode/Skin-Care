@@ -1,14 +1,14 @@
 .testimonial-section {
   background-color: var(--secondary-color);
   /* Light blush background for contrast */
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .testimonial-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .testimonial-header .section-title {
@@ -137,17 +137,7 @@
   color: var(--dark-color);
 }
 
-.testimonial-rating {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  margin-bottom: 15px;
-}
-
-.testimonial-rating .star {
-  color: var(--accent-color);
-  font-size: 1rem;
-}
+/* Rating Styles Removed */
 
 .testimonial-review {
   font-family: var(--font-body);

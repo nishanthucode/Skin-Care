@@ -3,6 +3,8 @@ import { useSearchParams, Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard/ProductCard';
 import { productAPI } from '../utils/api';
 import { FiChevronDown, FiChevronUp, FiX, FiFilter } from 'react-icons/fi';
+import image1 from '../assets/image 1.jpeg';
+import image2 from '../assets/image 2.jpeg';
 import './Shop.css';
 
 const Shop = ({ category }) => {
@@ -41,29 +43,17 @@ const Shop = ({ category }) => {
 
   const getMockProducts = () => {
     const productImages = [
-      'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=300&h=300&fit=crop',
+      image1,
+      image2,
       'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=300&fit=crop',
       'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=300&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=300&h=300&fit=crop',
     ];
 
     const productNames = [
-      'Beauty Cream (25g)',
+      'Beauty Cream (250g)',
       'DarkSpot Remover Soap (100g)',
       'MARYA (50ml)',
       'Papaya Face Wash (50ml)',
-      'Niacinamide Serum (30ml)',
-      'Vitamin C Face Wash (100ml)',
-      'Kojic Acid Soap (75g)',
-      'Anti-Aging Cream (50g)',
-      'Charcoal Face Mask (100g)',
-      'Rose Water Toner (150ml)',
     ];
 
     const descriptions = [
@@ -71,21 +61,15 @@ const Shop = ({ category }) => {
       'Brighten, Smooth, And Protect',
       'Perfect for Every Moment',
       'Oil Control & Brighter Skin in 4 Weeks',
-      'Reduces Dark Spots & Pigmentation',
-      'Deep Cleansing & Brightening',
-      'Natural Skin Whitening',
-      'Reduces Fine Lines & Wrinkles',
-      'Deep Pore Cleansing',
-      'Hydrates & Refreshes Skin',
     ];
 
-    const prices = [599, 199, 299, 199, 449, 249, 179, 699, 349, 199];
-    const originalPrices = [799, 299, 399, 299, 599, 349, 249, 899, 449, 299];
-    const ratings = [4.9, 0, 0, 5.0, 4.7, 4.5, 4.8, 4.6, 4.9, 4.4];
-    const reviewCounts = [60, 0, 0, 31, 45, 28, 52, 38, 67, 22];
-    const stocks = [50, 25, 30, 40, 35, 45, 28, 32, 38, 42];
+    const prices = [599, 199, 299, 199];
+    const originalPrices = [799, 299, 399, 299];
+    const ratings = [4.9, 0, 0, 5.0];
+    const reviewCounts = [60, 0, 0, 31];
+    const stocks = [50, 25, 30, 40];
 
-    return Array.from({ length: 10 }, (_, i) => ({
+    return Array.from({ length: 4 }, (_, i) => ({
       _id: `${i + 1}`,
       name: productNames[i],
       description: descriptions[i],
@@ -146,25 +130,6 @@ const Shop = ({ category }) => {
         {/* Main Content */}
         <main className="shop-main">
           {/* Top Bar */}
-          <div className="shop-top-bar">
-            <div className="shop-info">
-              <span className="product-count">{filteredProducts.length} Products</span>
-            </div>
-
-            <div className="sort-dropdown">
-              <label>Sort by</label>
-              <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                <option value="featured">Featured</option>
-                <option value="best-selling">Best selling</option>
-                <option value="name-asc">Alphabetically, A-Z</option>
-                <option value="name-desc">Alphabetically, Z-A</option>
-                <option value="price-low">Price, low to high</option>
-                <option value="price-high">Price, high to low</option>
-                <option value="date-old">Date, old to new</option>
-                <option value="date-new">Date, new to old</option>
-              </select>
-            </div>
-          </div>
 
           {/* Products Grid */}
           {loading ? (

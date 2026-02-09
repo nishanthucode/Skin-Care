@@ -34,18 +34,6 @@ const TrustBadges = () => {
       title: 'Cruelty-Free',
       color: '#ff69b4',
     },
-    {
-      id: 6,
-      icon: <FaLeaf />,
-      title: 'Paraben-Free',
-      color: '#ff1493',
-    },
-    {
-      id: 7,
-      icon: <FaRecycle />,
-      title: 'Sustainable Packaging',
-      color: '#ff69b4',
-    },
   ];
 
   return (

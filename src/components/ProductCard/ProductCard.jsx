@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingCart, FiHeart, FiEye } from 'react-icons/fi';
-import { FaStar } from 'react-icons/fa';
 import { useCart } from '../../context/CartContext';
 import './ProductCard.css';
 
@@ -18,19 +17,6 @@ const ProductCard = ({ product }) => {
     addToWishlist(product);
   };
 
-  const renderRating = (rating) => {
-    return (
-      <div className="rating">
-        {[...Array(5)].map((_, index) => (
-          <FaStar
-            key={index}
-            className={index < Math.floor(rating) ? 'filled' : 'empty'}
-          />
-        ))}
-        <span className="rating-text">({rating})</span>
-      </div>
-    );
-  };
 
   return (
     <div className="product-card">
@@ -79,22 +65,8 @@ const ProductCard = ({ product }) => {
               )}
             </div>
 
-            <div className="rating-compact">
-              {[...Array(5)].map((_, index) => (
-                <FaStar
-                  key={index}
-                  className={index < Math.floor(product.rating || 5) ? 'filled' : 'empty'}
-                />
-              ))}
-              <span className="review-count-text">{product.reviewCount || 60} reviews</span>
-            </div>
           </div>
 
-          <div className="rating-detail-row">
-            <FaStar className="star-icon-small" />
-            <span className="average-rating">{product.rating || 4.9}</span>
-            <span className="total-ratings">({product.reviewCount || 60} Ratings)</span>
-          </div>
         </div>
       </Link>
 

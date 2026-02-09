@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi';
 import './HeroBanner.css';
 
 const HeroBanner = () => {
@@ -60,41 +61,34 @@ const HeroBanner = () => {
                 <source media="(max-width: 768px)" srcSet={slide.mobileImage} />
                 <img src={slide.image} alt={slide.title} />
               </picture>
-              <div className="banner-overlay"></div>
+
             </div>
 
-            <div className="banner-content container">
-              <div className="content-inner">
-                <span className="banner-tagline">Welcome to Aura</span>
-                <h1 className="banner-title">{slide.title}</h1>
-                <p className="banner-subtitle">{slide.subtitle}</p>
-                <Link to={slide.link} className="btn btn-primary banner-btn">
-                  {slide.buttonText}
-                </Link>
-              </div>
-            </div>
+
           </div>
         ))}
       </div>
 
-      {/* Navigation Arrows */}
-      <button className="banner-arrow prev" onClick={prevSlide} aria-label="Previous slide">
-        ❮
-      </button>
-      <button className="banner-arrow next" onClick={nextSlide} aria-label="Next slide">
-        ❯
-      </button>
+      {/* Navigation Controls */}
+      <div className="hero-nav-controls">
+        <button className="nav-control-arrow prev" onClick={prevSlide} aria-label="Previous slide">
+          <HiArrowNarrowLeft />
+        </button>
 
-      {/* Dots Navigation */}
-      <div className="banner-dots">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === currentSlide ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+        <div className="banner-dots">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`dot ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => goToSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        <button className="nav-control-arrow next" onClick={nextSlide} aria-label="Next slide">
+          <HiArrowNarrowRight />
+        </button>
       </div>
     </div>
   );

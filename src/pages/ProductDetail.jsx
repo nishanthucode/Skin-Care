@@ -3,6 +3,8 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight, FiShare2, FiHeart } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
 import { productAPI } from '../utils/api';
+import image1 from '../assets/image 1.jpeg';
+import image2 from '../assets/image 2.jpeg';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -29,9 +31,9 @@ const ProductDetail = () => {
       benefits: ['Intense Brightening', '24h Moisture', 'Anti-Aging', 'For All Skin Types'],
       rating: 4.9,
       reviewCount: 60,
-      image: 'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&h=800&fit=crop',
+      image: image1,
       images: [
-        'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&h=800&fit=crop',
+        image1,
         'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&h=800&fit=crop',
         'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&h=800&fit=crop'
       ],
@@ -53,9 +55,9 @@ const ProductDetail = () => {
       benefits: ['Fades Dark Spots', 'Even Tone', 'Germ Protection', 'Gentle Fragrance'],
       rating: 4.5,
       reviewCount: 40,
-      image: 'https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=800&h=800&fit=crop',
+      image: image2,
       images: [
-        'https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=800&h=800&fit=crop',
+        image2,
         'https://images.unsplash.com/photo-1585652757173-57de5e9fab42?w=800&h=800&fit=crop'
       ],
       packs: [
@@ -176,14 +178,6 @@ const ProductDetail = () => {
               ))}
             </div>
 
-            <div className="product-rating">
-              <div className="stars">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className={`star ${i < Math.floor(product.rating || 5) ? 'filled' : ''}`}>★</span>
-                ))}
-              </div>
-              <span className="review-count">{product.reviewCount || 0} reviews</span>
-            </div>
 
             <div className="product-price-section">
               <span className="label">Price:</span>

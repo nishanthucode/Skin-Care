@@ -5,9 +5,10 @@
 
 .section-header-center {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
+/* Restored styles */
 .section-header-center .section-title {
     font-size: 2rem;
     font-weight: 700;
@@ -32,7 +33,7 @@
     gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 10px 0 30px;
+    padding: 10px 0 20px;
     -webkit-overflow-scrolling: touch;
 }
 

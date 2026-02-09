@@ -97,11 +97,6 @@ const TestimonialSection = () => {
                 {/* Testimonial Content */}
                 <div className="testimonial-content">
                   <h3 className="testimonial-name">{testimonial.name}</h3>
-                  <div className="testimonial-rating">
-                    {[...Array(5)].map((_, index) => (
-                      <span key={index} className="star">★</span>
-                    ))}
-                  </div>
                   <p className="testimonial-review">{testimonial.review}</p>
                 </div>
               </div>

@@ -101,7 +101,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="about-cta section">
+      <section className="about-cta">
         <div className="container text-center">
           <h2>Experience the Aura Glow</h2>
           <p>Join thousands who have transformed their daily ritual.</p>

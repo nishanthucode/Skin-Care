@@ -154,30 +154,10 @@
     color: var(--dark-color);
 }
 
-.product-rating {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
+/* Rating Styles Removed */
 
-.stars {
-    display: flex;
-    gap: 3px;
-}
-
-.star {
-    color: #ddd;
-    font-size: 1.2rem;
-}
-
-.star.filled {
-    color: #ffc107;
-}
-
-.review-count {
-    font-size: 0.9rem;
-    color: var(--gray-text);
+.product-price-section {
+    margin-bottom: 10px;
 }
 
 .product-price-section {
@@ -507,8 +487,8 @@
 
 /* Product Details Tabs */
 .product-details-section {
-    margin-top: 60px;
-    padding: 40px 0;
+    margin-top: 30px;
+    padding: 30px 0;
     border-top: 1px solid var(--border-color);
 }
 

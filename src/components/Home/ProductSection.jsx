@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard/ProductCard';
 import { productAPI } from '../../utils/api';
+import image1 from '../../assets/image 1.jpeg';
+import image2 from '../../assets/image 2.jpeg';
 import './ProductSection.css';
 
 const ProductSection = ({ title, viewAllLink, fetchFunction, category, categories, limit }) => {
@@ -58,7 +60,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
         price: 599,
         originalPrice: 799,
         category: 'body-cream',
-        image: 'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=300&h=300&fit=crop',
+        image: image1,
         rating: 4.9,
         reviewCount: 60,
         stock: 50,
@@ -71,7 +73,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
         price: 199,
         originalPrice: 249,
         category: 'soap',
-        image: 'https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=300&h=300&fit=crop', // Pinkish soap
+        image: image2,
         rating: 4.5,
         reviewCount: 40,
         stock: 45,
@@ -101,51 +103,6 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
         rating: 0,
         reviewCount: 0,
         stock: 20,
-      },
-      // ... keep existing ones as filler if needed, but these 4 are priority
-      {
-        _id: '5',
-        name: 'Whitening Soap (100g)',
-        description: 'Natural Ingredients for Glowing Skin',
-        price: 149,
-        category: 'soap',
-        image: 'https://images.unsplash.com/photo-1585652757173-57de5e9fab42?w=300&h=300&fit=crop',
-        rating: 4.7,
-        reviewCount: 38,
-        stock: 60,
-      },
-      {
-        _id: '6',
-        name: 'Collagen Boost Cream (45g)',
-        description: 'Firm & Lift Your Skin',
-        price: 849,
-        category: 'body-cream',
-        image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=300&fit=crop',
-        rating: 4.9,
-        reviewCount: 57,
-        stock: 22,
-      },
-      {
-        _id: '7',
-        name: 'Aloe Vera Soap (100g)',
-        description: 'Soothing & Healing Properties',
-        price: 139,
-        category: 'soap',
-        image: 'https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=300&h=300&fit=crop',
-        rating: 4.5,
-        reviewCount: 29,
-        stock: 65,
-      },
-      {
-        _id: '8',
-        name: 'Vitamin C Cream (35g)',
-        description: 'Brightening & Radiance Boost',
-        price: 649,
-        category: 'body-cream',
-        image: 'https://images.unsplash.com/photo-1617897903246-719242758050?w=300&h=300&fit=crop',
-        rating: 4.8,
-        reviewCount: 44,
-        stock: 38,
       }
     ];
 

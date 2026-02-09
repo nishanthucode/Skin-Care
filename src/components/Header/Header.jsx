@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiChevronLeft, FiPhone, FiMail } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronLeft, FiPhone, FiShoppingCart } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
+import { useCart } from '../../context/CartContext';
 import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { getCartCount } = useCart();
 
 
   useEffect(() => {
@@ -87,9 +89,12 @@ const Header = () => {
             >
               <FaWhatsapp />
             </a>
-            <a href="mailto:support@youthface.in" className="icon-action-btn" aria-label="Email Us">
-              <FiMail />
-            </a>
+            <Link to="/cart" className="icon-action-btn cart-btn" aria-label="Cart">
+              <div className="cart-icon-wrapper">
+                <FiShoppingCart />
+                {getCartCount() > 0 && <span className="cart-badge">{getCartCount()}</span>}
+              </div>
+            </Link>
           </div>
         </div>
       </header>

@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet-async';
 import ProductCard from '../components/ProductCard/ProductCard';
 import { productAPI } from '../utils/api';
 import { FiSearch } from 'react-icons/fi';
+import image1 from '../assets/image 1.jpeg';
+import image2 from '../assets/image 2.jpeg';
 import './Search.css';
 
 const Search = () => {
@@ -42,7 +44,7 @@ const Search = () => {
                 description: 'Brighter Skin in 4 Weeks',
                 price: 599,
                 originalPrice: 799,
-                image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop',
+                image: image1,
                 rating: 4.9,
                 reviewCount: 60,
                 stock: 50,
@@ -54,7 +56,7 @@ const Search = () => {
                 description: 'Brighten, Smooth, And Protect',
                 price: 199,
                 originalPrice: 299,
-                image: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=300&h=300&fit=crop',
+                image: image2,
                 rating: 5.0,
                 reviewCount: 45,
                 stock: 25,
@@ -193,30 +195,9 @@ const Search = () => {
                             <button type="submit">Search</button>
                         </form>
 
-                        {query && (
-                            <p className="search-results-text">
-                                Search: <strong>{products.length} results found for "{query}"</strong>
-                            </p>
-                        )}
                     </div>
 
                     {/* Filter and Sort Bar */}
-                    {products.length > 0 && (
-                        <div className="search-controls">
-                            <div className="filter-info">
-                                <span className="result-count">{products.length} Results</span>
-                            </div>
-                            <div className="sort-dropdown">
-                                <label>Sort by</label>
-                                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                                    <option value="relevance">Relevance</option>
-                                    <option value="price-low">Price: Low to High</option>
-                                    <option value="price-high">Price: High to Low</option>
-                                    <option value="name-asc">Name: A to Z</option>
-                                </select>
-                            </div>
-                        </div>
-                    )}
 
                     {/* Results */}
                     {loading ? (

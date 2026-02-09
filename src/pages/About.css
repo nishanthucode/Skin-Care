@@ -55,7 +55,7 @@
 /* --- Intro Section (About Us) --- */
 .about-intro {
     background-color: var(--white);
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 .intro-grid {
@@ -78,11 +78,17 @@
     font-weight: 500;
 }
 
+.intro-image {
+    display: flex;
+    justify-content: center;
+}
+
 .intro-image img {
     width: 100%;
-    height: auto;
-    border-radius: 4px;
-    /* Minimal radius */
+    max-width: 480px;
+    max-height: 580px;
+    object-fit: cover;
+    border-radius: 8px;
     box-shadow: var(--shadow-md);
 }
 
@@ -90,7 +96,7 @@
 .mission-vision {
     background-color: var(--secondary-color);
     /* Light Blush Background/Accent */
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 .mv-grid {
@@ -172,7 +178,7 @@
     background: url('https://images.unsplash.com/photo-1556228720-1910d5254173?q=80&w=2072&auto=format&fit=crop') center/cover no-repeat fixed;
     position: relative;
     color: var(--white);
-    padding: 120px 0;
+    padding: 80px 0;
 }
 
 .about-cta::before {
