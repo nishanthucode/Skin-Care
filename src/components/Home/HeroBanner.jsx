@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi';
 import './HeroBanner.css';
@@ -48,9 +48,40 @@ const HeroBanner = () => {
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
+  const touchStart = useRef(0);
+  const touchEnd = useRef(0);
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    touchEnd.current = 0;
+    touchStart.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e) => {
+    touchEnd.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart.current || !touchEnd.current) return;
+    const distance = touchStart.current - touchEnd.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
     <div className="hero-banner">
-      <div className="banner-slider">
+      <div
+        className="banner-slider"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -59,7 +90,7 @@ const HeroBanner = () => {
             <div className="banner-image-wrapper">
               <picture>
                 <source media="(max-width: 768px)" srcSet={slide.mobileImage} />
-                <img src={slide.image} alt={slide.title} />
+                <img src={slide.image} alt={slide.title} draggable="false" />
               </picture>
             </div>
 

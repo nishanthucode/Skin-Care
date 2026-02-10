@@ -17,6 +17,8 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  /* Allow only vertical scrolling to let JS handle horizontal swipes */
+  touch-action: pan-y;
 }
 
 .banner-slide {

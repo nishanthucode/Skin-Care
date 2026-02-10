@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -43,6 +43,7 @@ function App() {
               <Route path="/best-seller" element={<Shop category="best-seller" />} />
 
               {/* Product Detail */}
+              <Route path="/product" element={<Navigate to="/shop-all" replace />} />
               <Route path="/product/:id" element={<ProductDetail />} />
 
               {/* Cart & Checkout */}

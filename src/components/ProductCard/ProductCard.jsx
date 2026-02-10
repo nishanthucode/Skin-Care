@@ -1,20 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   const handleAddToCart = (e) => {
     e.preventDefault();
     addToCart(product);
+    navigate(`/product/${product._id || product.id}`);
   };
 
 
   return (
     <div className="product-card">
-      <Link to={`/product/${product._id}`} className="product-link">
+      <Link to={`/product/${product._id || product.id}`} className="product-link">
         {/* Product Image */}
         <div className="product-image-container">
           {product.discount && (

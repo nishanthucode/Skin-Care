@@ -37,7 +37,7 @@
 /* Scroll Container */
 .comparisons-scroll-container {
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
@@ -45,6 +45,7 @@
     /* Vertical padding for shadow/scale */
     -ms-overflow-style: none;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
 
     /* Crucial for centering first/last items */
     display: flex;

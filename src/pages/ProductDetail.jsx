@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight, FiShare2, FiHeart } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -20,13 +20,15 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedPack, setSelectedPack] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const touchStart = useRef(0);
+  const touchEnd = useRef(0);
 
   // Mock Products Database for Fallback
   const mockProducts = [
     {
       id: '1',
       _id: '1',
-      name: 'Beauty Cream (250g)',
+      name: 'Beauty Cream (25g)',
       tagline: 'Brighter Skin in 4 Weeks',
       description: 'Experience the ultimate skin transformation with our Beauty Cream. Specially formulated with natural extracts, it deeply nourishes and brightens your complexion while providing 24-hour hydration. Perfect for all skin types, this non-greasy formula works while you sleep to reveal a radiant glow.',
       benefits: ['Intense Brightening', '24h Moisture', 'Anti-Aging', 'For All Skin Types'],
@@ -41,10 +43,6 @@ const ProductDetail = () => {
       packs: [
         { id: 1, name: 'Single Jar', price: 599.00, description: 'Standard size jar' },
         { id: 2, name: 'Twin Pack', price: 1099.00, description: 'Best value for 2 months' }
-      ],
-      relatedProducts: [
-        { id: '2', name: 'DarkSpot Soap', price: 199.00, image: 'https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=300' },
-        { id: '3', name: 'Face Wash', price: 199.00, image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300' }
       ]
     },
     {
@@ -64,15 +62,51 @@ const ProductDetail = () => {
       packs: [
         { id: 1, name: 'Standard Bar', price: 199.00, description: 'Luxury soap bar' },
         { id: 2, name: 'Pack of 3', price: 499.00, description: 'Value multi-pack' }
+      ]
+    },
+    {
+      id: '3',
+      _id: '3',
+      name: 'Glow & Protect Combo Pack',
+      tagline: 'Complete Skincare Solution',
+      description: 'Get the best of both worlds with our exclusive Glow & Protect Combo. This pack includes our signature Beauty Cream and the DarkSpot Remover Soap, working in harmony to cleanse, protect and brighten your skin every day.',
+      benefits: ['Complete Care', 'Value Set', 'Deep Cleansing', 'Daily Protection'],
+      rating: 5.0,
+      reviewCount: 31,
+      image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=800&h=800&fit=crop',
+      images: [
+        'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=800&h=800&fit=crop',
+        image1,
+        image2
       ],
-      relatedProducts: [
-        { id: '1', name: 'Beauty Cream', price: 599.00, image: 'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=300' }
+      packs: [
+        { id: 1, name: 'Combo Pack', price: 699.00, description: 'Cream + Soap' }
+      ]
+    },
+    {
+      id: '4',
+      _id: '4',
+      name: 'DarkSpot Remover Soap (Pack of 3)',
+      tagline: 'Buy 2 Get 1 Free Special Offer',
+      description: 'Stock up on your favorite DarkSpot Remover Soap with our value pack of 3. Our powerful yet gentle formula target hyperpigmentation effectively when used consistently. This special pack ensures you never run out of your essential skincare.',
+      benefits: ['Value Savings', 'Consistent Result', 'Targeted Action', 'Family Pack'],
+      rating: 4.8,
+      reviewCount: 52,
+      image: image2,
+      images: [
+        image2,
+        image2,
+        image2
+      ],
+      packs: [
+        { id: 1, name: 'Pack of 3', price: 398.00, description: 'Buy 2 Get 1 Free' }
       ]
     }
   ];
 
   useEffect(() => {
     const fetchProduct = async () => {
+      console.log('Loading product detail for ID:', id);
       try {
         setLoading(true);
         // Try to fetch from API
@@ -138,6 +172,24 @@ const ProductDetail = () => {
     navigate('/checkout');
   };
 
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    touchEnd.current = 0;
+    touchStart.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e) => {
+    touchEnd.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart.current || !touchEnd.current) return;
+    const distance = touchStart.current - touchEnd.current;
+    if (distance > minSwipeDistance) nextImage();
+    if (distance < -minSwipeDistance) prevImage();
+  };
+
   return (
     <div className="product-detail-page">
       <div className="container">
@@ -151,9 +203,14 @@ const ProductDetail = () => {
       <div className="container">
         <div className="product-detail-container">
           <div className="product-gallery">
-            <div className="main-image-container">
+            <div
+              className="main-image-container"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               <button className="gallery-nav prev" onClick={prevImage}><FiChevronLeft /></button>
-              <img src={product.images && product.images[selectedImage]} alt={product.name} className="main-image" />
+              <img src={product.images && product.images[selectedImage]} alt={product.name} className="main-image" draggable="false" />
               <button className="gallery-nav next" onClick={nextImage}><FiChevronRight /></button>
             </div>
             <div className="thumbnail-gallery">
@@ -194,10 +251,12 @@ const ProductDetail = () => {
             {/* Quantity Removed */}
 
             <div className="action-buttons">
-              <button className="add-to-bag-btn" onClick={() => window.open(`https://wa.me/919876543210?text=I want to buy ${product.name}`, '_blank')}>
-                <FaWhatsapp size={20} /> Order Via WhatsApp
+              <button className="add-to-bag-btn" onClick={handleAddToBag}>
+                + ADD TO BAG
               </button>
-              <button className="buy-now-btn" onClick={handleBuyNow}>BUY NOW</button>
+              <button className="buy-now-btn" onClick={() => window.open(`https://wa.me/919876543210?text=I want to buy ${product.name}`, '_blank')}>
+                ORDER VIA WHATSAPP
+              </button>
             </div>
 
             {/* Related Products and Share Removed */}

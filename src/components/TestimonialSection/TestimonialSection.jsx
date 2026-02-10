@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import './TestimonialSection.css';
 
@@ -6,7 +6,7 @@ const TestimonialSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 992);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -83,6 +83,32 @@ const TestimonialSection = () => {
     </div>
   );
 
+  const touchStart = useRef(0);
+  const touchEnd = useRef(0);
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    touchEnd.current = 0;
+    touchStart.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e) => {
+    touchEnd.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart.current || !touchEnd.current) return;
+    const distance = touchStart.current - touchEnd.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
     <section className="testimonial-section section">
       <div className="container">
@@ -109,6 +135,9 @@ const TestimonialSection = () => {
         <div className="testimonials-carousel">
           <div
             className="testimonials-track"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
             style={{
               transform: `translateX(-${currentSlide * slideShift}%)`,
             }}
@@ -120,10 +149,10 @@ const TestimonialSection = () => {
                   <div className="testimonial-image-wrapper">
                     <div className="ba-split">
                       <div className="ba-item">
-                        <img src={testimonial.beforeImage} alt="Before" />
+                        <img src={testimonial.beforeImage} alt="Before" draggable="false" />
                       </div>
                       <div className="ba-item">
-                        <img src={testimonial.afterImage} alt="After" />
+                        <img src={testimonial.afterImage} alt="After" draggable="false" />
                       </div>
                     </div>
                   </div>
