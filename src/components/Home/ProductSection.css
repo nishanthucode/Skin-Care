@@ -87,61 +87,25 @@
 }
 
 @media (max-width: 768px) {
-  .section-header {
-    flex-direction: row;
-    /* Keep header items in row */
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 0 15px;
-    /* Ensure alignment with scroll start */
-  }
-
   .section-title {
     font-size: 1.8rem;
   }
 
   .products-grid {
-    display: flex !important;
-    /* Flex layout for horizontal scroll */
-    flex-wrap: nowrap !important;
-    grid-template-columns: none !important;
-    /* Reset grid */
-    overflow-x: auto !important;
-    /* Enable scroll */
-    overflow-y: hidden;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    padding: 10px 15px 30px 15px;
-    /* Padding for scroll/shadow */
-    margin: 0 -15px;
-    /* Edge to edge */
-    scroll-snap-type: x mandatory;
-    max-width: none;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    touch-action: auto;
-  }
-
-  .products-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Each product card fixed width initially (tablet) */
-  .products-grid>* {
-    flex: 0 0 280px !important;
-    width: 280px !important;
-    scroll-snap-align: center;
-    margin: 0;
-    scroll-snap-stop: always;
+    padding: 0 10px;
   }
 }
 
 @media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
 
-  /* Only need to override item size for phone */
-  .products-grid>* {
-    flex: 0 0 85% !important;
-    /* One product at a time with peek */
-    width: 85% !important;
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 5px;
   }
 }
