@@ -4,6 +4,13 @@ import './TestimonialSection.css';
 
 const TestimonialSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 992);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const testimonials = [
     {
@@ -41,11 +48,23 @@ const TestimonialSection = () => {
       afterImage: 'https://youthface.co.in/cdn/shop/files/4_52e3cad0-dd1a-4d3b-9005-ec4a3d293f72.png?v=1769862945&width=800',
       rating: 5,
       review: "I am Keerthana from Coimbatore College days were full of travel and sun, and my skin looked so dull. After using YouthFace for just 1 month, my face became clear and Whiten! Now all my friends keep asking, 'What are you using?' I feel so happy seeing my skin glow every day YouthFace is just super bro..!",
+    },
+    {
+      id: 5,
+      name: 'Fathima',
+      location: 'Kerala',
+      beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-130833bd08df.png?v=1769862945&width=800',
+      afterImage: 'https://youthface.co.in/cdn/shop/files/4_52e3cad0-dd1a-4d3b-9005-ec4a3d293f72.png?v=1769862945&width=800',
+      rating: 5,
+      review: "I am Fathima from Kerala when I see my face in the mirror, I just smile automatically, I've used so many big brand creams, but none gave this kind of change. After using YouthFace, my skin became clear, fair, and smooth in just 4 weeks!",
     }
   ];
 
+  const maxSlides = isMobile ? testimonials.length - 1 : testimonials.length - 2;
+  const slideShift = isMobile ? 100 : 50;
+
   const nextSlide = () => {
-    if (currentSlide < testimonials.length - 2) {
+    if (currentSlide < maxSlides) {
       setCurrentSlide(currentSlide + 1);
     }
   };
@@ -78,9 +97,9 @@ const TestimonialSection = () => {
               <FiChevronLeft />
             </button>
             <button
-              className={`nav-arrow ${currentSlide >= testimonials.length - 2 ? 'disabled' : 'active-next'}`}
+              className={`nav-arrow ${currentSlide >= maxSlides ? 'disabled' : 'active-next'}`}
               onClick={nextSlide}
-              disabled={currentSlide >= testimonials.length - 2}
+              disabled={currentSlide >= maxSlides}
             >
               <FiChevronRight />
             </button>
@@ -91,7 +110,7 @@ const TestimonialSection = () => {
           <div
             className="testimonials-track"
             style={{
-              transform: `translateX(calc(-${currentSlide} * 50%))`,
+              transform: `translateX(-${currentSlide * slideShift}%)`,
             }}
           >
             {testimonials.map((testimonial) => (
