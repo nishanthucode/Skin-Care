@@ -118,6 +118,8 @@
     max-width: none;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: auto;
   }
 
   .products-grid::-webkit-scrollbar {

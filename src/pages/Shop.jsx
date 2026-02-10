@@ -75,8 +75,15 @@ const Shop = ({ category }) => {
     const reviewCounts = [60, 0, 31, 52];
     const stocks = [50, 25, 30, 40];
 
+    const productSlugs = [
+      'beauty-cream',
+      'darkspot-soap',
+      'glow-combo',
+      'soap-pack-3',
+    ];
+
     return Array.from({ length: 4 }, (_, i) => ({
-      _id: `${i + 1}`,
+      _id: productSlugs[i],
       name: productNames[i],
       description: descriptions[i],
       price: prices[i],

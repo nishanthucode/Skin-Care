@@ -54,7 +54,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
     // Mock products for Soap and Body Cream
     const allMockProducts = [
       {
-        _id: '1',
+        _id: 'beauty-cream',
         name: 'Beauty Cream (25g)',
         description: 'Brighter Skin in 4 Weeks',
         price: 599,
@@ -67,7 +67,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
         discount: 25,
       },
       {
-        _id: '2',
+        _id: 'darkspot-soap',
         name: 'DarkSpot Remover Soap (100g)',
         description: 'Brighten, Smooth, And Protect',
         price: 199,
@@ -80,7 +80,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
         specialOffer: 'Best Seller',
       },
       {
-        _id: '3',
+        _id: 'glow-combo',
         name: 'Glow & Protect Combo Pack',
         description: 'Complete Skincare Solution',
         price: 699,
@@ -93,7 +93,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
         comboOffer: 'EXCLUSIVE COMBO',
       },
       {
-        _id: '4',
+        _id: 'soap-pack-3',
         name: 'DarkSpot Remover Soap (Pack of 3)',
         description: 'Buy 2 Get 1 Free Special Offer',
         price: 398,

@@ -136,8 +136,12 @@
   .category-card {
     max-width: calc(50% - 8px);
     /* 2 per row roughly */
-    /* On mobile, maybe taller aspect ratio is better? Staying faithful to prompt for now. 
-       But user requested 2 per row. */
+  }
+
+  @media (max-width: 360px) {
+    .category-card {
+      max-width: 100%;
+    }
   }
 
   .category-label-text {

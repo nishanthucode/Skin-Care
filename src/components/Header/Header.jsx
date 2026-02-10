@@ -71,7 +71,6 @@ const Header = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 aria-label="Close Menu"
               >
-                <FiChevronLeft /> <span>Back</span>
               </button>
             </div>
             <ul className="nav-links">

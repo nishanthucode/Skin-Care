@@ -59,19 +59,23 @@ const HeroBanner = () => {
 
   const onTouchMove = (e) => {
     touchEnd.current = e.targetTouches[0].clientX;
+    if (Math.abs(touchStart.current - touchEnd.current) > 10) {
+      if (e.cancelable) e.preventDefault();
+    }
   };
 
   const onTouchEnd = () => {
     if (!touchStart.current || !touchEnd.current) return;
     const distance = touchStart.current - touchEnd.current;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-
-    if (isLeftSwipe) {
-      nextSlide();
-    } else if (isRightSwipe) {
-      prevSlide();
+    if (Math.abs(distance) > 40) {
+      if (distance > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
     }
+    touchStart.current = 0;
+    touchEnd.current = 0;
   };
 
   return (
@@ -90,7 +94,7 @@ const HeroBanner = () => {
             <div className="banner-image-wrapper">
               <picture>
                 <source media="(max-width: 768px)" srcSet={slide.mobileImage} />
-                <img src={slide.image} alt={slide.title} draggable="false" />
+                <img src={slide.image} alt={slide.title} draggable="false" style={{ pointerEvents: 'none' }} />
               </picture>
             </div>
 

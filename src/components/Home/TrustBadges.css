@@ -57,6 +57,7 @@
     /* Hide scrollbar */
     -ms-overflow-style: none;
     scrollbar-width: none;
+    touch-action: auto;
   }
 
   .badges-grid::-webkit-scrollbar {

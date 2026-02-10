@@ -26,8 +26,8 @@ const ProductDetail = () => {
   // Mock Products Database for Fallback
   const mockProducts = [
     {
-      id: '1',
-      _id: '1',
+      id: 'beauty-cream',
+      _id: 'beauty-cream',
       name: 'Beauty Cream (25g)',
       tagline: 'Brighter Skin in 4 Weeks',
       description: 'Experience the ultimate skin transformation with our Beauty Cream. Specially formulated with natural extracts, it deeply nourishes and brightens your complexion while providing 24-hour hydration. Perfect for all skin types, this non-greasy formula works while you sleep to reveal a radiant glow.',
@@ -46,8 +46,8 @@ const ProductDetail = () => {
       ]
     },
     {
-      id: '2',
-      _id: '2',
+      id: 'darkspot-soap',
+      _id: 'darkspot-soap',
       name: 'DarkSpot Remover Soap (100g)',
       tagline: 'Brighten, Smooth, And Protect',
       description: 'Our DarkSpot Remover Soap is a powerful yet gentle cleanser that targeted hyperpigmentation and uneven skin tone. Infused with vitamin C and herbal extracts, it fades dark spots effectively while maintaining your skins natural moisture balance.',
@@ -65,8 +65,8 @@ const ProductDetail = () => {
       ]
     },
     {
-      id: '3',
-      _id: '3',
+      id: 'glow-combo',
+      _id: 'glow-combo',
       name: 'Glow & Protect Combo Pack',
       tagline: 'Complete Skincare Solution',
       description: 'Get the best of both worlds with our exclusive Glow & Protect Combo. This pack includes our signature Beauty Cream and the DarkSpot Remover Soap, working in harmony to cleanse, protect and brighten your skin every day.',
@@ -84,8 +84,8 @@ const ProductDetail = () => {
       ]
     },
     {
-      id: '4',
-      _id: '4',
+      id: 'soap-pack-3',
+      _id: 'soap-pack-3',
       name: 'DarkSpot Remover Soap (Pack of 3)',
       tagline: 'Buy 2 Get 1 Free Special Offer',
       description: 'Stock up on your favorite DarkSpot Remover Soap with our value pack of 3. Our powerful yet gentle formula target hyperpigmentation effectively when used consistently. This special pack ensures you never run out of your essential skincare.',
@@ -255,7 +255,7 @@ const ProductDetail = () => {
                 + ADD TO BAG
               </button>
               <button className="buy-now-btn" onClick={() => window.open(`https://wa.me/919876543210?text=I want to buy ${product.name}`, '_blank')}>
-                ORDER VIA WHATSAPP
+                <FaWhatsapp className="whatsapp-icon" /> ORDER VIA WHATSAPP
               </button>
             </div>
 

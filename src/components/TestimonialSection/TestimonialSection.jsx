@@ -94,19 +94,27 @@ const TestimonialSection = () => {
 
   const onTouchMove = (e) => {
     touchEnd.current = e.targetTouches[0].clientX;
+    // Lower threshold for preventing scroll interference
+    if (Math.abs(touchStart.current - touchEnd.current) > 10) {
+      if (e.cancelable) e.preventDefault();
+    }
   };
 
   const onTouchEnd = () => {
     if (!touchStart.current || !touchEnd.current) return;
     const distance = touchStart.current - touchEnd.current;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
+    const isLeftSwipe = distance > 40; // Lowered from 50
+    const isRightSwipe = distance < -40; // Lowered from 50
 
     if (isLeftSwipe) {
       nextSlide();
     } else if (isRightSwipe) {
       prevSlide();
     }
+
+    // Reset
+    touchStart.current = 0;
+    touchEnd.current = 0;
   };
 
   return (
@@ -149,10 +157,10 @@ const TestimonialSection = () => {
                   <div className="testimonial-image-wrapper">
                     <div className="ba-split">
                       <div className="ba-item">
-                        <img src={testimonial.beforeImage} alt="Before" draggable="false" />
+                        <img src={testimonial.beforeImage} alt="Before" draggable="false" style={{ pointerEvents: 'none' }} />
                       </div>
                       <div className="ba-item">
-                        <img src={testimonial.afterImage} alt="After" draggable="false" />
+                        <img src={testimonial.afterImage} alt="After" draggable="false" style={{ pointerEvents: 'none' }} />
                       </div>
                     </div>
                   </div>

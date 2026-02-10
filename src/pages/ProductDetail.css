@@ -362,18 +362,25 @@
 }
 
 .buy-now-btn {
-    background: #FF1493;
-    /* Vibrant Pink/Magenta */
+    background: #1ac24d;
     color: white;
     border: none;
     text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(26, 194, 77, 0.2);
 }
 
 .buy-now-btn:hover {
-    background: #e01283;
+    background: #16a341;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 20, 147, 0.3);
+    box-shadow: 0 6px 20px rgba(26, 194, 77, 0.3);
+}
+
+.whatsapp-icon {
+    font-size: 1.4rem;
 }
 
 /* Offers */
@@ -508,6 +515,14 @@
 
     .action-buttons {
         flex-direction: column;
+        gap: 12px;
+    }
+
+    .add-to-bag-btn,
+    .buy-now-btn {
+        width: 100%;
+        padding: 18px;
+        font-size: 1.1rem;
     }
 
     .related-products-grid {
