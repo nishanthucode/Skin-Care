@@ -66,12 +66,12 @@ const Footer = () => {
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                   <FaLinkedinIn />
                 </a>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+                {/* <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
                   <FaWhatsapp />
                 </a>
                 <a href="mailto:support@youthface.in">
                   <FaEnvelope />
-                </a>
+                </a> */}
               </div>
             </div>
 
@@ -84,7 +84,7 @@ const Footer = () => {
                 <li><Link to="/track-order">Track Order</Link></li>
                 <li><Link to="/about-us">About Us</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/blog">Blog</Link></li>
+                {/* <li><Link to="/blog">Blog</Link></li> */}
               </ul>
             </div>
 
@@ -107,7 +107,7 @@ const Footer = () => {
                 <li><Link to="/contact">Grievance Office</Link></li>
                 <li><Link to="/track-order">Track Your Order</Link></li>
                 <li><Link to="/faq">FAQs</Link></li>
-                <li><Link to="/blog">Blogs</Link></li>
+                {/* <li><Link to="/blog">Blogs</Link></li> */}
                 <li><Link to="/distributorship">Distributorship</Link></li>
               </ul>
             </div>

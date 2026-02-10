@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FiMenu, FiX, FiChevronLeft, FiPhone, FiMail } from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaFacebookF, FaInstagram } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
 import { useCart } from '../../context/CartContext';
 import './Header.css';
@@ -44,6 +44,21 @@ const Header = () => {
 
   return (
     <>
+      <div className="top-banner">
+        <div className="top-banner-container">
+          <div className="top-social-links">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebookF />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram />
+            </a>
+          </div>
+          <div className="top-banner-text">
+            Anniversary sale is live now!
+          </div>
+        </div>
+      </div>
       <header className={`header ${isScrolled ? 'scrolled' : ''} ${!isVisible ? 'hidden' : ''}`}>
         <div className="header-container">
           {/* Mobile Menu Button - Left on Mobile */}
@@ -90,11 +105,11 @@ const Header = () => {
 
           {/* Header Actions - Right Side Icons */}
           <div className="header-actions">
-            <a href="tel:+919876543210" className="icon-action-btn" aria-label="Call Us">
+            <a href="tel:+918296350093" className="icon-action-btn" aria-label="Call Us">
               <FiPhone />
             </a>
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/918296350093"
               target="_blank"
               rel="noopener noreferrer"
               className="icon-action-btn"
@@ -102,7 +117,7 @@ const Header = () => {
             >
               <FaWhatsapp />
             </a>
-            <a href="mailto:support@youthface.com" className="icon-action-btn" aria-label="Mail">
+            <a href="info@yourdomain.com" className="icon-action-btn" aria-label="Mail">
               <FiMail />
             </a>
           </div>

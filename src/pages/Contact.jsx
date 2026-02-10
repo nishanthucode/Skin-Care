@@ -56,8 +56,8 @@ const Contact = () => {
               </div>
               <div className="info-text">
                 <h3>Call Us</h3>
-                <p>+91 98765 43210</p>
-                <p>Mon - Sat, 9am - 6pm</p>
+                <p>+91 82963 50093</p>
+                {/* <p>Mon - Sat, 9am - 6pm</p> */}
               </div>
             </div>
 
@@ -67,8 +67,8 @@ const Contact = () => {
               </div>
               <div className="info-text">
                 <h3>WhatsApp</h3>
-                <p>+91 98765 43210</p>
-                <p>Available 24/7 for quick support</p>
+                <p>+91 82963 50093</p>
+                {/* <p>Available 24/7 for quick support</p> */}
               </div>
             </div>
 
@@ -78,8 +78,8 @@ const Contact = () => {
               </div>
               <div className="info-text">
                 <h3>Email Us</h3>
-                <p>support@youthface.in</p>
-                <p>We reply within 24 hours</p>
+                <p>info@yourdomain.com</p>
+                {/* <p>We reply within 24 hours</p> */}
               </div>
             </div>
 
@@ -89,8 +89,8 @@ const Contact = () => {
               </div>
               <div className="info-text">
                 <h3>Visit Us</h3>
-                <p>123 Skincare Avenue, Beauty City</p>
-                <p>Mumbai, Maharashtra - 400001</p>
+                <p>Guruvayanakere, Belthangady Tq - 574214</p>
+                {/* <p>Mumbai, Maharashtra - 400001</p> */}
               </div>
             </div>
           </div>

@@ -1,12 +1,61 @@
 .top-banner {
-  background-color: var(--primary-color);
-  color: var(--black);
-  text-align: center;
-  padding: 8px;
+  background-color: #DC3545;
+  color: var(--white);
+  padding: 8px 0;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.top-banner-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.top-social-links {
+  position: absolute;
+  left: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.top-social-links a {
+  color: var(--white);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.top-social-links a:hover {
+  transform: scale(1.2);
+}
+
+.top-banner-text {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .top-banner-container {
+    padding: 0 20px;
+  }
+
+  .top-social-links {
+    left: 20px;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .top-social-links {
+    display: none;
+  }
 }
 
 .header {
@@ -15,14 +64,14 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 120px;
+  height: 100px;
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
 }
 
 .header.scrolled {
-  height: 90px;
+  height: 80px;
   box-shadow: var(--shadow-md);
 }
 
@@ -57,14 +106,14 @@
 }
 
 .logo-image {
-  height: 100px;
+  height: 80px;
   width: auto;
   object-fit: contain;
   transition: height 0.3s ease;
 }
 
 .header.scrolled .logo-image {
-  height: 75px;
+  height: 60px;
 }
 
 /* Navigation */

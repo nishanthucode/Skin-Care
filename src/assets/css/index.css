@@ -6,9 +6,9 @@ html {
 
 :root {
   /* Premium Color Palette */
-  --primary-color: #e63946;
-  /* Vibrant Red */
-  --primary-hover: #d62839;
+  --primary-color: #DC3545;
+  /* Specified Red */
+  --primary-hover: #c82333;
   --secondary-color: #F5E6E3;
   /* Soft Blush - Keep for background contrast */
   --accent-color: #D4A373;
