@@ -8,49 +8,61 @@ const TestimonialSection = () => {
   const testimonials = [
     {
       id: 1,
+      name: 'Shiva',
+      location: 'Kerala',
+      beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-130833bd08df.png?v=1769862945&width=800',
+      afterImage: 'https://youthface.co.in/cdn/shop/files/4_52e3cad0-dd1a-4d3b-9005-ec4a3d293f72.png?v=1769862945&width=800',
+      rating: 5,
+      review: "I am Shiva Kerala Now I feel more confident to smile and talk YouthFace super... I'm a courier boy, saw so many YouthFace orders, so I tried it too. In just 1 month, superb result! My face got clear and bright.",
+    },
+    {
+      id: 2,
       name: 'Nanditha',
       location: 'Bangalore',
-      beforeImage: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=400&h=400&fit=crop',
-      afterImage: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=400&fit=crop',
+      beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-130833bd08df.png?v=1769862945&width=800',
+      afterImage: 'https://youthface.co.in/cdn/shop/files/4_52e3cad0-dd1a-4d3b-9005-ec4a3d293f72.png?v=1769862945&width=800',
       rating: 5,
       review: "Hey, I'm Nanditha from Bangalore. My skin had a lot of marks and dullness before, but after using YouthFace for just 1 month, it's totally changed! Now my face looks so clean, soft, and glowing. Seriously, YouthFace did magic love it..",
     },
     {
-      id: 2,
+      id: 3,
       name: 'Anusha',
       location: 'Chennai',
-      beforeImage: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&h=400&fit=crop',
-      afterImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop',
+      beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-130833bd08df.png?v=1769862945&width=800',
+      afterImage: 'https://youthface.co.in/cdn/shop/files/4_52e3cad0-dd1a-4d3b-9005-ec4a3d293f72.png?v=1769862945&width=800',
       rating: 5,
       review: "I Didn't expect such a big change in just one month! My skin feels lighter, clearer, and has that natural glow now I feel confident and fresh every day YouthFace really surprised me..",
-    },
-    {
-      id: 3,
-      name: 'Fathima',
-      location: 'Kerala',
-      beforeImage: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop',
-      afterImage: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=400&fit=crop',
-      rating: 5,
-      review: "I am Fathima from Kerala when I see my face in the mirror, I just smile automatically, I've used so many big brand creams, even Fair & Lovely and other international ones, but none gave this kind of change.After using YouthFace, my skin became clear, fair, and smooth in just 4 weeks Now",
     },
     {
       id: 4,
       name: 'Keerthana',
       location: 'Coimbatore',
-      beforeImage: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=400&fit=crop',
-      afterImage: 'https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?w=400&h=400&fit=crop',
+      beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-130833bd08df.png?v=1769862945&width=800',
+      afterImage: 'https://youthface.co.in/cdn/shop/files/4_52e3cad0-dd1a-4d3b-9005-ec4a3d293f72.png?v=1769862945&width=800',
       rating: 5,
       review: "I am Keerthana from Coimbatore College days were full of travel and sun, and my skin looked so dull. After using YouthFace for just 1 month, my face became clear and Whiten! Now all my friends keep asking, 'What are you using?' I feel so happy seeing my skin glow every day YouthFace is just super bro..!",
-    },
+    }
   ];
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % (testimonials.length - 1));
+    if (currentSlide < testimonials.length - 2) {
+      setCurrentSlide(currentSlide + 1);
+    }
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + (testimonials.length - 1)) % (testimonials.length - 1));
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+    }
   };
+
+  const StarRating = () => (
+    <div className="star-rating">
+      {[...Array(5)].map((_, i) => (
+        <span key={i} className="star">★</span>
+      ))}
+    </div>
+  );
 
   return (
     <section className="testimonial-section section">
@@ -58,10 +70,18 @@ const TestimonialSection = () => {
         <div className="testimonial-header">
           <h2 className="section-title">Testimonials</h2>
           <div className="testimonial-nav-arrows">
-            <button className="nav-arrow" onClick={prevSlide}>
+            <button
+              className={`nav-arrow ${currentSlide === 0 ? 'disabled' : 'active-prev'}`}
+              onClick={prevSlide}
+              disabled={currentSlide === 0}
+            >
               <FiChevronLeft />
             </button>
-            <button className="nav-arrow" onClick={nextSlide}>
+            <button
+              className={`nav-arrow ${currentSlide >= testimonials.length - 2 ? 'disabled' : 'active-next'}`}
+              onClick={nextSlide}
+              disabled={currentSlide >= testimonials.length - 2}
+            >
               <FiChevronRight />
             </button>
           </div>
@@ -71,34 +91,29 @@ const TestimonialSection = () => {
           <div
             className="testimonials-track"
             style={{
-              transform: `translateX(calc(-${currentSlide} * var(--slide-pct)))`,
+              transform: `translateX(calc(-${currentSlide} * 50%))`,
             }}
           >
             {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="testimonial-card">
-                <div className="testimonial-card-inner">
-                  {/* Before/After Split Image */}
-                  <div className="testimonial-image-container">
-                    <div className="split-image">
-                      <div className="before-side">
+              <div key={testimonial.id} className="testimonial-card-v2">
+                <div className="testimonial-card-inner-v2">
+                  {/* Left: Before/After Side-by-Side Image */}
+                  <div className="testimonial-image-wrapper">
+                    <div className="ba-split">
+                      <div className="ba-item">
                         <img src={testimonial.beforeImage} alt="Before" />
-                        <span className="image-label">Before</span>
                       </div>
-                      <div className="after-side">
+                      <div className="ba-item">
                         <img src={testimonial.afterImage} alt="After" />
                       </div>
                     </div>
-                    <div className="play-button">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
                   </div>
 
-                  {/* Testimonial Content */}
-                  <div className="testimonial-content">
-                    <h3 className="testimonial-name">{testimonial.name}</h3>
-                    <p className="testimonial-review">{testimonial.review}</p>
+                  {/* Right: Text Content */}
+                  <div className="testimonial-text-wrapper">
+                    <h3 className="customer-name-v2">{testimonial.name}</h3>
+                    <StarRating />
+                    <p className="testimonial-text-v2">{testimonial.review}</p>
                   </div>
                 </div>
               </div>
