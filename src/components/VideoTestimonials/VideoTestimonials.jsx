@@ -7,6 +7,16 @@ import image2 from '../../assets/image 2.jpeg';
 
 const VideoTestimonials = () => {
     const [hoveredVideo, setHoveredVideo] = useState(null);
+    const [playingVideoId, setPlayingVideoId] = useState(null);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const videos = [
         {
@@ -53,6 +63,17 @@ const VideoTestimonials = () => {
         },
     ];
 
+    const shouldPlay = (id, index) => {
+        if (isMobile) {
+            // Mobile: Play if explicitly clicked OR (it's the first one and nothing else is manually playing)
+            // Actually, usually if I click another, I want the first one to stop?
+            // "1st video play automatical and rest must play after clicking play button"
+            // Simple logic: If index 0 and playingVideoId is null, play. Or if playingVideoId matches.
+            return playingVideoId === id || (index === 0 && playingVideoId === null);
+        }
+        return hoveredVideo === id;
+    };
+
     return (
         <section className="video-testimonials-section">
             <div className="container">
@@ -62,15 +83,15 @@ const VideoTestimonials = () => {
                 </div>
 
                 <div className="videos-gallery-container">
-                    {videos.map((video) => (
+                    {videos.map((video, index) => (
                         <div
                             key={video.id}
                             className="video-card-v3"
-                            onMouseEnter={() => setHoveredVideo(video.id)}
-                            onMouseLeave={() => setHoveredVideo(null)}
+                            onMouseEnter={() => !isMobile && setHoveredVideo(video.id)}
+                            onMouseLeave={() => !isMobile && setHoveredVideo(null)}
                         >
                             <div className="v-video-container">
-                                {hoveredVideo === video.id ? (
+                                {shouldPlay(video.id, index) ? (
                                     <video
                                         src={video.webUrl}
                                         className="main-video"
@@ -83,8 +104,18 @@ const VideoTestimonials = () => {
                                     <>
                                         <img src={video.thumbnail} alt={video.productName} className="main-thumbnail" />
 
-                                        {/* Centered Play Button */}
-                                        <div className="play-overlay-center">
+                                        {/* Centered Play Button - Interactive on Mobile */}
+                                        <div
+                                            className="play-overlay-center"
+                                            style={isMobile ? { pointerEvents: 'auto', zIndex: 20, cursor: 'pointer' } : {}}
+                                            onClick={(e) => {
+                                                if (isMobile) {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                    setPlayingVideoId(video.id);
+                                                }
+                                            }}
+                                        >
                                             <div className="play-circle-red">
                                                 <div className="play-icon-white"></div>
                                             </div>

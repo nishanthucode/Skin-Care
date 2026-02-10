@@ -39,21 +39,63 @@
 
 @media (max-width: 768px) {
   .badges-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    display: flex;
+    /* Flex layout for horizontal scroll */
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+    overflow-x: auto;
+    /* Enable scroll */
+    gap: 15px;
+    padding-bottom: 20px;
+    /* Space for shadow/scroll */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    /* Reset grid columns */
+    grid-template-columns: none;
+
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
-  .badge-icon {
-    font-size: 2.5rem;
+  .badges-grid::-webkit-scrollbar {
+    display: none;
   }
 
-  .badge-item h3 {
-    font-size: 0.9rem;
+  .badge-item {
+    flex: 0 0 200px;
+    /* Fixed width */
+    width: 200px;
+    scroll-snap-align: center;
+    /* Snap to center */
+    margin: 0;
   }
 }
 
 @media (max-width: 480px) {
+
+  /* Ensure container centers the active item */
   .badges-grid {
-    grid-template-columns: 1fr;
+    padding-left: 5%;
+    /* Half of remaining 10% to center first item if needed, assuming margin calc */
+    padding-right: 5%;
+  }
+
+  .badge-item {
+    padding: 15px 10px;
+    flex: 0 0 90%;
+    /* One at a time with peek */
+    width: 90%;
+    scroll-snap-align: center;
+  }
+
+  .badge-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .badge-item h3 {
+    font-size: 0.8rem;
   }
 }
