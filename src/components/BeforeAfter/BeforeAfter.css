@@ -148,6 +148,8 @@
 
 .before-layer {
     z-index: 2;
+    /* transition must match .slider-divider for sync */
+    transition: clip-path 0.1s cubic-bezier(0.1, 0.5, 0.5, 1);
 }
 
 .before-layer img,
@@ -192,6 +194,8 @@
     pointer-events: none;
     transform: translateX(-50%);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* Smoothen movement */
+    transition: left 0.1s cubic-bezier(0.1, 0.5, 0.5, 1);
 }
 
 .slider-btn-modern {
@@ -210,6 +214,8 @@
     color: #333;
     cursor: grab;
     pointer-events: auto;
+    /* Prevent browser scroll interference on mobile drag */
+    touch-action: none;
 }
 
 .slider-grip-line {
