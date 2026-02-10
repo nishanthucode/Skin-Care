@@ -20,7 +20,7 @@ const CategorySection = () => {
 
   return (
     <section className="category-section">
-      <h2 className="section-title">SHOP BY CATEGORY</h2>
+      <h2 className="category-title">SHOP BY CATEGORY</h2>
       <div className="category-grid">
         {categories.map((category) => (
           <Link
@@ -28,11 +28,14 @@ const CategorySection = () => {
             to={category.link}
             className="category-card"
           >
-            <div className="category-image-container">
-              <img src={category.image} alt={category.name} />
-            </div>
-            <div className="category-info">
-              <h3>{category.name}</h3>
+            <img
+              src={category.image}
+              alt={category.name}
+              className="category-image"
+            />
+            <div className="category-overlay">
+              <h3 className="category-name">{category.name}</h3>
+              <span className="category-link">Shop Now</span>
             </div>
           </Link>
         ))}

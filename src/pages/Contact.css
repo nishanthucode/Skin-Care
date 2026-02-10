@@ -7,8 +7,9 @@
 .contact-header {
     background-color: var(--primary-color);
     color: white;
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .contact-header h1 {
@@ -17,7 +18,8 @@
 }
 
 .contact-content {
-    padding: 60px 0;
+    padding: 80px 0;
+    margin-top: 40px;
     width: 100%;
 }
 
@@ -30,7 +32,7 @@
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: 40px;
+    gap: 60px;
 }
 
 .contact-info-card,

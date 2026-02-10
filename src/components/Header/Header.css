@@ -15,15 +15,19 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 80px;
+  height: 120px;
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
 }
 
 .header.scrolled {
-  height: 70px;
+  height: 90px;
   box-shadow: var(--shadow-md);
+}
+
+.header.hidden {
+  transform: translateY(-100%);
 }
 
 .header-container {
@@ -53,14 +57,14 @@
 }
 
 .logo-image {
-  height: 60px;
+  height: 100px;
   width: auto;
   object-fit: contain;
   transition: height 0.3s ease;
 }
 
 .header.scrolled .logo-image {
-  height: 50px;
+  height: 75px;
 }
 
 /* Navigation */
@@ -169,30 +173,32 @@
 
 @media (max-width: 900px) {
   .header {
-    height: 60px;
+    height: 90px;
   }
 
   .mobile-menu-btn {
     display: block;
     order: 1;
+    margin-right: 15px;
   }
 
   .logo {
     order: 2;
-    margin: 0 auto;
+    margin: 0;
   }
 
   .header-actions {
     order: 3;
     gap: 15px;
+    margin-left: auto;
   }
 
   .nav-menu {
     position: fixed;
-    top: 75px;
+    top: 90px;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 75px);
+    height: calc(100vh - 90px);
     background: var(--white);
     flex-direction: column;
     justify-content: flex-start;
@@ -241,7 +247,7 @@
 
 @media (max-width: 480px) {
   .logo-image {
-    height: 45px;
+    height: 70px;
   }
 
   .header-actions {

@@ -61,10 +61,20 @@ const HeroBanner = () => {
                 <source media="(max-width: 768px)" srcSet={slide.mobileImage} />
                 <img src={slide.image} alt={slide.title} />
               </picture>
-
             </div>
 
+            <div className="banner-overlay"></div>
 
+            <div className="banner-content container">
+              <div className="content-inner">
+                {slide.tagline && <span className="banner-tagline">{slide.tagline}</span>}
+                <h2 className="banner-title">{slide.title}</h2>
+                <p className="banner-subtitle">{slide.subtitle}</p>
+                <Link to={slide.link} className="banner-btn primary-btn">
+                  {slide.buttonText}
+                </Link>
+              </div>
+            </div>
           </div>
         ))}
       </div>

@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Premium Color Palette */
-  --primary-color: #B06D66;
-  /* Muted Rose Clay */
-  --primary-hover: #8D524C;
+  --primary-color: #e63946;
+  /* Vibrant Red */
+  --primary-hover: #d62839;
   --secondary-color: #F5E6E3;
-  /* Soft Blush */
+  /* Soft Blush - Keep for background contrast */
   --accent-color: #D4A373;
   /* Gold/Bronze Accent */
 
@@ -23,7 +27,8 @@
   --font-body: 'Lato', sans-serif;
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+  /* Deeper shadow */
 }
 
 * {

@@ -1,117 +1,110 @@
 .category-section {
-  background-color: var(--white);
-  padding: 10px 0 20px;
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
 }
 
-.category-section .section-title {
-  text-align: left;
-  font-family: var(--font-heading);
-  font-size: 2rem;
+.category-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #1a1a1a;
   letter-spacing: 1px;
-  width: 96%;
-  max-width: 1400px;
-  margin: 0 auto 15px;
-  text-transform: uppercase;
-  color: var(--dark-color);
 }
 
 .category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 30px;
-  width: 96%;
-  max-width: 1400px;
-  /* Match Hero Banner max-width */
+  flex-wrap: wrap;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .category-card {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: var(--white);
-  height: 100%;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  flex: 1 1 300px;
 }
 
 .category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  opacity: 1;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-.category-image-container {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16/9;
-  /* Wider aspect ratio to fit better vertically */
-  padding-top: 0;
-  margin-bottom: 0;
-  overflow: hidden;
-  background-color: #F8F5E6;
-}
-
-.category-image-container img {
+.category-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
-  position: static;
-  /* Reset absolute positioning */
 }
 
-.category-card:hover .category-image-container img {
-  transform: scale(1.05);
+.category-card:hover .category-image {
+  transform: scale(1.1);
 }
 
-.category-info {
-  background-color: transparent;
-  padding: 12px 0;
+.category-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-  flex-shrink: 0;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  text-align: left;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
 }
 
-.category-info h3 {
-  color: var(--dark-color);
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
+.category-card:hover .category-overlay {
+  opacity: 1;
+}
+
+.category-name {
+  color: #fff;
+  font-size: 2rem;
   font-weight: 700;
-  margin: 0;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.category-link {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: none;
-  position: static;
-  /* Reset absolute positioning */
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+  width: fit-content;
+  transition: border-color 0.3s ease;
 }
 
-/* Gradient overlay remove */
-.category-image-container::after {
-  display: none;
+.category-card:hover .category-link {
+  border-color: #fff;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 columns on mobile */
-    gap: 15px;
-    /* Reduce gap for mobile */
-    max-width: 100%;
-    margin: 0 auto;
+  .category-title {
+    font-size: 2rem;
   }
 
-  .category-image-container {
-    aspect-ratio: 1/1;
-    /* Square aspect for mobile cards */
+  .category-card {
+    height: 400px;
   }
 
-  .category-info h3 {
-    font-size: 1.2rem;
+  .category-name {
+    font-size: 1.5rem;
   }
 }

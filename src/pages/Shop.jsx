@@ -47,13 +47,25 @@ const Shop = ({ category }) => {
       image2,
       'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=300&fit=crop',
       'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300&h=300&fit=crop',
+      'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop',
+      'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=300&h=300&fit=crop',
+      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=300&fit=crop',
+      'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300&h=300&fit=crop',
+      'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop',
+      'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=300&h=300&fit=crop',
     ];
 
     const productNames = [
-      'Beauty Cream (250g)',
+      'Beauty Cream (25g)',
       'DarkSpot Remover Soap (100g)',
       'MARYA (50ml)',
       'Papaya Face Wash (50ml)',
+      'Niacinamide Serum (30ml)',
+      'Vitamin C Face Wash (100ml)',
+      'Kojic Acid Soap (75g)',
+      'Anti-Aging Cream (50g)',
+      'Charcoal Face Mask (100g)',
+      'Rose Water Toner (150ml)',
     ];
 
     const descriptions = [
@@ -61,15 +73,21 @@ const Shop = ({ category }) => {
       'Brighten, Smooth, And Protect',
       'Perfect for Every Moment',
       'Oil Control & Brighter Skin in 4 Weeks',
+      'Reduces Dark Spots & Pigmentation',
+      'Deep Cleansing & Brightening',
+      'Natural Skin Whitening',
+      'Reduces Fine Lines & Wrinkles',
+      'Deep Pore Cleansing',
+      'Hydrates & Refreshes Skin',
     ];
 
-    const prices = [599, 199, 299, 199];
-    const originalPrices = [799, 299, 399, 299];
-    const ratings = [4.9, 0, 0, 5.0];
-    const reviewCounts = [60, 0, 0, 31];
-    const stocks = [50, 25, 30, 40];
+    const prices = [599, 199, 299, 199, 449, 249, 179, 699, 349, 199];
+    const originalPrices = [799, 299, 399, 299, 599, 349, 249, 899, 449, 299];
+    const ratings = [4.9, 0, 0, 5.0, 4.7, 4.5, 4.8, 4.6, 4.9, 4.4];
+    const reviewCounts = [60, 0, 0, 31, 45, 28, 52, 38, 67, 22];
+    const stocks = [50, 25, 30, 40, 35, 45, 28, 32, 38, 42];
 
-    return Array.from({ length: 4 }, (_, i) => ({
+    return Array.from({ length: 10 }, (_, i) => ({
       _id: `${i + 1}`,
       name: productNames[i],
       description: descriptions[i],

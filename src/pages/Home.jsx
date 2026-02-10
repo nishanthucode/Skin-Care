@@ -22,8 +22,7 @@ const Home = () => {
       {/* Our Products - Soap and Body Cream Only */}
       <ProductSection
         title="Our Products"
-        viewAllLink="/best-seller"
-        categories={['soap', 'body-cream', 'face-wash', 'perfume']}
+        categories={['soap', 'body-cream', 'face-wash', 'perfume', 'face-care']}
         limit={4}
       />
 

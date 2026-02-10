@@ -1,62 +1,101 @@
 .product-section {
-  background: white;
+  padding: 80px 0;
+  background-color: #fff;
+  position: relative;
 }
 
 .section-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
+  align-items: flex-end;
+  /* Align baseline */
+  margin-bottom: 50px;
+  padding: 0 10px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+  margin: 0;
 }
 
 .view-all-link {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1a1a;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-bottom: 2px solid #e63946;
+  /* Matching accent color */
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
 }
 
 .view-all-link:hover {
-  color: #ff1493;
-  text-decoration: underline;
+  color: #e63946;
+  border-color: transparent;
 }
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  column-gap: 30px;
+  row-gap: 50px;
 }
 
 .error-message {
   text-align: center;
-  color: var(--gray-text);
+  color: #666;
   font-size: 1.1rem;
-  padding: 40px;
+  padding: 60px;
+  background: #f9fafb;
+  border-radius: 12px;
 }
 
 @media (max-width: 1200px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
   }
 }
 
 @media (max-width: 968px) {
+  .product-section {
+    padding: 60px 0;
+  }
+
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    column-gap: 15px;
+    row-gap: 30px;
   }
 
   .section-header {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
+    flex-direction: row;
+    /* Keep row for mobile if possible, or stacked if title long */
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 576px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
   .products-grid {
     grid-template-columns: 1fr;
+    /* Stack on very small screens */
+    max-width: 350px;
+    margin: 0 auto;
   }
 }

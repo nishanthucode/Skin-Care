@@ -9,17 +9,31 @@ import './Header.css';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const { getCartCount } = useCart();
 
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      // Update scrolled state for styling (compact mode)
+      setIsScrolled(currentScrollY > 50);
+
+      // Scroll Down logic
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false); // Hide
+      } else {
+        setIsVisible(true); // Show (Scrolling up or at top)
+      }
+
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -30,7 +44,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+      <header className={`header ${isScrolled ? 'scrolled' : ''} ${!isVisible ? 'hidden' : ''}`}>
         <div className="header-container">
           {/* Mobile Menu Button - Left on Mobile */}
           <button

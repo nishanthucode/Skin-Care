@@ -71,33 +71,35 @@ const TestimonialSection = () => {
           <div
             className="testimonials-track"
             style={{
-              transform: `translateX(-${currentSlide * 50}%)`,
+              transform: `translateX(calc(-${currentSlide} * var(--slide-pct)))`,
             }}
           >
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="testimonial-card">
-                {/* Before/After Split Image */}
-                <div className="testimonial-image-container">
-                  <div className="split-image">
-                    <div className="before-side">
-                      <img src={testimonial.beforeImage} alt="Before" />
-                      <span className="image-label">Before</span>
+                <div className="testimonial-card-inner">
+                  {/* Before/After Split Image */}
+                  <div className="testimonial-image-container">
+                    <div className="split-image">
+                      <div className="before-side">
+                        <img src={testimonial.beforeImage} alt="Before" />
+                        <span className="image-label">Before</span>
+                      </div>
+                      <div className="after-side">
+                        <img src={testimonial.afterImage} alt="After" />
+                      </div>
                     </div>
-                    <div className="after-side">
-                      <img src={testimonial.afterImage} alt="After" />
+                    <div className="play-button">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
                     </div>
                   </div>
-                  <div className="play-button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
 
-                {/* Testimonial Content */}
-                <div className="testimonial-content">
-                  <h3 className="testimonial-name">{testimonial.name}</h3>
-                  <p className="testimonial-review">{testimonial.review}</p>
+                  {/* Testimonial Content */}
+                  <div className="testimonial-content">
+                    <h3 className="testimonial-name">{testimonial.name}</h3>
+                    <p className="testimonial-review">{testimonial.review}</p>
+                  </div>
                 </div>
               </div>
             ))}
