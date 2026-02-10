@@ -55,7 +55,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
     const allMockProducts = [
       {
         _id: '1',
-        name: 'Beauty Cream (250g)',
+        name: 'Beauty Cream (25g)',
         description: 'Brighter Skin in 4 Weeks',
         price: 599,
         originalPrice: 799,
@@ -81,28 +81,29 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
       },
       {
         _id: '3',
-        name: 'Papaya Face Wash (50ml)',
-        description: 'Oil Control & Brighter Skin in 4 Weeks',
-        price: 199,
-        originalPrice: 299,
-        category: 'face-wash',
-        image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300&h=300&fit=crop', // Orange fruit vibe
+        name: 'Glow & Protect Combo Pack',
+        description: 'Complete Skincare Solution',
+        price: 699,
+        originalPrice: 899,
+        category: 'face-care',
+        image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300&h=300&fit=crop',
         rating: 5.0,
         reviewCount: 31,
         stock: 30,
-        comboOffer: 'Buy 2 Get 1',
+        comboOffer: 'EXCLUSIVE COMBO',
       },
       {
         _id: '4',
-        name: 'MARYA (50ml)',
-        description: 'Perfect for Every Moment',
-        price: 299,
-        originalPrice: 499,
-        category: 'perfume',
-        image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=300&h=300&fit=crop', // Perfume bottle
-        rating: 0,
-        reviewCount: 0,
-        stock: 20,
+        name: 'DarkSpot Remover Soap (Pack of 3)',
+        description: 'Buy 2 Get 1 Free Special Offer',
+        price: 398,
+        originalPrice: 597,
+        category: 'soap',
+        image: image2,
+        rating: 4.8,
+        reviewCount: 52,
+        stock: 40,
+        specialOffer: 'PACK OF 3',
       }
     ];
 

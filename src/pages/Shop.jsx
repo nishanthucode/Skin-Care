@@ -58,36 +58,24 @@ const Shop = ({ category }) => {
     const productNames = [
       'Beauty Cream (25g)',
       'DarkSpot Remover Soap (100g)',
-      'MARYA (50ml)',
-      'Papaya Face Wash (50ml)',
-      'Niacinamide Serum (30ml)',
-      'Vitamin C Face Wash (100ml)',
-      'Kojic Acid Soap (75g)',
-      'Anti-Aging Cream (50g)',
-      'Charcoal Face Mask (100g)',
-      'Rose Water Toner (150ml)',
+      'Glow & Protect Combo Pack',
+      'DarkSpot Remover Soap (Pack of 3)',
     ];
 
     const descriptions = [
       'Brighter Skin in 4 Weeks',
       'Brighten, Smooth, And Protect',
-      'Perfect for Every Moment',
-      'Oil Control & Brighter Skin in 4 Weeks',
-      'Reduces Dark Spots & Pigmentation',
-      'Deep Cleansing & Brightening',
-      'Natural Skin Whitening',
-      'Reduces Fine Lines & Wrinkles',
-      'Deep Pore Cleansing',
-      'Hydrates & Refreshes Skin',
+      'Complete Skincare Solution',
+      'Buy 2 Get 1 Free Special Offer',
     ];
 
-    const prices = [599, 199, 299, 199, 449, 249, 179, 699, 349, 199];
-    const originalPrices = [799, 299, 399, 299, 599, 349, 249, 899, 449, 299];
-    const ratings = [4.9, 0, 0, 5.0, 4.7, 4.5, 4.8, 4.6, 4.9, 4.4];
-    const reviewCounts = [60, 0, 0, 31, 45, 28, 52, 38, 67, 22];
-    const stocks = [50, 25, 30, 40, 35, 45, 28, 32, 38, 42];
+    const prices = [599, 199, 699, 398];
+    const originalPrices = [799, 299, 899, 597];
+    const ratings = [4.9, 0, 5.0, 4.8];
+    const reviewCounts = [60, 0, 31, 52];
+    const stocks = [50, 25, 30, 40];
 
-    return Array.from({ length: 10 }, (_, i) => ({
+    return Array.from({ length: 4 }, (_, i) => ({
       _id: `${i + 1}`,
       name: productNames[i],
       description: descriptions[i],
@@ -98,6 +86,8 @@ const Shop = ({ category }) => {
       reviewCount: reviewCounts[i],
       stock: stocks[i],
       discount: i === 0 ? 25 : null,
+      comboOffer: i === 2 ? 'EXCLUSIVE COMBO' : null,
+      specialOffer: i === 3 ? 'PACK OF 3' : null,
     }));
   };
 
