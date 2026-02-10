@@ -28,14 +28,18 @@ const CategorySection = () => {
             to={category.link}
             className="category-card"
           >
-            <img
-              src={category.image}
-              alt={category.name}
-              className="category-image"
-            />
-            <div className="category-overlay">
-              <h3 className="category-name">{category.name}</h3>
-              <span className="category-link">Shop Now</span>
+            {/* Upper Section - Product Display Area */}
+            <div className="category-image-wrapper">
+              <img
+                src={category.image}
+                alt={category.name}
+                className="category-display-image"
+              />
+            </div>
+
+            {/* Lower Section - Category Label */}
+            <div className="category-label-banner">
+              <span className="category-label-text">{category.name}</span>
             </div>
           </Link>
         ))}

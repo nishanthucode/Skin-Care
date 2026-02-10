@@ -1,5 +1,5 @@
 .product-section {
-  padding: 80px 0;
+  padding: 20px 0;
   background-color: #fff;
   position: relative;
 }
@@ -28,6 +28,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
+  font-family: var(--font-heading);
   border-bottom: 2px solid #e63946;
   /* Matching accent color */
   padding-bottom: 4px;
@@ -93,9 +94,11 @@
   }
 
   .products-grid {
-    grid-template-columns: 1fr;
-    /* Stack on very small screens */
-    max-width: 350px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 per row on mobile */
+    max-width: 100%;
+    margin: 0;
+    column-gap: 10px;
+    row-gap: 20px;
   }
 }

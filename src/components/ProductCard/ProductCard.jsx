@@ -1,20 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiShoppingCart, FiHeart, FiEye } from 'react-icons/fi';
 import { useCart } from '../../context/CartContext';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
-  const { addToCart, addToWishlist, isInWishlist } = useCart();
+  const { addToCart } = useCart();
 
   const handleAddToCart = (e) => {
     e.preventDefault();
     addToCart(product);
-  };
-
-  const handleToggleWishlist = (e) => {
-    e.preventDefault();
-    addToWishlist(product);
   };
 
 

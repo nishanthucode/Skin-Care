@@ -12,7 +12,7 @@
 .banner-slider {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 400px;
   /* Taller hero */
   border-radius: 20px;
   overflow: hidden;
@@ -231,13 +231,16 @@
 /* Responsive */
 @media (max-width: 992px) {
   .hero-banner {
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
+    width: 92%;
+    /* Create space left/right */
+    margin: 20px auto;
+    /* Create space top/bottom */
+    border-radius: 15px;
+    /* Restore rounded corners */
   }
 
   .banner-slider {
-    border-radius: 0;
+    border-radius: 15px;
     height: 500px;
     /* Shorter on tablet */
   }

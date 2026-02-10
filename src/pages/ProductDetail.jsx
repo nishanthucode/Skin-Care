@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight, FiShare2, FiHeart } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import { useCart } from '../context/CartContext';
 import { productAPI } from '../utils/api';
 import image1 from '../assets/image 1.jpeg';
@@ -190,38 +191,16 @@ const ProductDetail = () => {
               <p>{product.description}</p>
             </div>
 
-            <div className="quantity-section">
-              <label>Quantity</label>
-              <div className="quantity-controls">
-                <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>-</button>
-                <span>{quantity}</span>
-                <button onClick={() => setQuantity(quantity + 1)}>+</button>
-              </div>
-            </div>
+            {/* Quantity Removed */}
 
             <div className="action-buttons">
-              <button className="add-to-bag-btn" onClick={handleAddToBag}>+ ADD TO BAG</button>
+              <button className="add-to-bag-btn" onClick={() => window.open(`https://wa.me/919876543210?text=I want to buy ${product.name}`, '_blank')}>
+                <FaWhatsapp size={20} /> Order Via WhatsApp
+              </button>
               <button className="buy-now-btn" onClick={handleBuyNow}>BUY NOW</button>
             </div>
 
-            <div className="related-products-inline">
-              <h3>You can also pair it with</h3>
-              <div className="related-products-grid">
-                {product.relatedProducts && product.relatedProducts.map((rp) => (
-                  <Link to={`/product/${rp.id}`} key={rp.id} className="related-product-card">
-                    <img src={rp.image} alt={rp.name} />
-                    <div className="related-product-info">
-                      <h4>{rp.name}</h4>
-                      <p className="related-product-price">Rs. {rp.price.toFixed(2)}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="share-section">
-              <FiShare2 /> <span>SHARE</span>
-            </div>
+            {/* Related Products and Share Removed */}
           </div>
         </div>
       </div>

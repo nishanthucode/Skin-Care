@@ -64,6 +64,21 @@ h6 {
   line-height: 1.3;
 }
 
+/* Enforce Font Consistency Request: Bold = Heading Font */
+strong,
+b {
+  font-family: var(--font-heading);
+}
+
+/* Utility classes for consistency */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -111,7 +126,7 @@ select:focus {
 }
 
 .section {
-  padding: 40px 0;
+  padding: 10px 0;
   margin-bottom: 0;
 }
 

@@ -67,12 +67,7 @@ const HeroBanner = () => {
 
             <div className="banner-content container">
               <div className="content-inner">
-                {slide.tagline && <span className="banner-tagline">{slide.tagline}</span>}
-                <h2 className="banner-title">{slide.title}</h2>
-                <p className="banner-subtitle">{slide.subtitle}</p>
-                <Link to={slide.link} className="banner-btn primary-btn">
-                  {slide.buttonText}
-                </Link>
+                {/* Content Removed */}
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 .testimonial-section {
   background-color: #f8f9fa;
   /* Light clean background */
-  padding: 80px 0;
+  padding: 20px 0;
   overflow: hidden;
   --slide-pct: 50%;
   /* Default slide width percentage for desktop */
@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;

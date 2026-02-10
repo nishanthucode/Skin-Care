@@ -4,7 +4,7 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import './BeforeAfter.css';
 
 const BeforeAfter = () => {
-    const comparisons = [
+    const originalComparisons = [
         {
             id: 1,
             beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-130833bd08df.png?v=1769862945&width=800',
@@ -47,76 +47,160 @@ const BeforeAfter = () => {
         },
     ];
 
-    const [activeIndex, setActiveIndex] = useState(2);
+    // Create extended array for infinite scroll
+    // Clones of last 2 at start, clones of first 2 at end
+    // [4, 5, 1, 2, 3, 4, 5, 1, 2]
+    const CLONE_COUNT = 2;
+    const items = [
+        ...originalComparisons.slice(-CLONE_COUNT),
+        ...originalComparisons,
+        ...originalComparisons.slice(0, CLONE_COUNT)
+    ];
+
+    const [activeIndex, setActiveIndex] = useState(0); // This will track the "real" index (0-4)
     const [sliderPositions, setSliderPositions] = useState({});
-    const [isDragging, setIsDragging] = useState({});
+
+    // Use a ref to track dragging state to avoid closure issues in global listeners
+    const dragTargetRef = useRef(null); // { key: index, id: comparison.id }
+
     const containerRefs = useRef({});
     const scrollRef = useRef(null);
+    const paramsRef = useRef({
+        isScrolling: false,
+        timeout: null
+    });
+
+    // We need a ref to track active index inside scroll handler without dependency issues
+    const activeRealIndexRef = useRef(0);
 
     // Card width (350px) + Horizontal Margin (15px * 2) = 380px
     const CARD_WIDTH_WITH_MARGIN = 380;
 
+    // Initialize scroll position to the first real item
     useEffect(() => {
-        // Scroll to initial active index on mount
-        scrollToSlide(2);
+        if (scrollRef.current) {
+            const initialRealIndex = 0;
+            const extendedIndex = initialRealIndex + CLONE_COUNT;
+
+            scrollRef.current.scrollLeft = extendedIndex * CARD_WIDTH_WITH_MARGIN;
+            setActiveIndex(initialRealIndex);
+        }
     }, []);
 
-    const scrollToSlide = (index) => {
+    // Helper to scroll to a specific REAL index (0-4)
+    const scrollToRealSlide = (realIndex, behavior = 'smooth') => {
         if (scrollRef.current) {
-            const scrollPos = index * CARD_WIDTH_WITH_MARGIN;
+            const extendedIndex = realIndex + CLONE_COUNT;
+            const scrollPos = extendedIndex * CARD_WIDTH_WITH_MARGIN;
             scrollRef.current.scrollTo({
                 left: scrollPos,
-                behavior: 'smooth'
+                behavior: behavior
             });
-            setActiveIndex(index);
+            setActiveIndex(realIndex);
         }
     };
 
     const handleScroll = () => {
         if (scrollRef.current) {
             const scrollLeft = scrollRef.current.scrollLeft;
-            const index = Math.round(scrollLeft / CARD_WIDTH_WITH_MARGIN);
-            // Clamp index between 0 and comparisons.length - 1
-            const clampedIndex = Math.min(Math.max(index, 0), comparisons.length - 1);
-            if (clampedIndex !== activeIndex) {
-                setActiveIndex(clampedIndex);
+            const extendedIndex = Math.round(scrollLeft / CARD_WIDTH_WITH_MARGIN);
+
+            let realIndex = (extendedIndex - CLONE_COUNT);
+            // Normalize positive modulo
+            realIndex = ((realIndex % originalComparisons.length) + originalComparisons.length) % originalComparisons.length;
+
+            if (activeRealIndexRef.current !== realIndex) {
+                setActiveIndex(realIndex);
+                activeRealIndexRef.current = realIndex;
             }
+
+            clearTimeout(paramsRef.current.timeout);
+            paramsRef.current.timeout = setTimeout(() => {
+                checkInfiniteScrollLoop(scrollLeft);
+            }, 100);
         }
     };
 
-    const updateSliderPosition = (e, id) => {
-        const container = containerRefs.current[id];
+    const checkInfiniteScrollLoop = (currentScrollLeft) => {
+        if (!scrollRef.current) return;
+
+        const extendedIndex = Math.round(currentScrollLeft / CARD_WIDTH_WITH_MARGIN);
+        const totalExtended = items.length;
+        const realCount = originalComparisons.length;
+
+        // If we are at the clones at the START (Indices < CLONE_COUNT)
+        if (extendedIndex < CLONE_COUNT) {
+            const newExtendedIndex = extendedIndex + realCount;
+            scrollRef.current.scrollTo({
+                left: newExtendedIndex * CARD_WIDTH_WITH_MARGIN,
+                behavior: 'auto' // Instant jump
+            });
+        }
+        // If we are at the clones at the END (Indices >= CLONE_COUNT + realCount)
+        else if (extendedIndex >= CLONE_COUNT + realCount) {
+            const newExtendedIndex = extendedIndex - realCount;
+            scrollRef.current.scrollTo({
+                left: newExtendedIndex * CARD_WIDTH_WITH_MARGIN,
+                behavior: 'auto' // Instant jump
+            });
+        }
+    };
+
+    const updateSliderPosition = (clientX, refKey, dataId) => {
+        const container = containerRefs.current[refKey];
         if (!container) return;
         const rect = container.getBoundingClientRect();
-        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
         const x = clientX - rect.left;
         const percentage = (x / rect.width) * 100;
-        setSliderPositions(prev => ({ ...prev, [id]: Math.min(Math.max(percentage, 0), 100) }));
+
+        // Update slider position for this specific ID (shared across clones)
+        setSliderPositions(prev => ({ ...prev, [dataId]: Math.min(Math.max(percentage, 0), 100) }));
     };
 
-    const handleMouseDown = (e, id) => {
-        setIsDragging(prev => ({ ...prev, [id]: true }));
-        updateSliderPosition(e, id);
+    const handleDragStart = (e, refKey, dataId) => {
+        // Prevent default only if needed, but here we want to allow scrolling if not dragging slider?
+        // But dragging slider is horizontal, scrolling is horizontal. Conflict?
+        // Let's assume user wants to drag slider if they touch it.
+        // e.preventDefault(); // Might block page scroll on touch devices? Carefully use.
+
+        dragTargetRef.current = { key: refKey, id: dataId };
+
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        updateSliderPosition(clientX, refKey, dataId);
     };
 
-    const handleMouseMove = (e, id) => {
-        if (!isDragging[id]) return;
-        updateSliderPosition(e, id);
-    };
-
-    const handleMouseUp = (id) => {
-        setIsDragging(prev => ({ ...prev, [id]: false }));
-    };
-
+    // Global Event Listeners for Dragging
     useEffect(() => {
-        const handleGlobalMouseUp = () => setIsDragging({});
-        window.addEventListener('mouseup', handleGlobalMouseUp);
-        window.addEventListener('touchend', handleGlobalMouseUp);
+        const handleGlobalMove = (e) => {
+            if (!dragTargetRef.current) return;
+            const { key, id } = dragTargetRef.current;
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            updateSliderPosition(clientX, key, id);
+        };
+
+        const handleGlobalUp = () => {
+            if (dragTargetRef.current) {
+                dragTargetRef.current = null;
+            }
+        };
+
+        window.addEventListener('mousemove', handleGlobalMove);
+        window.addEventListener('mouseup', handleGlobalUp);
+        window.addEventListener('touchmove', handleGlobalMove, { passive: false });
+        window.addEventListener('touchend', handleGlobalUp);
+
         return () => {
-            window.removeEventListener('mouseup', handleGlobalMouseUp);
-            window.removeEventListener('touchend', handleGlobalMouseUp);
+            window.removeEventListener('mousemove', handleGlobalMove);
+            window.removeEventListener('mouseup', handleGlobalUp);
+            window.removeEventListener('touchmove', handleGlobalMove);
+            window.removeEventListener('touchend', handleGlobalUp);
         };
     }, []);
+
+    // Cleanup refs on unmount or updates
+    useEffect(() => {
+        // We keep refs valid
+    });
 
     return (
         <section className="before-after-section">
@@ -132,24 +216,20 @@ const BeforeAfter = () => {
                     onScroll={handleScroll}
                 >
                     <div className="comparisons-flex-track">
-                        {comparisons.map((comparison, index) => {
-                            const isActive = index === activeIndex;
+                        {items.map((comparison, index) => {
+                            const isDataActive = comparison.id === originalComparisons[activeIndex].id;
+
                             return (
                                 <div
-                                    key={comparison.id}
-                                    className={`comparison-card-modern ${isActive ? 'active' : ''}`}
-                                    onClick={() => !isActive && scrollToSlide(index)}
+                                    key={`${comparison.id}-${index}`} // Unique key for extended array
+                                    className={`comparison-card-modern ${isDataActive ? 'active' : ''}`}
+                                    onClick={() => !isDataActive && scrollToRealSlide(originalComparisons.findIndex(c => c.id === comparison.id))}
                                 >
                                     <div
                                         className="comparison-box"
-                                        ref={(el) => (containerRefs.current[comparison.id] = el)}
-                                        onMouseDown={(e) => handleMouseDown(e, comparison.id)}
-                                        onMouseMove={(e) => handleMouseMove(e, comparison.id)}
-                                        onMouseUp={() => handleMouseUp(comparison.id)}
-                                        onMouseLeave={() => handleMouseUp(comparison.id)}
-                                        onTouchStart={(e) => handleMouseDown(e, comparison.id)}
-                                        onTouchMove={(e) => handleMouseMove(e, comparison.id)}
-                                        onTouchEnd={() => handleMouseUp(comparison.id)}
+                                        ref={(el) => (containerRefs.current[index] = el)} // Use index as key
+                                        onMouseDown={(e) => handleDragStart(e, index, comparison.id)}
+                                        onTouchStart={(e) => handleDragStart(e, index, comparison.id)}
                                     >
                                         <div className="after-layer">
                                             <img src={comparison.afterImage} alt="After" draggable="false" />
@@ -191,11 +271,11 @@ const BeforeAfter = () => {
                 </div>
 
                 <div className="pagination-dots-modern">
-                    {comparisons.map((_, index) => (
+                    {originalComparisons.map((_, index) => (
                         <button
                             key={index}
                             className={`modern-dot ${index === activeIndex ? 'active' : ''}`}
-                            onClick={() => scrollToSlide(index)}
+                            onClick={() => scrollToRealSlide(index)}
                         />
                     ))}
                 </div>
