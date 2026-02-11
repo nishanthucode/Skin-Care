@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FiMenu, FiX, FiChevronLeft, FiPhone, FiMail } from 'react-icons/fi';
-import { FaWhatsapp, FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaWhatsapp, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
 import { useCart } from '../../context/CartContext';
 import './Header.css';
@@ -52,6 +52,9 @@ const Header = () => {
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+              <FaYoutube />
             </a>
           </div>
           <div className="top-banner-text">
