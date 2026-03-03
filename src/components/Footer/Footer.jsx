@@ -48,8 +48,7 @@ const Footer = () => {
                 <img src={logo} alt="Youth Face" className="footer-logo-img" />
               </Link>
               <p className="footer-desc">
-                For over eight years, Youthface has been on a mission to deliver the best skin whitening products India deserves—safe, dermatologist-approved formulations that actually work.
-              </p>
+                Aura is dedicated to creating safe, effective skincare that enhances your natural glow. With carefully crafted formulations and premium ingredients, we focus on delivering visible results while keeping your skin’s health our top priority. Experience confidence and radiance with every use.              </p>
               <div className="social-links">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                   <FaFacebookF />
@@ -81,7 +80,7 @@ const Footer = () => {
               <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/shop-all">Collections</Link></li>
-                <li><Link to="/track-order">Track Order</Link></li>
+                {/* <li><Link to="/track-order">Track Order</Link></li> */}
                 <li><Link to="/about-us">About Us</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
                 {/* <li><Link to="/blog">Blog</Link></li> */}
@@ -92,24 +91,20 @@ const Footer = () => {
             <div className="footer-col">
               <h4>Policies</h4>
               <ul>
-                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link to="/terms-of-service">Terms of Service</Link></li>
-                <li><Link to="/shipping-policy">Shipping Policy</Link></li>
-                <li><Link to="/refund-policy">Refund Policy</Link></li>
+                <li><Link to="#">Privacy Policy</Link></li>
+                <li><Link to="#">Terms of Service</Link></li>
+                <li><Link to="#">Shipping Policy</Link></li>
+                <li><Link to="#">Refund Policy</Link></li>
               </ul>
             </div>
 
             {/* Info */}
             <div className="footer-col">
-              <h4>Info</h4>
-              <ul>
-                <li><Link to="/about-us">Our Story</Link></li>
-                <li><Link to="/contact">Grievance Office</Link></li>
-                <li><Link to="/track-order">Track Your Order</Link></li>
-                <li><Link to="/faq">FAQs</Link></li>
-                {/* <li><Link to="/blog">Blogs</Link></li> */}
-                <li><Link to="/distributorship">Distributorship</Link></li>
-              </ul>
+              <h4>Address</h4>
+              <p>Guruvayanakere, Belthangady Taluku- 574214 </p>
+              <p>+91 8296350093</p>
+              <p>info@yourdomain.com</p>
+              
             </div>
           </div>
         </div>

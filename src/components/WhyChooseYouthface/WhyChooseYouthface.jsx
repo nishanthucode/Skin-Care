@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './WhyChooseYouthface.css';
+import image1 from '../../assets/product-1.jpeg';
+import image3 from '../../assets/product-3.jpeg';
+import image4 from '../../assets/product-4.jpeg';
 
 const WhyChooseYouthface = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -11,7 +14,7 @@ const WhyChooseYouthface = () => {
             content: {
                 title: 'Rooted Where We Began',
                 description: 'We started from our homeland Kasaragod, Kerala, India. Built with pride, grown with purpose, and trusted by communities across the country. No matter how far we reach, our roots remain our strength.',
-                image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&h=400&fit=crop',
+                image: image1,
             },
         },
         {
@@ -20,7 +23,7 @@ const WhyChooseYouthface = () => {
             content: {
                 title: 'Made with Love',
                 description: "It all began with our Beauty Cream. With the love and trust people showed us, we gently grew, adding skin care, body care, and perfumes that feel just right for everyday life. Made with love, always. 💛",
-                image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&h=400&fit=crop',
+                image: image3,
             },
         },
         {
@@ -29,7 +32,7 @@ const WhyChooseYouthface = () => {
             content: {
                 title: 'Care You Can Trust',
                 description: "FDA-approved, cruelty-free, and carefully tested, because your skin's safety comes first. Gentle yet effective formulas powered by Kojic Acid, Niacinamide, Salicylic Acid, Alpha Arbutin, fruit enzymes, and nourishing actives. 💛",
-                image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=600&h=400&fit=crop',
+                image: image4,
             },
         },
     ];

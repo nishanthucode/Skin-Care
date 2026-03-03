@@ -10,7 +10,7 @@
     height: 70vh;
     /* Taller hero for impact */
     min-height: 500px;
-    background: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat fixed;
+    background: url('../assets/about-herobanner.jpeg') center/cover no-repeat fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,7 +55,7 @@
 /* --- Intro Section (About Us) --- */
 .about-intro {
     background-color: var(--white);
-    padding: 60px 0;
+    padding: 100px 0 !important;
 }
 
 .intro-grid {
@@ -96,7 +96,7 @@
 .mission-vision {
     background-color: var(--secondary-color);
     /* Light Blush Background/Accent */
-    padding: 60px 0;
+    padding: 100px 0 !important;
 }
 
 .mv-grid {
@@ -133,6 +133,10 @@
 }
 
 /* --- Values Section --- */
+.values-section {
+    padding: 100px 0 !important;
+}
+
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

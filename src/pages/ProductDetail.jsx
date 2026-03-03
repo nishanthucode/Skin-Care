@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { FiChevronLeft, FiChevronRight, FiShare2, FiHeart } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useCart } from '../context/CartContext';
 import { productAPI } from '../utils/api';
-import image1 from '../assets/image 1.jpeg';
-import image2 from '../assets/image 2.jpeg';
+import image1 from '../assets/product-1.jpeg';
+import image2 from '../assets/product-2.jpeg';
+import image3 from '../assets/product-3.jpeg';
+import image4 from '../assets/product-4.jpeg';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -37,8 +38,7 @@ const ProductDetail = () => {
       image: image1,
       images: [
         image1,
-        'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&h=800&fit=crop'
+
       ],
       packs: [
         { id: 1, name: 'Single Jar', price: 599.00, description: 'Standard size jar' },
@@ -57,7 +57,7 @@ const ProductDetail = () => {
       image: image2,
       images: [
         image2,
-        'https://images.unsplash.com/photo-1585652757173-57de5e9fab42?w=800&h=800&fit=crop'
+
       ],
       packs: [
         { id: 1, name: 'Standard Bar', price: 199.00, description: 'Luxury soap bar' },
@@ -73,11 +73,9 @@ const ProductDetail = () => {
       benefits: ['Complete Care', 'Value Set', 'Deep Cleansing', 'Daily Protection'],
       rating: 5.0,
       reviewCount: 31,
-      image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=800&h=800&fit=crop',
+      image: image3,
       images: [
-        'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=800&h=800&fit=crop',
-        image1,
-        image2
+        image3
       ],
       packs: [
         { id: 1, name: 'Combo Pack', price: 699.00, description: 'Cream + Soap' }
@@ -92,11 +90,10 @@ const ProductDetail = () => {
       benefits: ['Value Savings', 'Consistent Result', 'Targeted Action', 'Family Pack'],
       rating: 4.8,
       reviewCount: 52,
-      image: image2,
+      image: image4,
       images: [
-        image2,
-        image2,
-        image2
+        image4,
+
       ],
       packs: [
         { id: 1, name: 'Pack of 3', price: 398.00, description: 'Buy 2 Get 1 Free' }
@@ -209,9 +206,7 @@ const ProductDetail = () => {
               onTouchMove={onTouchMove}
               onTouchEnd={onTouchEnd}
             >
-              <button className="gallery-nav prev" onClick={prevImage}><FiChevronLeft /></button>
               <img src={product.images && product.images[selectedImage]} alt={product.name} className="main-image" draggable="false" />
-              <button className="gallery-nav next" onClick={nextImage}><FiChevronRight /></button>
             </div>
             <div className="thumbnail-gallery">
               {product.images && product.images.map((image, index) => (

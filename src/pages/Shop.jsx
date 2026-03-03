@@ -3,8 +3,10 @@ import { useSearchParams, Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard/ProductCard';
 import { productAPI } from '../utils/api';
 import { FiChevronDown, FiChevronUp, FiX, FiFilter } from 'react-icons/fi';
-import image1 from '../assets/image 1.jpeg';
-import image2 from '../assets/image 2.jpeg';
+import image1 from '../assets/product-1.jpeg';
+import image2 from '../assets/product-2.jpeg';
+import image3 from '../assets/product-3.jpeg';
+import image4 from '../assets/product-4.jpeg';
 import './Shop.css';
 
 const Shop = ({ category }) => {
@@ -45,8 +47,8 @@ const Shop = ({ category }) => {
     const productImages = [
       image1,
       image2,
-      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300&h=300&fit=crop',
+      image3,
+      image4,
       'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop',
       'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=300&h=300&fit=crop',
       'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=300&fit=crop',

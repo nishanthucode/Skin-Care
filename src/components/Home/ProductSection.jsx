@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard/ProductCard';
 import { productAPI } from '../../utils/api';
-import image1 from '../../assets/image 1.jpeg';
-import image2 from '../../assets/image 2.jpeg';
+import image1 from '../../assets/product-1.jpeg';
+import image2 from '../../assets/product-2.jpeg'
+import image3 from '../../assets/product-3.jpeg';
+import image4 from '../../assets/product-4.jpeg';
+
+import newImg from '../../assets/new-img.jpeg';
 import './ProductSection.css';
 
 const ProductSection = ({ title, viewAllLink, fetchFunction, category, categories, limit }) => {
@@ -86,7 +90,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
         price: 699,
         originalPrice: 899,
         category: 'face-care',
-        image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300&h=300&fit=crop',
+        image: image3,
         rating: 5.0,
         reviewCount: 31,
         stock: 30,
@@ -99,7 +103,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
         price: 398,
         originalPrice: 597,
         category: 'soap',
-        image: image2,
+        image: image4,
         rating: 4.8,
         reviewCount: 52,
         stock: 40,

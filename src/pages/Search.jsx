@@ -4,8 +4,10 @@ import { Helmet } from 'react-helmet-async';
 import ProductCard from '../components/ProductCard/ProductCard';
 import { productAPI } from '../utils/api';
 import { FiSearch } from 'react-icons/fi';
-import image1 from '../assets/image 1.jpeg';
-import image2 from '../assets/image 2.jpeg';
+import image1 from '../assets/product-1.jpeg';
+import image2 from '../assets/product-2.jpeg';
+import image3 from '../assets/product-3.jpeg';
+import image4 from '../assets/product-4.jpeg';
 import './Search.css';
 
 const Search = () => {
@@ -68,7 +70,7 @@ const Search = () => {
                 description: 'Oil Control & Brighter Skin in 4 Weeks',
                 price: 199,
                 originalPrice: 299,
-                image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=300&h=300&fit=crop',
+                image: image3,
                 rating: 5.0,
                 reviewCount: 31,
                 stock: 40,
@@ -80,7 +82,7 @@ const Search = () => {
                 description: 'Reduces Dark Spots & Pigmentation',
                 price: 449,
                 originalPrice: 599,
-                image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=300&fit=crop',
+                image: image4,
                 rating: 4.7,
                 reviewCount: 45,
                 stock: 35,

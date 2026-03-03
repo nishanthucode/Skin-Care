@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi';
 import './HeroBanner.css';
+import newImg1 from '../../assets/herobanner-1.jpeg';
+import newImg2 from '../../assets/product.jpeg';
+import newImg3 from '../../assets/33.jpeg';
 
 const HeroBanner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,7 +12,7 @@ const HeroBanner = () => {
   const slides = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1920&h=800&fit=crop',
+      image: newImg1,
       mobileImage: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=768&h=600&fit=crop',
       title: 'Reveal Your Natural Glow',
       subtitle: 'Premium ingredients for radiant, healthy-looking skin.',
@@ -18,7 +21,7 @@ const HeroBanner = () => {
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=1920&h=800&fit=crop',
+      image: newImg2,
       mobileImage: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=768&h=600&fit=crop',
       title: 'Science Meets Elegance',
       subtitle: 'Dermatologist-approved formulas for visible results.',
@@ -27,7 +30,7 @@ const HeroBanner = () => {
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=1920&h=800&fit=crop',
+      image: newImg3,
       mobileImage: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=768&h=600&fit=crop',
       title: 'Nourish Your Body',
       subtitle: 'Luxurious textures and gentle care for all skin types.',

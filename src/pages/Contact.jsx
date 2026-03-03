@@ -89,7 +89,7 @@ const Contact = () => {
               </div>
               <div className="info-text">
                 <h3>Visit Us</h3>
-                <p>Guruvayanakere, Belthangady Tq - 574214</p>
+                <p>Guruvayanakere, Belthangady Taluku - 574214</p>
                 {/* <p>Mumbai, Maharashtra - 400001</p> */}
               </div>
             </div>

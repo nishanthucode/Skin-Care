@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaLeaf, FaHeart, FaAward, FaUsers, FaLightbulb, FaBullseye } from 'react-icons/fa';
 import './About.css';
+import image2 from '../assets/Philosopy.jpeg';
+import image1 from '../assets/about-herobanner.jpeg';
+
 
 const About = () => {
   useEffect(() => {
@@ -34,7 +37,7 @@ const About = () => {
             </div>
             <div className="intro-image">
               <img
-                src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=2070&auto=format&fit=crop"
+                src={image2}
                 alt="Aura Skincare Products"
               />
             </div>

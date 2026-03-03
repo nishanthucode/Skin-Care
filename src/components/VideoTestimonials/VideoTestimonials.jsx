@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiVolume2, FiVolumeX } from 'react-icons/fi';
 import './VideoTestimonials.css';
-import image1 from '../../assets/image 1.jpeg';
-import image2 from '../../assets/image 2.jpeg';
+import image2 from '../../assets/product-2.jpeg';
+import image1 from '../../assets/product-1.jpeg';
+import image3 from '../../assets/product-3.jpeg';
+import image4 from '../../assets/product-4.jpeg';
 
 const VideoTestimonials = () => {
     const [hoveredVideo, setHoveredVideo] = useState(null);
@@ -27,7 +29,7 @@ const VideoTestimonials = () => {
             price: 199.00,
             // Using the requested thumbnail
             thumbnail: 'https://youthface.co.in/cdn/shop/files/preview_images/6c83543f1ce047129dcaa166b755b63c.thumbnail.0000000000.jpg?v=1763800022&width=600',
-            productImage: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=200&h=200&fit=crop',
+            productImage: image3,
         },
         {
             id: 2,
@@ -35,31 +37,31 @@ const VideoTestimonials = () => {
             productName: 'Papaya Face Wash (50ml)',
             price: 199.00,
             thumbnail: 'https://youthface.co.in/cdn/shop/files/preview_images/fe70d588d9144700bcce6b0151c9fe34.thumbnail.0000000000.jpg?v=1752250018&width=720',
-            productImage: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=200&h=200&fit=crop',
+            productImage: image4,
         },
         {
             id: 3,
-            webUrl: 'https://youthface.co.in/cdn/shop/videos/c/vp/6c83543f1ce047129dcaa166b755b63c/6c83543f1ce047129dcaa166b755b63c.m3u8?v=0',
+            webUrl: 'https://youthface.co.in/cdn/shop/videos/c/vp/7a64a636af7f4e328872b68416d58be5/7a64a636af7f4e328872b68416d58be5.m3u8?v=0',
             productName: 'Beauty Cream (25g)',
             price: 599.00,
-            thumbnail: 'https://youthface.co.in/cdn/shop/files/preview_images/6c83543f1ce047129dcaa166b755b63c.thumbnail.0000000000.jpg?v=1763800022&width=600',
+            thumbnail: 'https://youthface.co.in/cdn/shop/files/preview_images/7a64a636af7f4e328872b68416d58be5.thumbnail.0000000000.jpg?v=1764055048&width=480',
             productImage: image1,
         },
         {
             id: 4,
-            webUrl: 'https://youthface.co.in/cdn/shop/videos/c/vp/fe70d588d9144700bcce6b0151c9fe34/fe70d588d9144700bcce6b0151c9fe34.m3u8?v=0',
+            webUrl: 'https://youthface.co.in/cdn/shop/videos/c/vp/63b3ac2467d94f60b3b8e425da374564/63b3ac2467d94f60b3b8e425da374564.m3u8?v=0',
             productName: 'Beauty Cream (25g)',
             price: 599.00,
-            thumbnail: 'https://youthface.co.in/cdn/shop/files/preview_images/fe70d588d9144700bcce6b0151c9fe34.thumbnail.0000000000.jpg?v=1752250018&width=720',
+            thumbnail: 'https://youthface.co.in/cdn/shop/files/preview_images/63b3ac2467d94f60b3b8e425da374564.thumbnail.0000000000.jpg?v=1752249510&width=600',
             productImage: image2,
         },
         {
             id: 5,
-            webUrl: 'https://youthface.co.in/cdn/shop/videos/c/vp/6c83543f1ce047129dcaa166b755b63c/6c83543f1ce047129dcaa166b755b63c.m3u8?v=0',
+            webUrl: 'https://youthface.co.in/cdn/shop/videos/c/vp/f6001e20954544f6b16c76aed8460769/f6001e20954544f6b16c76aed8460769.m3u8?v=0',
             productName: 'Sunscreen (50ml)',
             price: 399.00,
-            thumbnail: 'https://youthface.co.in/cdn/shop/files/preview_images/6c83543f1ce047129dcaa166b755b63c.thumbnail.0000000000.jpg?v=1763800022&width=600',
-            productImage: image2,
+            thumbnail: 'https://youthface.co.in/cdn/shop/files/preview_images/f6001e20954544f6b16c76aed8460769.thumbnail.0000000000.jpg?v=1755847917&width=600',
+            productImage: image1,
         },
     ];
 

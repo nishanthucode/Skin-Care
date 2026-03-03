@@ -19,15 +19,7 @@ const ProductCard = ({ product }) => {
       <Link to={`/product/${product._id || product.id}`} className="product-link">
         {/* Product Image */}
         <div className="product-image-container">
-          {product.discount && (
-            <span className="discount-badge">{product.discount}% OFF</span>
-          )}
-          {product.comboOffer && (
-            <span className="combo-badge">{product.comboOffer}</span>
-          )}
-          {product.specialOffer && (
-            <span className="special-badge">{product.specialOffer}</span>
-          )}
+
 
 
 
