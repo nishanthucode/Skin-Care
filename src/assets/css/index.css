@@ -24,7 +24,7 @@ html {
 
   /* Typography */
   --font-heading: 'Playfair Display', serif;
-  --font-body: 'Lato', sans-serif;
+  --font-body: 'Playfair Display', serif;
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);

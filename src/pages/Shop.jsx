@@ -58,17 +58,17 @@ const Shop = ({ category }) => {
     ];
 
     const productNames = [
-      'Beauty Cream (25g)',
-      'DarkSpot Remover Soap (100g)',
-      'Glow & Protect Combo Pack',
-      'DarkSpot Remover Soap (Pack of 3)',
+      'Aura Bright Cream',
+      'Aura Glow Soap',
+      'Aura Glow Combo',
+      'Aura Glow Soap(Pack of 2)',
     ];
 
     const descriptions = [
-      'Brighter Skin in 4 Weeks',
-      'Brighten, Smooth, And Protect',
-      'Complete Skincare Solution',
-      'Buy 2 Get 1 Free Special Offer',
+      'Bright Cream',
+      'Glow Soap',
+      'Glow Combo',
+      'Buy 2 Saop',
     ];
 
     const prices = [599, 199, 699, 398];

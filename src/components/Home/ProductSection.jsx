@@ -59,8 +59,8 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
     const allMockProducts = [
       {
         _id: 'beauty-cream',
-        name: 'Beauty Cream (25g)',
-        description: 'Brighter Skin in 4 Weeks',
+        name: 'Aura Bright Cream',
+        description: 'Bright Cream',
         price: 599,
         originalPrice: 799,
         category: 'body-cream',
@@ -72,8 +72,8 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
       },
       {
         _id: 'darkspot-soap',
-        name: 'DarkSpot Remover Soap (100g)',
-        description: 'Brighten, Smooth, And Protect',
+        name: 'Aura Glow Soap',
+        description: 'Glow Soap',
         price: 199,
         originalPrice: 249,
         category: 'soap',
@@ -85,8 +85,8 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
       },
       {
         _id: 'glow-combo',
-        name: 'Glow & Protect Combo Pack',
-        description: 'Complete Skincare Solution',
+        name: 'Aura Glow Combo',
+        description: 'Glow Combo',
         price: 699,
         originalPrice: 899,
         category: 'face-care',
@@ -98,8 +98,8 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
       },
       {
         _id: 'soap-pack-3',
-        name: 'DarkSpot Remover Soap (Pack of 3)',
-        description: 'Buy 2 Get 1 Free Special Offer',
+        name: 'Aura Glow Soap(Pack of 2)',
+        description: 'Buy 2 Saop',
         price: 398,
         originalPrice: 597,
         category: 'soap',
