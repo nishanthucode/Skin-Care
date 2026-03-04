@@ -162,7 +162,6 @@ const ProductDetail = () => {
     };
 
     addToCart(cartItem, quantity);
-    alert('Added to cart!');
   };
 
   const handleBuyNow = () => {
