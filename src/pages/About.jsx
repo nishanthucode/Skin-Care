@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaLeaf, FaHeart, FaAward, FaUsers, FaLightbulb, FaBullseye } from 'react-icons/fa';
 import './About.css';
 import image2 from '../assets/Philosopy.jpeg';
-import image1 from '../assets/about-herobanner.jpeg';
+import image1 from '../assets/33.jpeg';
 
 
 const About = () => {
@@ -17,7 +17,7 @@ const About = () => {
       <section className="about-hero">
         <div className="about-hero-overlay"></div>
         <div className="about-hero-content container">
-          <h1>About Aura</h1>
+          <h1 style={{ color: "white" }}>About Aura</h1>
           <p className="hero-subtitle">Quality. Safety. Elegance.</p>
         </div>
       </section>

@@ -7,16 +7,21 @@
 /* --- Hero Section --- */
 .about-hero {
     position: relative;
+    width: 98%;
+    max-width: 1600px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
     height: 70vh;
     /* Taller hero for impact */
     min-height: 500px;
-    background: url('../assets/about-herobanner.jpeg') center/cover no-repeat fixed;
+    background: url('../assets/33.jpeg') center/100% 100% no-repeat;
+
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--white);
-    margin-bottom: 0;
     /* Let sections flow naturally */
 }
 
@@ -227,15 +232,18 @@
 }
 
 /* --- Responsive --- */
-@media (max-width: 992px) {
+@media (max-width: 925px) {
+    .about-hero {
+        width: 92%;
+        margin: 20px auto;
+        border-radius: 15px;
+        height: 350px;
+        min-height: 350px;
+    }
+
     .intro-grid {
         grid-template-columns: 1fr;
         gap: 50px;
-    }
-
-    .intro-image {
-        order: -1;
-        /* Image first on tablet? Or keep text first? Let's keep text first for storytelling */
     }
 
     .mv-grid {
@@ -244,6 +252,11 @@
 }
 
 @media (max-width: 768px) {
+    .about-hero {
+        height: 250px;
+        min-height: 250px;
+    }
+
     .about-hero h1 {
         font-size: 2.5rem;
     }
