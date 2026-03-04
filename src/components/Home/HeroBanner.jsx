@@ -13,7 +13,7 @@ const HeroBanner = () => {
     {
       id: 1,
       image: newImg1,
-      mobileImage: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=768&h=600&fit=crop',
+      mobileImage: newImg1,
       title: 'Reveal Your Natural Glow',
       subtitle: 'Premium ingredients for radiant, healthy-looking skin.',
       buttonText: 'Shop Collection',
@@ -22,7 +22,7 @@ const HeroBanner = () => {
     {
       id: 2,
       image: newImg2,
-      mobileImage: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=768&h=600&fit=crop',
+      mobileImage: newImg2,
       title: 'Science Meets Elegance',
       subtitle: 'Dermatologist-approved formulas for visible results.',
       buttonText: 'Discover More',
@@ -31,7 +31,7 @@ const HeroBanner = () => {
     {
       id: 3,
       image: newImg3,
-      mobileImage: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=768&h=600&fit=crop',
+      mobileImage: newImg3,
       title: 'Nourish Your Body',
       subtitle: 'Luxurious textures and gentle care for all skin types.',
       buttonText: 'Shop All',

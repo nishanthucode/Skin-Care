@@ -15,12 +15,12 @@ const TestimonialSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Shiva',
+      name: 'Fathima',
       location: 'Kerala',
       beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-130833bd08df.png?v=1769862945&width=800',
       afterImage: 'https://youthface.co.in/cdn/shop/files/4_52e3cad0-dd1a-4d3b-9005-ec4a3d293f72.png?v=1769862945&width=800',
       rating: 5,
-      review: "I am Shiva Kerala Now I feel more confident to smile and talk YouthFace super... I'm a courier boy, saw so many YouthFace orders, so I tried it too. In just 1 month, superb result! My face got clear and bright.",
+      review: "I am Fathima Kerala Now I feel more confident to smile and talk YouthFace super... I'm a courier boy, saw so many YouthFace orders, so I tried it too. In just 1 month, superb result! My face got clear and bright.",
     },
     {
       id: 2,

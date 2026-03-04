@@ -29,8 +29,8 @@ const ProductDetail = () => {
     {
       id: 'beauty-cream',
       _id: 'beauty-cream',
-       name: 'Aura Bright Cream',
-        description: 'Bright Cream',
+      name: 'Aura Face Cream',
+      description: 'Face Cream',
       benefits: ['Intense Brightening', '24h Moisture', 'Anti-Aging', 'For All Skin Types'],
       rating: 4.9,
       reviewCount: 60,
@@ -40,15 +40,15 @@ const ProductDetail = () => {
 
       ],
       packs: [
-        { id: 1, name: 'Single Jar', price: 599.00, description: 'Standard size jar' },
+        { id: 1, name: 'Single Jar', price: 699.00, description: 'Standard size jar' },
         { id: 2, name: 'Twin Pack', price: 1099.00, description: 'Best value for 2 months' }
       ]
     },
     {
       id: 'darkspot-soap',
       _id: 'darkspot-soap',
-       name: 'Aura Glow Soap',
-        description: 'Glow Soap',
+      name: 'Aura Goat Milk Soap',
+      description: 'Goat Milk Soap',
       tagline: 'Brighten, Smooth, And Protect',
       // description: 'Our DarkSpot Remover Soap is a powerful yet gentle cleanser that targeted hyperpigmentation and uneven skin tone. Infused with vitamin C and herbal extracts, it fades dark spots effectively while maintaining your skins natural moisture balance.',
       benefits: ['Fades Dark Spots', 'Even Tone', 'Germ Protection', 'Gentle Fragrance'],
@@ -60,15 +60,15 @@ const ProductDetail = () => {
 
       ],
       packs: [
-        { id: 1, name: 'Standard Bar', price: 199.00, description: 'Luxury soap bar' },
-        { id: 2, name: 'Pack of 3', price: 499.00, description: 'Value multi-pack' }
+        { id: 1, name: 'Standard Bar', price: 249.00, description: 'Luxury soap bar' },
+        { id: 2, name: 'Pack of 3', price: 699.00, description: 'Value multi-pack' }
       ]
     },
     {
       id: 'glow-combo',
       _id: 'glow-combo',
       name: 'Aura Glow Combo',
-        description: 'Glow Combo',
+      description: 'Glow Combo',
       tagline: 'Complete Skincare Solution',
       // description: 'Get the best of both worlds with our exclusive Glow & Protect Combo. This pack includes our signature Beauty Cream and the DarkSpot Remover Soap, working in harmony to cleanse, protect and brighten your skin every day.',
       benefits: ['Complete Care', 'Value Set', 'Deep Cleansing', 'Daily Protection'],
@@ -79,15 +79,15 @@ const ProductDetail = () => {
         image3
       ],
       packs: [
-        { id: 1, name: 'Combo Pack', price: 699.00, description: 'Cream + Soap' }
+        { id: 1, name: 'Combo Pack', price: 949.00, description: 'Cream + Soap' }
       ]
     },
     {
       id: 'soap-pack-3',
       _id: 'soap-pack-3',
- name: 'Aura Glow Soap(Pack of 2)',
-        description: 'Buy 2 Saop' ,   
-          tagline: 'Buy 2 Get 1 Free Special Offer',
+      name: 'Aura Goat Milk Soap(Pack of 2)',
+      description: 'Buy 2 Soap',
+      tagline: 'Buy 2 Get 1 Free Special Offer',
       benefits: ['Value Savings', 'Consistent Result', 'Targeted Action', 'Family Pack'],
       rating: 4.8,
       reviewCount: 52,
@@ -97,7 +97,7 @@ const ProductDetail = () => {
 
       ],
       packs: [
-        { id: 1, name: 'Pack of 3', price: 398.00, description: 'Buy 2 Get 1 Free' }
+        { id: 1, name: 'Pack of 3', price: 499.00, description: 'Buy 2 Get 1 Free' }
       ]
     }
   ];
@@ -250,7 +250,7 @@ const ProductDetail = () => {
               <button className="add-to-bag-btn" onClick={handleAddToBag}>
                 + ADD TO BAG
               </button>
-              <button className="buy-now-btn" onClick={() => window.open(`https://wa.me/919876543210?text=I want to buy ${product.name}`, '_blank')}>
+              <button className="buy-now-btn" onClick={() => window.open(`https://wa.me/918296350093?text=I want to buy ${product.name}`, '_blank')}>
                 <FaWhatsapp className="whatsapp-icon" /> ORDER VIA WHATSAPP
               </button>
             </div>

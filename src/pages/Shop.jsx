@@ -58,21 +58,21 @@ const Shop = ({ category }) => {
     ];
 
     const productNames = [
-      'Aura Bright Cream',
-      'Aura Glow Soap',
+      'Aura Face Cream',
+      'Aura Goat Milk Soap',
       'Aura Glow Combo',
-      'Aura Glow Soap(Pack of 2)',
+      'Aura Goat Milk Soap(Pack of 2)',
     ];
 
     const descriptions = [
-      'Bright Cream',
-      'Glow Soap',
+      'Face Cream',
+      'Goat Milk Soap',
       'Glow Combo',
-      'Buy 2 Saop',
+      'Buy 2 Soap',
     ];
 
-    const prices = [599, 199, 699, 398];
-    const originalPrices = [799, 299, 899, 597];
+    const prices = [699, 249, 949, 499];
+    const originalPrices = [799, 299, 999, 597];
     const ratings = [4.9, 0, 5.0, 4.8];
     const reviewCounts = [60, 0, 31, 52];
     const stocks = [50, 25, 30, 40];

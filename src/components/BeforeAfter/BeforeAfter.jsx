@@ -19,7 +19,7 @@ beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-1
       afterImage: 'https://youthface.co.in/cdn/shop/files/1_e8199244-90f9-4112-8f5e-df280a06b579.png?v=1769862945&width=800',
       
         concerns: ['Acne & Pimples', 'Redness & Sunburn', 'Skin Inflammation'],
-        customerName: 'Keerthana, Age: 25',
+        customerName: 'Nandan',
         productLink: '/product/darkspot-soap',
     },
     {
@@ -27,7 +27,7 @@ beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-1
         beforeImage: 'https://youthface.co.in/cdn/shop/files/5_37736d95-b3b8-4044-8796-cd809c431da9.png?v=1769862944&width=800',
       afterImage: 'https://youthface.co.in/cdn/shop/files/6_acad1fa2-0ab6-4da5-8ac3-6fb898b56fd4.png?v=1769862945&width=800',
       concerns: ['Blackheads', 'Dull Skin', 'Dark Spots'],
-        customerName: 'Shiva',
+        customerName: 'Aysha',
         productLink: '/product/darkspot-soap',
     },
     {
@@ -35,7 +35,7 @@ beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-1
         beforeImage: 'https://youthface.co.in/cdn/shop/files/7_aa1c6402-1ad5-4a4a-8541-94be4d2e0620.png?v=1769862945&width=800',
       afterImage: 'https://youthface.co.in/cdn/shop/files/8_6150f2d8-2b92-476c-90e3-ef1bec016103.png?v=1769862944&width=800',
      concerns: ['Acne Scars', 'Dark Spots', 'Hyperpigmentation'],
-        customerName: 'Nanditha',
+        customerName: 'Keerthana',
         productLink: '/product/beauty-cream',
     },
     {
@@ -43,7 +43,7 @@ beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-1
          beforeImage: 'https://youthface.co.in/cdn/shop/files/2_c858972b-9f31-4237-8d30-cba539cc7a5b.png?v=1769862945&width=800',
       afterImage: 'https://youthface.co.in/cdn/shop/files/1_e8199244-90f9-4112-8f5e-df280a06b579.png?v=1769862945&width=800',
        concerns: ['Dull Skin', 'Fine Lines', 'Puffiness'],
-        customerName: 'Vikram',
+        customerName: 'Nandan',
         productLink: '/product/beauty-cream',
     },
 ];

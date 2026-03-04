@@ -113,7 +113,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; 2026, Youth Face. All rights reserved.</p>
+          <p>&copy; 2026, Aura. Designed by Oneplanet360.com</p>
         </div>
       </div>
     </footer >
