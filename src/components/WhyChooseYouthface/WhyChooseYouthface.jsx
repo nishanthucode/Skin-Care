@@ -10,10 +10,10 @@ const WhyChooseYouthface = () => {
     const tabs = [
         {
             id: 0,
-            title: 'Built on 8 Years of Trust',
+            title: 'Built 2+ Years of Trust',
             content: {
                 title: 'Rooted Where We Began',
-                description: 'We started from our homeland Kasaragod, Kerala, India. Built with pride, grown with purpose, and trusted by communities across the country. No matter how far we reach, our roots remain our strength.',
+                description: 'Our brand stays true to the values and vision that started our journey — providing trusted skincare solutions that help people achieve healthy, bright, and confident skin.',
                 image: image1,
             },
         },
@@ -22,7 +22,7 @@ const WhyChooseYouthface = () => {
             title: 'Complete Skincare Range',
             content: {
                 title: 'Made with Love',
-                description: "It all began with our Beauty Cream. With the love and trust people showed us, we gently grew, adding skin care, body care, and perfumes that feel just right for everyday life. Made with love, always. 💛",
+                description: "Carefully created with dedication and passion to give your skin the care it truly deserves.",
                 image: image3,
             },
         },
@@ -31,7 +31,7 @@ const WhyChooseYouthface = () => {
             title: 'Safety Without Compromise',
             content: {
                 title: 'Care You Can Trust',
-                description: "FDA-approved, cruelty-free, and carefully tested, because your skin's safety comes first. Gentle yet effective formulas powered by Kojic Acid, Niacinamide, Salicylic Acid, Alpha Arbutin, fruit enzymes, and nourishing actives. 💛",
+                description: "Aura Whitening Cream is created with care and dedication to provide reliable skincare results. Our commitment to quality and customer satisfaction has earned the trust of many users who rely on Aura for brighter, clearer, and healthier-looking skin.",
                 image: image4,
             },
         },
@@ -40,7 +40,7 @@ const WhyChooseYouthface = () => {
     return (
         <section className="why-choose-section section">
             <div className="container">
-                <h2 className="section-title">WHY CHOOSE YOUTHFACE</h2>
+                <h2 className="section-title">WHY CHOOSE AURA WHITENNING</h2>
 
                 {/* Tabs */}
                 <div className="why-choose-tabs">

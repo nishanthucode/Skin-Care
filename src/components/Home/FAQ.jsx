@@ -7,7 +7,7 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: 'How to ensure original Youthface products?',
+      question: 'How long does it take to see results with Aura Whitening Cream?',
       answer: 'Due to counterfeit products in the market, purchasing only from the official website (youthface.co.in) or verified retail partners is strongly recommended. Counterfeit products may not deliver expected outcomes and could potentially harm skin. Official channels guarantee authentic, safe formulations.',
     },
     {
