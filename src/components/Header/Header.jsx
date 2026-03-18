@@ -120,7 +120,7 @@ const Header = () => {
             >
               <FaWhatsapp />
             </a>
-            <a href="info@ddauralifestyle.in" className="icon-action-btn" aria-label="Mail">
+            <a href="mailto:info@ddauralifestyle.in" className="icon-action-btn" aria-label="Mail">
               <FiMail />
             </a>
           </div>

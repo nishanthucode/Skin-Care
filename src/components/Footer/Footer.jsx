@@ -60,7 +60,7 @@ We are a skincare brand dedicated to creating products that help people achieve 
                 {/* <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
                   <FaWhatsapp />
                 </a>
-                <a href="mailto:support@youthface.in">
+                <a href="mailto:info@ddauralifestyle.in">
                   <FaEnvelope />
                 </a> */}
               </div>

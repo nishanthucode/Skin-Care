@@ -78,7 +78,7 @@ const Contact = () => {
               </div>
               <div className="info-text">
                 <h3>Email Us</h3>
-                <a href="info@yourdomain.com">info@yourdomain.com</a>
+                <a href="mailto:info@ddauralifestyle.in">info@ddauralifestyle.in</a>
                 {/* <p>We reply within 24 hours</p> */}
               </div>
             </div>
