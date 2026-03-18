@@ -33,13 +33,13 @@
 }
 
 .tab-button:hover {
-    background: rgba(255, 20, 147, 0.1);
+    background: rgba(230, 171, 36, 0.1);
     color: var(--primary-color);
 }
 
 .tab-button.active {
     background: var(--primary-color);
-    color: white;
+    color: #1a1a1a;
 }
 
 .tab-content-wrapper {

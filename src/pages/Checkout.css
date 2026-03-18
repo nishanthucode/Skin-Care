@@ -86,7 +86,7 @@
 .form-group select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(255, 20, 147, 0.1);
+    box-shadow: 0 0 0 3px rgba(230, 171, 36, 0.1);
 }
 
 .payment-method {
@@ -103,7 +103,7 @@
 
 .payment-method.selected {
     border-color: var(--primary-color);
-    background: rgba(255, 20, 147, 0.05);
+    background: rgba(230, 171, 36, 0.05);
 }
 
 /* Right components: Order Summary */
@@ -184,7 +184,7 @@
     padding: 18px;
     font-size: 1.1rem;
     margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+    box-shadow: 0 4px 15px rgba(230, 171, 36, 0.3);
 }
 
 /* Responsive */

@@ -101,8 +101,8 @@
   flex: 0.8;
   /* Decreased relative to image wrapper */
   width: 100%;
-  background-color: #DC3545;
-  /* Vibrant red/coral */
+  background-color: var(--primary-color);
+  /* Golden */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,7 +111,7 @@
 }
 
 .category-label-text {
-  color: #FFFFFF;
+  color: #1A1A1A;
   font-family: var(--font-heading);
   font-size: 1.25rem;
   /* ~20px */

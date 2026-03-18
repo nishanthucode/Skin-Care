@@ -27,9 +27,9 @@ const About = () => {
         <div className="container">
           <div className="intro-grid">
             <div className="intro-text">
-              <h2 className="section-title text-left">The Aura Philosophy</h2>
+              <h2 className="section-title text-left">Aura Philosophy</h2>
               <p className="lead-text">
-                Aura is a premium skincare brand dedicated to enhancing natural beauty through thoughtfully crafted personal care products. We focus on combining gentle, skin-loving ingredients with modern skincare science to create products that support healthy, radiant-looking skin.
+               At Aura, we believe that true beauty begins with healthy and well-cared skin. Our philosophy is to create skincare products that combine natural goodness with effective care, helping people achieve brighter, smoother, and more confident skin. We focus on quality, trust, and visible results, ensuring every Aura product is made with care, love, and a commitment to customer satisfaction.
               </p>
               <p>
                 From nourishing creams to moisturizing soaps, every Aura product is designed for daily use, visible glow, and lasting confidence. Our goal is to deliver quality, safety, and elegance in every package, making skincare simple, effective, and luxurious.
@@ -82,7 +82,7 @@ Our mission is to provide effective skincare solutions that deliver visible resu
               <h4>Natural Ingredients</h4>
               <p>Harnessing the power of nature combined with science for safe, effective solutions.</p>
             </div>
-            <div className="value-card">
+            {/* <div className="value-card">
               <div className="value-icon"><FaAward /></div>
               <h4>Dermatologist Approved</h4>
               <p>Clinically tested and approved by experts to ensure your safety is our priority.</p>
@@ -91,7 +91,7 @@ Our mission is to provide effective skincare solutions that deliver visible resu
               <div className="value-icon"><FaHeart /></div>
               <h4>Cruelty-Free</h4>
               <p>We love animals. None of our products are ever tested on animals.</p>
-            </div>
+            </div> */}
             <div className="value-card">
               <div className="value-icon"><FaUsers /></div>
               <h4>Customer Focused</h4>

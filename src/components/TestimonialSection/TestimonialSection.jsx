@@ -1,7 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import './TestimonialSection.css';
-
+import firstimg from '../../assets/BefAft/img-1.0.jpeg';
+import firstimg1 from '../../assets/BefAft/img-1.jpeg';
+import secondimg from '../../assets/BefAft/img-2.0.jpeg';
+import secondimg1 from '../../assets/BefAft/img-2.jpeg';
+import thirdimg from '../../assets/BefAft/img-3.0.jpeg';
+import thirdimg1 from '../../assets/BefAft/img-3.jpeg';
+import fourthimg from '../../assets/BefAft/img-4.0.jpeg';
+import fourthimg1 from '../../assets/BefAft/img-4.jpeg';
+import fifthimg from '../../assets/BefAft/img-5.0.jpeg';
+import fifthimg1 from '../../assets/BefAft/img-5.jpeg';
 const TestimonialSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
@@ -13,70 +22,70 @@ const TestimonialSection = () => {
   }, []);
 
   const testimonials = [
-  {
-    id: 1,
-    name: 'Customer 1',
-    location: 'India',
-    beforeImage: '',
-    afterImage: '',
-    rating: 5,
-    review: "I started using Aura Whitening Cream and within a few days my skin looked brighter and smoother. My dark spots have reduced and my skin feels more confident now.",
-  },
-  {
-    id: 2,
-    name: 'Customer 2',
-    location: 'India',
-    beforeImage: '',
-    afterImage: '',
-    rating: 4,
-    review: "Aura Whitening Cream really worked well for my skin. It helped reduce pimples and improved my overall complexion. I highly recommend Aura.",
-  },
-  {
-    id: 3,
-    name: 'Customer 3',
-    location: 'India',
-    beforeImage: '',
-    afterImage: '',
-    rating: 5,
-    review: "I love Aura Whitening Cream! My skin tone looks more even and glowing after regular use.",
-  },
-  {
-    id: 4,
-    name: 'Customer 4',
-    location: 'India',
-    beforeImage: '',
-    afterImage: '',
-    rating: 4,
-    review: "After using Aura Whitening Cream, my skin looks clearer and healthier. The dark spots have visibly reduced.",
-  },
-  {
-    id: 5,
-    name: 'Customer 5',
-    location: 'India',
-    beforeImage: '',
-    afterImage: '',
-    rating: 5,
-    review: "Aura Whitening Cream is amazing. My skin feels softer, brighter, and much more refreshed.",
-  },
-  {
-    id: 6,
-    name: 'Customer 6',
-    location: 'India',
-    beforeImage: '',
-    afterImage: '',
-    rating: 4,
-    review: "I had dull skin before, but after using Aura Whitening Cream, my face looks more radiant and fresh.",
-  },
-  {
-    id: 7,
-    name: 'Customer 7',
-    location: 'India',
-    beforeImage: '',
-    afterImage: '',
-    rating: 4,
-    review: "Aura Whitening Cream helped reduce my acne marks and improved my skin tone. Very satisfied with the results.",
-  }
-];
+    {
+      id: 1,
+      name: 'Customer 1',
+      location: 'India',
+      beforeImage: firstimg1,
+      afterImage: firstimg,
+      rating: 5,
+      review: "I started using Aura Whitening Cream and within a few days my skin looked brighter and smoother. My dark spots have reduced and my skin feels more confident now.",
+    },
+    {
+      id: 2,
+      name: 'Customer 2',
+      location: 'India',
+      beforeImage: secondimg1,
+      afterImage: secondimg,
+      rating: 4,
+      review: "Aura Whitening Cream really worked well for my skin. It helped reduce pimples and improved my overall complexion. I highly recommend Aura.",
+    },
+    {
+      id: 3,
+      name: 'Customer 3',
+      location: 'India',
+      beforeImage: thirdimg1,
+      afterImage: thirdimg,
+      rating: 5,
+      review: "I love Aura Whitening Cream! My skin tone looks more even and glowing after regular use.",
+    },
+    {
+      id: 4,
+      name: 'Customer 4',
+      location: 'India',
+      beforeImage: fourthimg1,
+      afterImage: fourthimg,
+      rating: 4,
+      review: "After using Aura Whitening Cream, my skin looks clearer and healthier. The dark spots have visibly reduced.",
+    },
+    {
+      id: 5,
+      name: 'Customer 5',
+      location: 'India',
+      beforeImage: fifthimg1,
+      afterImage: fifthimg,
+      rating: 5,
+      review: "Aura Whitening Cream is amazing. My skin feels softer, brighter, and much more refreshed.",
+    },
+    {
+      id: 6,
+      name: 'Customer 6',
+      location: 'India',
+      beforeImage: secondimg,
+      afterImage: secondimg1,
+      rating: 4,
+      review: "I had dull skin before, but after using Aura Whitening Cream, my face looks more radiant and fresh.",
+    },
+    {
+      id: 7,
+      name: 'Customer 7',
+      location: 'India',
+      beforeImage: fourthimg,
+      afterImage: fourthimg1,
+      rating: 4,
+      review: "Aura Whitening Cream helped reduce my acne marks and improved my skin tone. Very satisfied with the results.",
+    }
+  ];
 
   const maxSlides = isMobile ? testimonials.length - 1 : testimonials.length - 2;
   const slideShift = isMobile ? 100 : 50;

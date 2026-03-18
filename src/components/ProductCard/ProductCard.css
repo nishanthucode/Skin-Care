@@ -3,7 +3,7 @@
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.3s ease;
-  height: 100%;
+  height: 580px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -31,11 +31,11 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   /* Using 1:1 for a balanced vertical card look, user mentioned 2:1 which might be too short or tall */
+  height: 280px;
   border-radius: 16px;
   /* Rounded corners for image */
   overflow: hidden;
-  background: #f4f1ea;
-  /* Soft neutral background */
+  background: transparent;
   margin-bottom: 16px;
   /* Spacing between image and info */
 }
@@ -106,6 +106,8 @@
   flex-grow: 1;
   text-align: left;
   /* Left-aligned layout */
+  min-height: 120px;
+  max-height: 160px;
 }
 
 .product-name {
@@ -168,14 +170,17 @@
 .action-container {
   padding: 0 16px 20px 16px;
   /* Matching padding */
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .btn-add-to-cart {
   width: 100%;
   padding: 16px;
-  background: #722F37;
-  /* Deep Burgundy */
-  color: #fff;
+  background: #E6AB24;
+  /* Golden */
+  color: #1a1a1a;
   border: none;
   border-radius: 12px;
   font-size: 1rem;
@@ -185,13 +190,13 @@
   cursor: pointer;
   font-family: var(--font-heading);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(114, 47, 55, 0.2);
+  box-shadow: 0 4px 10px rgba(230, 171, 36, 0.2);
 }
 
 .btn-add-to-cart:hover {
-  background: #5a252b;
+  background: #D4931A;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(114, 47, 55, 0.3);
+  box-shadow: 0 6px 15px rgba(230, 171, 36, 0.3);
 }
 
 .btn-out-of-stock {

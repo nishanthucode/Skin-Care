@@ -1,6 +1,6 @@
 .product-detail-page {
     background: white;
-    padding-bottom: 60px;
+    padding-bottom: 250px;
 }
 
 .breadcrumb {
@@ -32,6 +32,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     padding: 30px 0;
+    margin-bottom: 150px;
 }
 
 /* Product Gallery */
@@ -207,6 +208,7 @@
 
 .care-tip {
     margin-top: 35px;
+    margin-bottom: 40px;
     padding: 15px;
     background: linear-gradient(135deg, #f8f4f0 0%, #fdf9f6 100%);
     border-left: 4px solid var(--primary-color);
@@ -359,7 +361,7 @@
 .action-buttons {
     display: flex;
     gap: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 200px;
 }
 
 .add-to-bag-btn,
@@ -393,21 +395,21 @@
 }
 
 .buy-now-btn {
-    background: var(--primary-color);
-    color: #1a1a1a;
+    background: #2AB840;
+    color: #ffffff;
     border: none;
     text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    box-shadow: 0 4px 15px rgba(230, 171, 36, 0.2);
+    box-shadow: 0 4px 15px rgba(42, 184, 64, 0.2);
 }
 
 .buy-now-btn:hover {
-    background: var(--primary-hover);
+    background: #228c37;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(230, 171, 36, 0.3);
+    box-shadow: 0 6px 20px rgba(42, 184, 64, 0.3);
 }
 
 .whatsapp-icon {
@@ -468,6 +470,7 @@
 /* Product Details Tabs */
 .product-details-section {
     margin-top: 30px;
+    margin-bottom: 150px;
     padding: 30px 0;
     border-top: 1px solid var(--border-color);
 }

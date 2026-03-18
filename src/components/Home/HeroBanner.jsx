@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi';
 import './HeroBanner.css';
-import newImg1 from '../../assets/herobanner-1.jpeg';
+import newImg1 from '../../assets/herobanner-1.png';
 import newImg2 from '../../assets/product.jpeg';
 import newImg3 from '../../assets/33.jpeg';
 

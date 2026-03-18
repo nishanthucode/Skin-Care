@@ -6,7 +6,7 @@
 
 .contact-header {
     background-color: var(--primary-color);
-    color: white;
+    color: #1a1a1a;
     padding: 80px 0;
     text-align: center;
     margin-bottom: 20px;
@@ -71,7 +71,7 @@
 }
 
 .icon-wrapper {
-    background-color: rgba(255, 20, 147, 0.1);
+    background-color: rgba(230, 171, 36, 0.1);
     /* Primary color light */
     color: var(--primary-color);
     width: 50px;
@@ -125,12 +125,12 @@
 .form-group textarea:focus {
     border-color: var(--primary-color);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 20, 147, 0.1);
+    box-shadow: 0 0 0 3px rgba(230, 171, 36, 0.1);
 }
 
 .submit-btn {
     background-color: var(--primary-color);
-    color: white;
+    color: #1a1a1a;
     border: none;
     padding: 14px 30px;
     border-radius: 8px;
@@ -146,7 +146,7 @@
 }
 
 .submit-btn:hover {
-    background-color: #e60073;
+    background-color: var(--primary-hover);
     /* Slightly darker shade */
 }
 
