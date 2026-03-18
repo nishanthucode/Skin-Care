@@ -8,28 +8,28 @@ const FAQ = () => {
   const faqs = [
     {
       question: 'How long does it take to see results with Aura Whitening Cream?',
-      answer: 'Due to counterfeit products in the market, purchasing only from the official website (youthface.co.in) or verified retail partners is strongly recommended. Counterfeit products may not deliver expected outcomes and could potentially harm skin. Official channels guarantee authentic, safe formulations.',
+      answer: 'Most users start seeing visible improvements in skin brightness and clarity within 10 days of regular use of Aura Whitening Cream.',
     },
     {
-      question: 'How long before seeing visible changes?',
-      answer: 'Most customers notice visible improvements within 4 weeks of consistent use. Individual experiences may vary based on skin type and product selection.',
+      question: 'Can Aura Whitening Cream remove pimples and dark spots?',
+      answer: 'Yes, Aura Whitening Cream helps reduce pimples, dark spots, and blemishes, giving the skin a clearer and more even tone.',
     },
     {
-      question: 'Can men use Youthface products?',
-      answer: 'Absolutely. While the primary customer base is women, many men trust Youthface for effective skin whitening and care.',
+      question: 'Is Aura Whitening Cream safe for daily use?',
+      answer: 'Yes, Aura Whitening Cream is designed for daily skincare use to help maintain brighter, healthier-looking skin.',
     },
     {
-      question: 'Is pan-India shipping available?',
-      answer: 'Yes, shipping covers all of India. Whether in metro cities or rural areas, Youthface products reach every doorstep.',
+      question: 'How should I use Aura Whitening Cream for best results?',
+      answer: 'For best results, use Aura Whitening Cream as recommended, wash your face with a facewash before applying Aura, and avoid excessive sunlight exposure to maintain skin brightness.',
     },
     {
-      question: 'Can whitening cream be used during the day?',
-      answer: 'Some products, like the brightening cream, are formulated for night use for best performance. However, sunscreen is available to protect skin during the day. Always check individual product instructions.',
-    },
-    {
-      question: 'Why do some products recommend night use only?',
-      answer: 'Certain active whitening ingredients work more effectively when skin is in repair mode during sleep, away from sun exposure. This maximizes absorption and transformation while minimizing any sensitivity.',
-    },
+      question: 'What if Aura Whitening Cream does not show results?',
+      answer: 'We offer a 100% satisfaction guarantee. If Aura Whitening Cream does not show results within 7 days, you are eligible for a refund.',
+    }
+    // {
+    //   question: 'Why do some products recommend night use only?',
+    //   answer: 'Certain active whitening ingredients work more effectively when skin is in repair mode during sleep, away from sun exposure. This maximizes absorption and transformation while minimizing any sensitivity.',
+    // },
   ];
 
   const toggleFAQ = (index) => {
