@@ -233,7 +233,7 @@ const BeforeAfter = () => {
         <section className="before-after-section">
             <div className="container">
                 <div className="section-header-center">
-                    <h2 className="section-title">Over 1 Million People Trust Youthface</h2>
+                    <h2 className="section-title">Over 5 Thousand people Trust our DD Aura Whitening Product</h2>
                     <p className="section-subtitle">Explore Clinically Proven Formulations For South Indian Skin & Hair</p>
                 </div>
 

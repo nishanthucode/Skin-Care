@@ -13,52 +13,70 @@ const TestimonialSection = () => {
   }, []);
 
   const testimonials = [
-    {
-      id: 1,
-      name: 'Fathima',
-      location: 'Kerala',
-      beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-130833bd08df.png?v=1769862945&width=800',
-      afterImage: 'https://youthface.co.in/cdn/shop/files/4_52e3cad0-dd1a-4d3b-9005-ec4a3d293f72.png?v=1769862945&width=800',
-      rating: 5,
-      review: "I am Fathima Kerala Now I feel more confident to smile and talk YouthFace super... I'm a courier boy, saw so many YouthFace orders, so I tried it too. In just 1 month, superb result! My face got clear and bright.",
-    },
-    {
-      id: 2,
-      name: 'Nandan',
-      location: 'Bangalore',
-      beforeImage: 'https://youthface.co.in/cdn/shop/files/2_c858972b-9f31-4237-8d30-cba539cc7a5b.png?v=1769862945&width=800',
-      afterImage: 'https://youthface.co.in/cdn/shop/files/1_e8199244-90f9-4112-8f5e-df280a06b579.png?v=1769862945&width=800',
-      rating: 5,
-      review: "Hey, I'm Nandan from Bangalore. My skin had a lot of marks and dullness before, but after using YouthFace for just 1 month, it's totally changed! Now my face looks so clean, soft, and glowing. Seriously, YouthFace did magic love it..",
-    },
-    {
-      id: 3,
-      name: 'Aysha',
-      location: 'Chennai',
-      beforeImage: 'https://youthface.co.in/cdn/shop/files/5_37736d95-b3b8-4044-8796-cd809c431da9.png?v=1769862944&width=800',
-      afterImage: 'https://youthface.co.in/cdn/shop/files/6_acad1fa2-0ab6-4da5-8ac3-6fb898b56fd4.png?v=1769862945&width=800',
-      rating: 5,
-      review: "I Didn't expect such a big change in just one month! My skin feels lighter, clearer, and has that natural glow now I feel confident and fresh every day YouthFace really surprised me..",
-    },
-    {
-      id: 4,
-      name: 'Keerthana',
-      location: 'Coimbatore',
-      beforeImage: 'https://youthface.co.in/cdn/shop/files/7_aa1c6402-1ad5-4a4a-8541-94be4d2e0620.png?v=1769862945&width=800',
-      afterImage: 'https://youthface.co.in/cdn/shop/files/8_6150f2d8-2b92-476c-90e3-ef1bec016103.png?v=1769862944&width=800',
-      rating: 5,
-      review: "I am Keerthana from Coimbatore College days were full of travel and sun, and my skin looked so dull. After using YouthFace for just 1 month, my face became clear and Whiten! Now all my friends keep asking, 'What are you using?' I feel so happy seeing my skin glow every day YouthFace is just super bro..!",
-    },
-    {
-      id: 5,
-      name: 'Fathima',
-      location: 'Kerala',
-      beforeImage: 'https://youthface.co.in/cdn/shop/files/3_c4e0d5ca-04b1-474a-b6ee-130833bd08df.png?v=1769862945&width=800',
-      afterImage: 'https://youthface.co.in/cdn/shop/files/4_52e3cad0-dd1a-4d3b-9005-ec4a3d293f72.png?v=1769862945&width=800',
-      rating: 5,
-      review: "I am Fathima from Kerala when I see my face in the mirror, I just smile automatically, I've used so many big brand creams, but none gave this kind of change. After using YouthFace, my skin became clear, fair, and smooth in just 4 weeks!",
-    }
-  ];
+  {
+    id: 1,
+    name: 'Customer 1',
+    location: 'India',
+    beforeImage: '',
+    afterImage: '',
+    rating: 5,
+    review: "I started using Aura Whitening Cream and within a few days my skin looked brighter and smoother. My dark spots have reduced and my skin feels more confident now.",
+  },
+  {
+    id: 2,
+    name: 'Customer 2',
+    location: 'India',
+    beforeImage: '',
+    afterImage: '',
+    rating: 4,
+    review: "Aura Whitening Cream really worked well for my skin. It helped reduce pimples and improved my overall complexion. I highly recommend Aura.",
+  },
+  {
+    id: 3,
+    name: 'Customer 3',
+    location: 'India',
+    beforeImage: '',
+    afterImage: '',
+    rating: 5,
+    review: "I love Aura Whitening Cream! My skin tone looks more even and glowing after regular use.",
+  },
+  {
+    id: 4,
+    name: 'Customer 4',
+    location: 'India',
+    beforeImage: '',
+    afterImage: '',
+    rating: 4,
+    review: "After using Aura Whitening Cream, my skin looks clearer and healthier. The dark spots have visibly reduced.",
+  },
+  {
+    id: 5,
+    name: 'Customer 5',
+    location: 'India',
+    beforeImage: '',
+    afterImage: '',
+    rating: 5,
+    review: "Aura Whitening Cream is amazing. My skin feels softer, brighter, and much more refreshed.",
+  },
+  {
+    id: 6,
+    name: 'Customer 6',
+    location: 'India',
+    beforeImage: '',
+    afterImage: '',
+    rating: 4,
+    review: "I had dull skin before, but after using Aura Whitening Cream, my face looks more radiant and fresh.",
+  },
+  {
+    id: 7,
+    name: 'Customer 7',
+    location: 'India',
+    beforeImage: '',
+    afterImage: '',
+    rating: 4,
+    review: "Aura Whitening Cream helped reduce my acne marks and improved my skin tone. Very satisfied with the results.",
+  }
+];
 
   const maxSlides = isMobile ? testimonials.length - 1 : testimonials.length - 2;
   const slideShift = isMobile ? 100 : 50;

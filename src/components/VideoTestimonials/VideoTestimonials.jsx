@@ -24,11 +24,11 @@ const VideoTestimonials = () => {
         {
             id: 1,
             // Using the requested m3u8 URL for hover play
-            webUrl: 'https://youthface.co.in/cdn/shop/videos/c/vp/6c83543f1ce047129dcaa166b755b63c/6c83543f1ce047129dcaa166b755b63c.m3u8?v=0',
+            webUrl: 'https://youthface.co.in/cdn/shop/videos/c/vp/fe70d588d9144700bcce6b0151c9fe34/fe70d588d9144700bcce6b0151c9fe34.m3u8?v=0',
             productName: 'Papaya Face Wash (50ml)',
             price: 199.00,
             // Using the requested thumbnail
-            thumbnail: 'https://youthface.co.in/cdn/shop/files/preview_images/6c83543f1ce047129dcaa166b755b63c.thumbnail.0000000000.jpg?v=1763800022&width=600',
+            thumbnail: 'https://instagram.fixe1-1.fna.fbcdn.net/v/t51.71878-15/568652650_1467514497809228_6741214977905343715_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=101&ig_cache_key=Mzc0NzQ3MDQyMzg4NzAxNjMwNA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjY0MHgxMTM2LnNkci5DMyJ9&_nc_ohc=klPIGxRo4aIQ7kNvwGNJRbW&_nc_oc=AdldwpnpcTYpFVFeVnOUI4c0YjEWeiMW-JBgRMX20LOMSwGQIl2ji6ZVhvhhIn75PQtDvJLmaSgiS57zIgLIlhUq&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=instagram.fixe1-1.fna&_nc_gid=rrIV-HV1-ppc_X5iK2IPMA&_nc_ss=8&oh=00_AfzByraC5uMgnENFDXHOd2RzGbSGWobez6cO86itznOdow&oe=69BFF7D3',
             productImage: image3,
         },
         {
@@ -57,7 +57,7 @@ const VideoTestimonials = () => {
         },
         {
             id: 5,
-            webUrl: 'https://youthface.co.in/cdn/shop/videos/c/vp/f6001e20954544f6b16c76aed8460769/f6001e20954544f6b16c76aed8460769.m3u8?v=0',
+            webUrl: '=c76aed8460769.m3u8?v=0',
             productName: 'Sunscreen (50ml)',
             price: 399.00,
             thumbnail: 'https://youthface.co.in/cdn/shop/files/preview_images/f6001e20954544f6b16c76aed8460769.thumbnail.0000000000.jpg?v=1755847917&width=600',
@@ -80,8 +80,8 @@ const VideoTestimonials = () => {
         <section className="video-testimonials-section">
             <div className="container">
                 <div className="section-header-center">
-                    <h2 className="section-title">Real Results, Real Stories</h2>
-                    <p className="section-subtitle">See why thousands love Youthface</p>
+                    <h2 className="section-title">Reel Stories, DD Aura Lifestyle </h2>
+                    <p className="section-subtitle">Watch out for Latest Update</p>
                 </div>
 
                 <div className="videos-gallery-container">

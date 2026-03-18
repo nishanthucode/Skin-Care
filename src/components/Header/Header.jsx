@@ -47,13 +47,13 @@ const Header = () => {
       <div className="top-banner">
         <div className="top-banner-container">
           <div className="top-social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://www.instagram.com/dd_aura_offcial/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebookF />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/dd_aura_offcial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+            <a href="https://www.instagram.com/dd_aura_offcial/" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
               <FaYoutube />
             </a>
           </div>
@@ -120,7 +120,7 @@ const Header = () => {
             >
               <FaWhatsapp />
             </a>
-            <a href="info@yourdomain.com" className="icon-action-btn" aria-label="Mail">
+            <a href="info@ddauralifestyle.in" className="icon-action-btn" aria-label="Mail">
               <FiMail />
             </a>
           </div>
