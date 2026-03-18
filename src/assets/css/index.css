@@ -1,30 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
 
 :root {
-  /* Premium Color Palette */
-  --primary-color: #DC3545;
-  /* Specified Red */
-  --primary-hover: #c82333;
-  --secondary-color: #F5E6E3;
-  /* Soft Blush - Keep for background contrast */
-  --accent-color: #D4A373;
-  /* Gold/Bronze Accent */
+  /* Premium Golden, Black & White Color Palette */
+  --primary-color: #E6AB24;
+  /* Golden */
+  --primary-hover: #D4931A;
+  --secondary-color: #F5F5F5;
+  /* Off White - Light background */
+  --accent-color: #E6AB24;
+  /* Golden Accent */
 
   --dark-color: #1A1A1A;
-  /* Premium Charcoal */
-  --text-color: #444444;
-  /* Soft Gray Text */
-  --light-gray: #F8F8F8;
+  /* Charcoal Black */
+  --text-color: #1A1A1A;
+  /* Black Text */
+  --light-gray: #F9F9F9;
   --white: #FFFFFF;
   --border-color: #E2E2E2;
 
-  /* Typography */
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Playfair Display', serif;
+  /* Premium Sans-Serif Typography */
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -60,8 +60,9 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: var(--dark-color);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3;
+  letter-spacing: 0.02em;
 }
 
 /* Enforce Font Consistency Request: Bold = Heading Font */
@@ -133,23 +134,25 @@ select:focus {
 .section-title {
   font-family: var(--font-heading);
   font-size: 2.5rem;
+  font-weight: 500;
   color: var(--dark-color);
   text-align: center;
   margin-bottom: 30px;
   position: relative;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.03em;
 }
 
 /* Elegant Buttons */
 .btn {
   display: inline-block;
   padding: 14px 32px;
-  font-size: 14px;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 2px;
-  /* Sharper corners for luxury feel */
+  letter-spacing: 2px;
+  border-radius: 0;
+  /* Sharp corners for luxury feel */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
 }

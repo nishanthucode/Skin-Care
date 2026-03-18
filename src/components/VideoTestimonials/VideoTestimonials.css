@@ -66,19 +66,19 @@
 .play-circle-red {
     width: 60px;
     height: 60px;
-    background-color: #e63946;
-    /* Brand Red */
+    background-color: var(--primary-color);
+    /* Brand Golden */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+    box-shadow: 0 4px 15px rgba(230, 171, 36, 0.4);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .video-card-v3:hover .play-circle-red {
     transform: scale(1.15);
-    background-color: #ff4d5a;
+    background-color: var(--primary-hover);
 }
 
 .play-icon-white {

@@ -95,7 +95,7 @@
   margin-bottom: 20px;
   opacity: 0;
   transform: translateY(20px);
-  color: #e63946;
+  color: var(--primary-color);
   /* Accent color for kicker */
   background: rgba(255, 255, 255, 0.9);
   padding: 5px 10px;

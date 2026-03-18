@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './CategorySection.css';
-import faceCareImg from '../../assets/skin-care.png';
+import faceCareImg from '../../assets/skin-care.jpeg';
 import bodyCareImg from '../../assets/body-care.jpeg';
 
 const CategorySection = () => {

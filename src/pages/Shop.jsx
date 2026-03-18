@@ -7,6 +7,7 @@ import image1 from '../assets/product-1.jpeg';
 import image2 from '../assets/product-2.jpeg';
 import image3 from '../assets/product-3.jpeg';
 import image4 from '../assets/product-4.jpeg';
+import image5 from '../assets/product-5.jpeg';
 import './Shop.css';
 
 const Shop = ({ category }) => {
@@ -49,6 +50,7 @@ const Shop = ({ category }) => {
       image2,
       image3,
       image4,
+      image5,
       'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop',
       'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=300&h=300&fit=crop',
       'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=300&fit=crop',
@@ -58,10 +60,11 @@ const Shop = ({ category }) => {
     ];
 
     const productNames = [
-      'Aura Face Cream',
+      'Aura Face Whitening Cream',
       'Aura Goat Milk Soap',
-      'Aura Glow Combo',
-      'Aura Goat Milk Soap(Pack of 2)',
+      'Aura Face Whitening Cream & Aura Goat Milk Soap (Combo)',
+      'Aura Goat Milk Soap (Pack 2)',
+      'Aura Face Whitening Cream (Pack 2)',
     ];
 
     const descriptions = [
@@ -69,22 +72,24 @@ const Shop = ({ category }) => {
       'Goat Milk Soap',
       'Glow Combo',
       'Buy 2 Soap',
+      'Brighten & Glow',
     ];
 
-    const prices = [699, 249, 949, 499];
-    const originalPrices = [799, 299, 999, 597];
-    const ratings = [4.9, 0, 5.0, 4.8];
-    const reviewCounts = [60, 0, 31, 52];
-    const stocks = [50, 25, 30, 40];
+    const prices = [699, 249, 949, 499, 1399];
+    const originalPrices = [799, 299, 999, 597, 1599];
+    const ratings = [4.9, 4.5, 5.0, 4.8, 4.9];
+    const reviewCounts = [60, 40, 31, 52, 60];
+    const stocks = [50, 45, 30, 40, 35];
 
     const productSlugs = [
       'beauty-cream',
       'darkspot-soap',
       'glow-combo',
       'soap-pack-3',
+      'cream-pack-2',
     ];
 
-    return Array.from({ length: 4 }, (_, i) => ({
+    return Array.from({ length: 5 }, (_, i) => ({
       _id: productSlugs[i],
       name: productNames[i],
       description: descriptions[i],
@@ -96,7 +101,7 @@ const Shop = ({ category }) => {
       stock: stocks[i],
       discount: i === 0 ? 25 : null,
       comboOffer: i === 2 ? 'EXCLUSIVE COMBO' : null,
-      specialOffer: i === 3 ? 'PACK OF 3' : null,
+      specialOffer: i === 3 ? 'PACK OF 3' : (i === 4 ? 'PACK OF 2' : null),
     }));
   };
 

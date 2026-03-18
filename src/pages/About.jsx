@@ -56,8 +56,7 @@ const About = () => {
               </div>
               <h3>Our Mission</h3>
               <p>
-                Our mission is to provide high-quality, glow-enhancing skincare products made with effective and skin-friendly ingredients that people can trust for everyday use. We aim to make premium skincare accessible, reliable, and results-focused while maintaining strong standards in formulation, packaging, and customer satisfaction.
-              </p>
+Our vision is to become a trusted skincare brand that helps people achieve healthy, bright, and confident skin through safe, effective, and high-quality products.              </p>
             </div>
 
             {/* Vision */}
@@ -67,8 +66,7 @@ const About = () => {
               </div>
               <h3>Our Vision</h3>
               <p>
-                Our vision is to become a trusted and recognized skincare brand known for delivering visible results, premium experience, and ingredient transparency. We strive to build a brand that inspires confidence, promotes healthy skin habits, and grows into a leading name in modern beauty and personal care.
-              </p>
+Our mission is to provide effective skincare solutions that deliver visible results, build customer trust, and ensure satisfaction by offering quality products with a 100% guarantee and refund if results are not seen within 7 days              </p>
             </div>
           </div>
         </div>

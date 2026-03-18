@@ -6,6 +6,7 @@ import image1 from '../../assets/product-1.jpeg';
 import image2 from '../../assets/product-2.jpeg'
 import image3 from '../../assets/product-3.jpeg';
 import image4 from '../../assets/product-4.jpeg';
+import image5 from '../../assets/product-5.jpeg';
 
 import newImg from '../../assets/new-img.jpeg';
 import './ProductSection.css';
@@ -85,7 +86,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
       },
       {
         _id: 'glow-combo',
-        name: 'Aura Glow Combo',
+        name: 'Aura Face Whitening Cream & Aura Goat Milk Soap (Combo)',
         description: 'Glow Combo',
         price: 949,
         originalPrice: 999,
@@ -98,7 +99,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
       },
       {
         _id: 'soap-pack-3',
-        name: 'Aura Goat Milk Soap(Pack of 2)',
+        name: 'Aura Goat Milk Soap (Pack 2)',
         description: 'Buy 2 Saop',
         price: 499,
         originalPrice: 597,
@@ -108,6 +109,19 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
         reviewCount: 52,
         stock: 40,
         specialOffer: 'PACK OF 3',
+      },
+      {
+        _id: 'cream-pack-2',
+        name: 'Aura Face Whitening Cream (Pack 2)',
+        description: 'Brighten & Glow',
+        price: 1399,
+        originalPrice: 1599,
+        category: 'face-care',
+        image: image5,
+        rating: 4.9,
+        reviewCount: 60,
+        stock: 35,
+        specialOffer: 'PACK OF 2',
       }
     ];
 
@@ -157,7 +171,7 @@ const ProductSection = ({ title, viewAllLink, fetchFunction, category, categorie
           )}
         </div>
 
-        <div className="products-grid">
+        <div className="products-carousel">
           {products.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}

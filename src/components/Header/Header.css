@@ -1,5 +1,5 @@
 .top-banner {
-  background-color: #DC3545;
+  background-color: var(--primary-color);
   color: var(--white);
   padding: 8px 0;
   font-size: 13px;

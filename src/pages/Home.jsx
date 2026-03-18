@@ -23,7 +23,7 @@ const Home = () => {
       <ProductSection
         title="Our Products"
         categories={['soap', 'body-cream', 'face-wash', 'perfume', 'face-care']}
-        limit={4}
+        limit={5}
       />
 
       {/* Video Testimonials */}

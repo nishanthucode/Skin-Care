@@ -45,7 +45,8 @@ const Footer = () => {
                 <img src={logo} alt="Youth Face" className="footer-logo-img" />
               </Link>
               <p className="footer-desc">
-                Aura is dedicated to creating safe, effective skincare that enhances your natural glow. With carefully crafted formulations and premium ingredients, we focus on delivering visible results while keeping your skin’s health our top priority. Experience confidence and radiance with every use.              </p>
+We are a skincare brand dedicated to creating products that help people achieve brighter, clearer, and healthier-looking skin. At Aura, we focus on developing effective solutions that target common skin concerns such as pimples, dark spots, dullness, and uneven skin tone.
+              </p>
               <div className="social-links">
                 <a href="https://www.instagram.com/dd_aura_offcial/" target="_blank" rel="noopener noreferrer">
                   <FaFacebookF />
