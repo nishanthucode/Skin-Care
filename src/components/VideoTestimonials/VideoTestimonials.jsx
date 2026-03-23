@@ -7,6 +7,7 @@ import image2 from '../../assets/product-2.jpeg';
 import image3 from '../../assets/product-3.jpeg';
 import image4 from '../../assets/product-4.jpeg';
 
+import image11 from '../../assets/image-1.0.png';
 import image21 from '../../assets/image-2.0.png';
 import image31 from '../../assets/image-3.0.png';
 import image41 from '../../assets/image-4.0.png';
@@ -151,16 +152,15 @@ const VideoTestimonials = () => {
             id: 1,
             webUrl: video1,
             productName: 'Aura Face Cream',
-            price: 199.00,
+            price: 699.00,
             productImage: image1,
-            thumbnail: 'https://instagram.fixe1-1.fna.fbcdn.net/v/t51.71878-15/568652650_1467514497809228_6741214977905343715_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=101&ig_cache_key=Mzc0NzQ3MDQyMzg4NzAxNjMwNA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjY0MHgxMTM2LnNkci5DMyJ9&_nc_ohc=klPIGxRo4aIQ7kNvwGNJRbW&_nc_oc=AdldwpnpcTYpFVFeVnOUI4c0YjEWeiMW-JBgRMX20LOMSwGQIl2ji6ZVhvhhIn75PQtDvJLmaSgiS57zIgLIlhUq&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=instagram.fixe1-1.fna&_nc_gid=rrIV-HV1-ppc_X5iK2IPMA&_nc_ss=8&oh=00_AfzByraC5uMgnENFDXHOd2RzGbSGWobez6cO86itznOdow&oe=69BFF7D3',
-        },
+            thumbnail: image11,},
 
         {
             id: 2,
             webUrl: video2,
             productName: 'Aura Face Cream',
-            price: 199.00,
+            price: 699.00,
             thumbnail: image21,
             productImage: image1,       
         },
@@ -168,7 +168,7 @@ const VideoTestimonials = () => {
             id: 3,
              webUrl: video5,
             productName: 'Aura Face Cream',
-            price: 199.00,
+            price: 249.00,
             thumbnail: image51,
             productImage: image2,
         },

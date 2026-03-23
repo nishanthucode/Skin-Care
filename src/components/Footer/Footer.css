@@ -83,7 +83,8 @@
 .footer-desc {
   font-size: 14px;
   line-height: 1.8;
-  opacity: 0.7;
+  color: var(--white);
+  opacity: 1;
   margin-bottom: 30px;
 }
 
@@ -115,7 +116,8 @@
 
 .footer-col ul li a {
   font-size: 14px;
-  opacity: 0.6;
+  color: var(--white);
+  opacity: 1;
   transition: all 0.3s ease;
 }
 
@@ -133,8 +135,15 @@
 
 .footer-bottom p {
   font-size: 13px;
-  opacity: 0.5;
+  color: var(--white);
+  opacity: 1;
   letter-spacing: 0.5px;
+}
+
+.footer-col p,
+.footer-col a,
+.footer-bottom p {
+  color: var(--white);
 }
 
 /* Responsive */
