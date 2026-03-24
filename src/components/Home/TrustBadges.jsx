@@ -7,13 +7,13 @@ const TrustBadges = () => {
     {
       id: 1,
       icon: <FaAward />,
-      title: '9+ Years of Excellence',
+      title: '5K+ Happy Customers',
       color: '#ff69b4',
     },
     {
       id: 2,
       icon: <FaUsers />,
-      title: '2M+ Happy Customers',
+      title: '2+ Years of Excellence',
       color: '#ff1493',
     },
     {
@@ -39,7 +39,7 @@ const TrustBadges = () => {
   return (
     <section className="trust-badges-section section">
       <div className="container">
-        <h2 className="section-title">Trusted by over 2 Million Indians</h2>
+        <h2 className="section-title">Trusted by Thousands of Aura Clients</h2>
         <div className="badges-grid">
           {badges.map((badge) => (
             <div key={badge.id} className="badge-item">
