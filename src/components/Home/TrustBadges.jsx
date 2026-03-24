@@ -8,31 +8,31 @@ const TrustBadges = () => {
       id: 1,
       icon: <FaAward />,
       title: '5K+ Happy Customers',
-      color: '#ff69b4',
+      color: '#E6AB24',
     },
     {
       id: 2,
       icon: <FaUsers />,
       title: '2+ Years of Excellence',
-      color: '#ff1493',
+      color: '#E6AB24',
     },
     {
       id: 3,
       icon: <FaCheckCircle />,
       title: 'Dermatologist Tested',
-      color: '#ff69b4',
+      color: '#E6AB24',
     },
     {
       id: 4,
       icon: <FaShieldAlt />,
       title: 'FDA Approved',
-      color: '#ff1493',
+      color: '#E6AB24',
     },
     {
       id: 5,
       icon: <FaPaw />,
       title: 'Cruelty-Free',
-      color: '#ff69b4',
+      color: '#E6AB24',
     },
   ];
 
